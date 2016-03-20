@@ -20,7 +20,6 @@ class CreateClassesTable extends Migration
 			$table->string('duration');
 			$table->float('price');
 			$table->integer('Instructor')->nullabel()->unsigned();
-			$table->integer('Instructor')->nullabel()->unsigned();
 			$table->timestamps();
 
 			$table->foreign('location')
