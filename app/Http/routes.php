@@ -21,14 +21,14 @@ Route::get('/', function () {
 
 
 Route::get('classes', [
-	'uses' 	=> 'AdminController@index',
+	'uses' 	=> 'ClassController@index',
 	'as' 	=> '/',
 ]);
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'class'], function () {
 
 	Route::get('admins', [
 		'uses' 	=> 'AdminController@index',
 		'as' 	=> '/',
 	]);
-]);
+});

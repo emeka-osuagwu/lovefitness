@@ -17,9 +17,9 @@
 			<div class="row">
 				<div class="medium-6 columns">
 					<ul id="menu-main" class="menu">
-						<li><a href="http://localhost/lovefitness/">Home</a></li>
+						<li><a href="/">Home</a></li>
 						<li><a href="http://localhost/lovefitness/blog/">Blog</a></li>
-						<li><a href="http://localhost/lovefitness/classes/">Classes</a></li>
+						<li><a href="/classes">Classes</a></li>
 						<li><a href="http://localhost/lovefitness/about/">About</a></li>
 						<li><a href="http://localhost/lovefitness/contact/">Contact</a></li>
 					</ul>
