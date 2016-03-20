@@ -17,7 +17,6 @@ class CreateGymsTable extends Migration
 			$table->string('gym_name')->unique();
 			$table->string('address');
 			$table->string('location');
-			$table->string('location');
 			$table->float('longitude');
 			$table->float('latitude');
 			$table->json('numbers');
