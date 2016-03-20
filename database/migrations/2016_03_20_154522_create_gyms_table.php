@@ -14,14 +14,14 @@ class CreateGymsTable extends Migration
 	{
 		Schema::create('gyms', function (Blueprint $table) {
 			$table->increments('id');
-			$table->string('gym_name')->unique();
+			$table->string('name')->unique();
 			$table->string('address');
 			$table->string('location');
 			$table->float('longitude');
 			$table->float('latitude');
 			$table->json('numbers');
 			$table->string('opening_hours');
-			$table->decimal('membership_prices');
+			$table->decimal('price');
 			$table->string('website');
 			$table->timestamps();
 		});
