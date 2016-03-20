@@ -16,3 +16,19 @@ Route::get('/', function () {
 });
 
 
+
+
+
+
+Route::get('classes', [
+	'uses' 	=> 'AdminController@index',
+	'as' 	=> '/',
+]);
+
+Route::group(['prefix' => 'admin'], function () {
+
+	Route::get('admins', [
+		'uses' 	=> 'AdminController@index',
+		'as' 	=> '/',
+	]);
+]);
