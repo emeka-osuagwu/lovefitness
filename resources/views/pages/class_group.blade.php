@@ -45,11 +45,11 @@
 				<ul class="medium-block-grid-3 class-categories">
 					<li>
 
-						<a href="#"><img src="images/swimming.jpg" alt=""></a>
-
-						<h3 class="red"><a href="#">Swimming</a></h3>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod deleniti optio autem ducimus, minima recusandae corporis sunt, natus quos, consectetur sint voluptates! Hic voluptate quas, tempore cupiditate ipsum, illo explicabo non odio excepturi ducimus beatae sed ab temporibus minus. Laborum!</p>
+						<a href="/yoga/classes">
+							<img src="images/swimming.jpg" alt="">
+							<h3 class="red"><a href="#">Swimming</a></h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod deleniti optio autem ducimus, minima recusandae corporis sunt, natus quos, consectetur sint voluptates! Hic voluptate quas, tempore cupiditate ipsum, illo explicabo non odio excepturi ducimus beatae sed ab temporibus minus. Laborum!</p>
+						</a>
 					</li>
 				</ul>
 			</main>

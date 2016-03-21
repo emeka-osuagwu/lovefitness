@@ -41,14 +41,14 @@
 					
 					<div class="widget">
 						<h4 class="widget-title orange">Featured<i></i></h4>
-						<a href="#"><img src="images/featured.jpg" alt=""></a>
+						<a href="#"><img src="{{ asset('images/featured.jpg') }}" alt=""></a>
 					</div>
 
 					<div class="widget latest-posts">
 						<h4 class="widget-title orange">Latest Post<i></i></h4>
 						<ul>
 							<li>
-								<img src="images/image.jpg" alt="image" />
+								<img src="{{ asset('images/image.jpg') }}" alt="image" />
 								<div class="widget-content">
 									<h5><a href="http://localhost/lovefitness/post-2/">Post 2</a></h5>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus vel nibh in varius. Pellentesque eu elit quis mi tristique tempus in faucibus metus. Etiam lobortis placerat massa vestibulum scelerisque.</p>

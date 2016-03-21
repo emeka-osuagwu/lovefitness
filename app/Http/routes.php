@@ -21,7 +21,12 @@ Route::get('/', function () {
 
 
 Route::get('classes', [
-	'uses' 	=> 'ClassController@index',
+	'uses' 	=> 'ClassController@class_group',
+	'as' 	=> '/',
+]);
+
+Route::get('yoga/classes', [
+	'uses' 	=> 'ClassController@class_list',
 	'as' 	=> '/',
 ]);
 
