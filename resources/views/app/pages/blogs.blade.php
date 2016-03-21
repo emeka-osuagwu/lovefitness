@@ -1,9 +1,9 @@
-@extends('master')
+@extends('app.master')
 
 @section('title', 'Index')
 
 @section('content')
-	@include('pages.includes.sections.top_nav')
+	@include('app.pages.includes.sections.top_nav')
 	
 	<div class="page-header">
 		<div class="row">

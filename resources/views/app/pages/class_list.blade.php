@@ -1,9 +1,9 @@
-@extends('master')
+@extends('app.master')
 
 @section('title', 'Index')
 
 @section('content')
-	@include('pages.includes.sections.top_nav')
+	@include('app.pages.includes.sections.top_nav')
 	
 	<div class="page-header">
 		<div class="row">
@@ -32,7 +32,7 @@
 		<div class="row">
 			<div class="medium-8 columns">
 				<main class="main-gym-list">
-					@include('pages.includes.contents.list_two')
+					@include('app.pages.includes.contents.list_two')
 				</main>
 			</div>
 

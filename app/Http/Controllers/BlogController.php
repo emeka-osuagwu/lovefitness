@@ -11,6 +11,6 @@ class BlogController extends Controller
 {
 	public function index()
 	{
-		return view('pages.blogs');
+		return view('app.pages.blogs');
 	}
 }
