@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-	return view('pages.index');
+	return view('app.pages.index');
 });
 
 
@@ -30,6 +30,8 @@ Route::get('yoga/classes', [
 	'as' 	=> '/',
 ]);
 
+
+
 Route::group(['prefix' => 'class'], function () {
 
 	Route::get('view', [
@@ -42,3 +44,42 @@ Route::group(['prefix' => 'class'], function () {
 		'as' 	=> '/',
 	]);
 });
+
+
+
+Route::get('blogs', [
+	'uses' 	=> 'BlogController@index',
+	'as' 	=> '/',
+]);
+
+Route::get('contact', [
+	'uses' 	=> 'ContactController@index',
+	'as' 	=> '/',
+]);
+
+
+
+
+
+
+
+
+
+
+Route::get('dashboard', function () {
+	return view('dashboard.pages.index');
+});
+
+
+
+// Route::get('dashboard', [
+// 	'uses' 	=> 'ContactController@index',
+// 	'as' 	=> '/',
+// ]);
+
+
+
+
+
+
+
