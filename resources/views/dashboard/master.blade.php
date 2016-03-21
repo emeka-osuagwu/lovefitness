@@ -1,11 +1,10 @@
 <html class="no-js" lang="en">
 	<head>
 		<title>App Name - @yield('title')</title>
-		@include('app.pages.includes.sections.link')
+		@include('dashboard.pages.includes.sections.link')
+		@include('dashboard.pages.includes.sections.script')
 	</head>
-	<body>
+	<body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
 		@yield('content')
-		
-		
 	</body>
 </html>
