@@ -13,4 +13,9 @@ class ClassController extends Controller
 	{
 		return view('pages.class_list');
 	}
+
+	public function view()
+	{
+		return view('pages.class_view');
+	}
 }

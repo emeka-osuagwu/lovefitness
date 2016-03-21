@@ -27,6 +27,11 @@ Route::get('classes', [
 
 Route::group(['prefix' => 'class'], function () {
 
+	Route::get('view', [
+		'uses' 	=> 'ClassController@view',
+		'as' 	=> '/',
+	]);
+
 	Route::get('admins', [
 		'uses' 	=> 'AdminController@index',
 		'as' 	=> '/',
