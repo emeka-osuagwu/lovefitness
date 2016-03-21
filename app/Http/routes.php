@@ -21,11 +21,21 @@ Route::get('/', function () {
 
 
 Route::get('classes', [
-	'uses' 	=> 'ClassController@index',
+	'uses' 	=> 'ClassController@class_group',
+	'as' 	=> '/',
+]);
+
+Route::get('yoga/classes', [
+	'uses' 	=> 'ClassController@class_list',
 	'as' 	=> '/',
 ]);
 
 Route::group(['prefix' => 'class'], function () {
+
+	Route::get('view', [
+		'uses' 	=> 'ClassController@view',
+		'as' 	=> '/',
+	]);
 
 	Route::get('admins', [
 		'uses' 	=> 'AdminController@index',
