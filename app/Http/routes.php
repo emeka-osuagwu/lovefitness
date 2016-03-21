@@ -56,3 +56,30 @@ Route::get('contact', [
 	'uses' 	=> 'ContactController@index',
 	'as' 	=> '/',
 ]);
+
+
+
+
+
+
+
+
+
+
+Route::get('dashboard', function () {
+	return view('dashboard.pages.index');
+});
+
+
+
+// Route::get('dashboard', [
+// 	'uses' 	=> 'ContactController@index',
+// 	'as' 	=> '/',
+// ]);
+
+
+
+
+
+
+
