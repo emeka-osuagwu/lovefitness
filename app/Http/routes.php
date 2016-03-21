@@ -30,6 +30,8 @@ Route::get('yoga/classes', [
 	'as' 	=> '/',
 ]);
 
+
+
 Route::group(['prefix' => 'class'], function () {
 
 	Route::get('view', [
@@ -44,7 +46,13 @@ Route::group(['prefix' => 'class'], function () {
 });
 
 
+
 Route::get('blogs', [
 	'uses' 	=> 'BlogController@index',
+	'as' 	=> '/',
+]);
+
+Route::get('contact', [
+	'uses' 	=> 'ContactController@index',
 	'as' 	=> '/',
 ]);

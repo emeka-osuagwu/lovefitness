@@ -21,7 +21,7 @@
 						<li><a href="/blogs">Blog</a></li>
 						<li><a href="/classes">Classes</a></li>
 						<li><a href="http://localhost/lovefitness/about/">About</a></li>
-						<li><a href="http://localhost/lovefitness/contact/">Contact</a></li>
+						<li><a href="/contact">Contact</a></li>
 					</ul>
 				</div>				
 				<div class="medium-4 columns medium-text-right">
