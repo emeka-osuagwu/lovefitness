@@ -42,3 +42,9 @@ Route::group(['prefix' => 'class'], function () {
 		'as' 	=> '/',
 	]);
 });
+
+
+Route::get('blogs', [
+	'uses' 	=> 'BlogController@index',
+	'as' 	=> '/',
+]);
