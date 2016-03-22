@@ -80,6 +80,11 @@ Route::group(['prefix' => 'gym'], function () {
 	Route::get('create', function () {
 		return view('dashboard.pages.index');
 	});
+
+	Route::post('create', [
+		'uses' 	=> 'ContactController@index',
+		'as' 	=> '/',
+	]);
 });
 
 
