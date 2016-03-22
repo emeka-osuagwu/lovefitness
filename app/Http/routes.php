@@ -64,19 +64,26 @@ Route::get('contact', [
 
 
 
+Route::group(['prefix' => 'dashboard'], function () {
+
+	Route::get('/', function () {
+		return view('dashboard.pages.index');
+	});
 
 
-Route::get('dashboard', function () {
-	return view('dashboard.pages.index');
+	Route::group(['prefix' => 'gym'], function () {
+		
+		Route::get('/', function () {
+			return view('dashboard.pages.index');
+		});
+
+		Route::get('create', function () {
+			return view('dashboard.pages.index');
+		});
+	});
+
+
 });
-
-
-
-// Route::get('dashboard', [
-// 	'uses' 	=> 'ContactController@index',
-// 	'as' 	=> '/',
-// ]);
-
 
 
 
