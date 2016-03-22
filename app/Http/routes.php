@@ -82,7 +82,7 @@ Route::group(['prefix' => 'gym'], function () {
 	});
 
 	Route::post('create', [
-		'uses' 	=> 'ContactController@index',
+		'uses' 	=> 'GymController@create',
 		'as' 	=> '/',
 	]);
 });

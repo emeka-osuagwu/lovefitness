@@ -9,8 +9,6 @@
 			<div class="page-sidebar-wrapper">
 				@include('dashboard.pages.includes.sections.left_nav')
 				@include('dashboard.pages.includes.sections.add_gym')
-			
-
 			</div>
 		</div>
 @endsection

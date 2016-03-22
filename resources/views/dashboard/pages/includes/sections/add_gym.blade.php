@@ -13,7 +13,7 @@
 
 						<div class="portlet-body form">
 							
-							<form method="post" action="/gyms/create" enctype="multipart/form-data" class="form-horizontal">
+							<form method="post" action="/gym/create" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="form-body">
 									<div class="form-group">
