@@ -2,6 +2,7 @@
 
 namespace App\Http\Repo;
 
+use App\Model\ClassGroup;
 use App\Model\ClassCategory;
 
 class ClassRepo
@@ -18,5 +19,16 @@ class ClassRepo
 		];
 
 		ClassCategory::create($create);
+
+	}
+
+	public function createClassGroup($data)
+	{
+		$create = [
+			"name"	=> $data['name'],
+			"description"	=> $data['description'],
+		];
+		
+		ClassGroup::create($create);
 	}
 }

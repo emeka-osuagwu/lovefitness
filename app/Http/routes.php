@@ -100,9 +100,12 @@ Route::group(['prefix' => 'class'], function () {
 		'as' 	=> '/',
 	]);
 
+	Route::get('group', function () {
+		return view('dashboard.pages.add_class_group');
+	});
 
-	Route::post('create', [
-		'uses' 	=> 'ClassController@create',
+	Route::post('group', [
+		'uses' 	=> 'ClassController@createCreateGroup',
 		'as' 	=> '/',
 	]);
 });

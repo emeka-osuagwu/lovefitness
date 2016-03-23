@@ -39,7 +39,7 @@
 						Add new class</a>
 					</li>
 					<li>
-						<a href="/gym/create">
+						<a href="/class/group">
 						<i class="icon-plus"></i>
 						Add class group</a>
 					</li>

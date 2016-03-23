@@ -39,4 +39,10 @@ class ClassController extends Controller
 		$this->classRepo->createClassCategory($request->all());
 		return back();
 	}
+
+	public function createCreateGroup(Request $request)
+	{
+		$this->classRepo->createClassGroup($request->all());
+		return back();
+	}
 }
