@@ -24,10 +24,10 @@
 						<img class="gym-logo" src="{{asset('images/gym-logo.png')}}" alt="">
 						<div class="meta red clearfix">
 							<a href="#" class="arrow"></a>
-							<a href="#">CLASS: YOGA FOR BEGINNERS</a>
-							<a href="#">DURATION: 1H 30MIN</a>
-							<a href="#">GYM: ABC GYM</a>
-							<a href="#">LOCATION: IKOYI</a>
+							<a style="text-transform: uppercase;" href="#">CLASS: {{$class->name}}</a>
+							<a style="text-transform: uppercase;" href="#">DURATION: {{$class->duration}}</a>
+							<a style="text-transform: uppercase;" href="#">GYM: {{$class['gym']->name}}</a>
+							<a style="text-transform: uppercase;" href="#">LOCATION: {{$class['gym']->location}}</a>
 						</div>
 					</div>
 
@@ -35,12 +35,12 @@
 						<div class="row">
 							<div class="medium-3 columns right text-center">
 								<a href="#" class="button">Join Class</a>
-								<div class="gym-price"><span>Price: </span>$100</div>
+								<div class="gym-price"><span>Price: </span>${{$class->price}}</div>
 							</div>
 						</div>
 
 						<h5>About the class</h5>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab necessitatibus porro qui quae cumque sapiente vel esse vitae tempore impedit deleniti minus aperiam pariatur est, inventore voluptates, eum sint officia animi laudantium, laborum! Maiores laborum expedita quis illum sint architecto consequatur at, voluptates temporibus, assumenda enim in excepturi! Nulla, architecto.</p>
+						<p>{{$class->description}}</p>
 						<h5>Timetable</h5>
 						<p>Monday: <span>5pm</span><br />
 						Monday: <span>5pm</span><br />

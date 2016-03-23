@@ -18,32 +18,64 @@ Route::get('/', function () {
 
 
 
-
-
 Route::get('classes', [
 	'uses' 	=> 'ClassController@class_group',
 	'as' 	=> '/',
 ]);
 
-Route::get('yoga/classes', [
+Route::get('classes/{class_name}', [
+	'uses' 	=> 'ClassController@view',
+	'as' 	=> '/',
+]);
+
+Route::get('{group}/classes', [
 	'uses' 	=> 'ClassController@class_list',
 	'as' 	=> '/',
 ]);
 
-
-
 Route::group(['prefix' => 'class'], function () {
 
-	Route::get('view', [
-		'uses' 	=> 'ClassController@view',
+	Route::get('category', [
+		'uses' 	=> 'ClassController@getCreateCategory',
 		'as' 	=> '/',
 	]);
 
-	Route::get('admins', [
-		'uses' 	=> 'AdminController@index',
+	Route::post('category', [
+		'uses' 	=> 'ClassController@postCreateCategory',
+		'as' 	=> '/',
+	]);
+
+	Route::get('group', function () {
+		return view('dashboard.pages.add_class_group');
+	});
+
+	Route::post('group', [
+		'uses' 	=> 'ClassController@createGroup',
+		'as' 	=> '/',
+	]);
+
+	Route::get('create', [
+		'uses' 	=> 'ClassController@getCreateClass',
+		'as' 	=> '/',
+	]);
+
+	Route::post('create', [
+		'uses' 	=> 'ClassController@postCreateClass',
 		'as' 	=> '/',
 	]);
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -71,6 +103,12 @@ Route::group(['prefix' => 'dashboard'], function () {
 	});
 });
 
+
+Route::get('gyms', [
+	'uses' 	=> 'GymController@index',
+	'as' 	=> '/',
+]);
+
 Route::group(['prefix' => 'gym'], function () {
 	
 	Route::get('/', function () {
@@ -88,27 +126,6 @@ Route::group(['prefix' => 'gym'], function () {
 });
 
 
-Route::group(['prefix' => 'class'], function () {
-
-	Route::get('category', [
-		'uses' 	=> 'ClassController@getCreateCategory',
-		'as' 	=> '/',
-	]);
-
-	Route::post('category', [
-		'uses' 	=> 'ClassController@postCreateCategory',
-		'as' 	=> '/',
-	]);
-
-	Route::get('group', function () {
-		return view('dashboard.pages.add_class_group');
-	});
-
-	Route::post('group', [
-		'uses' 	=> 'ClassController@createCreateGroup',
-		'as' 	=> '/',
-	]);
-});
 
 
 

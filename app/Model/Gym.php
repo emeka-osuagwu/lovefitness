@@ -19,4 +19,9 @@ class Gym extends Model
 		"price",	
 		"website",	
 	];
+
+	public function classes()
+	{
+		return $this->hasMany('App\Model\ClassModel');
+	}
 }

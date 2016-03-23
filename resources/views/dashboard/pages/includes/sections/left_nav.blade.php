@@ -20,7 +20,7 @@
 						Add new gym</a>
 					</li>
 					<li>
-						<a href="/backend/gyms/">
+						<a href="/gyms/">
 						<i class="icon-list"></i><span class="badge badge-info">3</span>
 						List all</a>
 					</li>
@@ -34,7 +34,7 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="/gym/create">
+						<a href="/class/create">
 						<i class="icon-plus"></i>
 						Add new class</a>
 					</li>

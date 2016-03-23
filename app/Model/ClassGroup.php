@@ -8,8 +8,15 @@ class ClassGroup extends Model
 {
 	protected $table = 'class_groups';
 
+	protected $primaryKey = 'id';
+	
 	protected $fillable = [	
 		"name",
 		"description",
 	];
+
+	public function classes()
+	{
+		return $this->hasMany('App\Model\ClassModel');
+	}
 }

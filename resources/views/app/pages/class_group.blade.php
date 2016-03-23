@@ -43,14 +43,16 @@
 		<div class="columns">
 			<main>
 				<ul class="medium-block-grid-3 class-categories">
+					@foreach($groups as $group)
 					<li>
 
-						<a href="/yoga/classes">
+						<a href="/{{$group->name}}/classes">
 							<img src="images/swimming.jpg" alt="">
-							<h3 class="red"><a href="#">Swimming</a></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod deleniti optio autem ducimus, minima recusandae corporis sunt, natus quos, consectetur sint voluptates! Hic voluptate quas, tempore cupiditate ipsum, illo explicabo non odio excepturi ducimus beatae sed ab temporibus minus. Laborum!</p>
+							<h3 class="red"><a href="#">{{$group->name}}</a></h3>
+							<p>{{$group->description}}</p>
 						</a>
 					</li>
+					@endforeach
 				</ul>
 			</main>
 		</div>
