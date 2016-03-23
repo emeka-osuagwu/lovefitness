@@ -28,4 +28,15 @@ class ClassController extends Controller
 	{
 		return view('app.pages.class_view');
 	}
+
+	public function getCreateCategory()
+	{
+		return view('dashboard.pages.add_class_category');	
+	}
+
+	public function postCreateCategory(Request $request)
+	{
+		$this->classRepo->createClassCategory($request->all());
+		return back();
+	}
 }

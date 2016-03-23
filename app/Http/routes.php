@@ -88,6 +88,27 @@ Route::group(['prefix' => 'gym'], function () {
 });
 
 
+Route::group(['prefix' => 'class'], function () {
+
+	Route::get('category', [
+		'uses' 	=> 'ClassController@getCreateCategory',
+		'as' 	=> '/',
+	]);
+
+	Route::post('category', [
+		'uses' 	=> 'ClassController@postCreateCategory',
+		'as' 	=> '/',
+	]);
+
+
+	Route::post('create', [
+		'uses' 	=> 'ClassController@create',
+		'as' 	=> '/',
+	]);
+});
+
+
+
 
 
 

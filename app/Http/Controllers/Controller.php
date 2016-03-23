@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Repo\GymRepo;
+use App\Http\Repo\ClassRepo;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -15,7 +16,8 @@ abstract class Controller extends BaseController
 
 	public function __construct()
 	{
-		$this->gymRepo = new GymRepo;
+		$this->gymRepo 	= new GymRepo;
+		$this->classRepo 	= new ClassRepo;
 	}	
 
 }
