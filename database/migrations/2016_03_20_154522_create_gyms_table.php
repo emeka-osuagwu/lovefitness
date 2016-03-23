@@ -16,13 +16,18 @@ class CreateGymsTable extends Migration
 			$table->increments('id');
 			$table->string('name')->unique();
 			$table->string('address');
+			$table->string('email');
 			$table->string('location');
-			$table->float('longitude');
-			$table->float('latitude');
-			$table->json('numbers');
-			$table->string('opening_hours');
+			$table->string('image')->nullable();
+
+			$table->float('longitude')->nullable();
+			$table->float('latitude')->nullable();
+			
+			$table->json('number')->nullable();
+			$table->string('hours');
+			$table->string('description');
 			$table->decimal('price');
-			$table->string('website');
+			$table->string('website')->nullable();
 			$table->timestamps();
 		});
 	}

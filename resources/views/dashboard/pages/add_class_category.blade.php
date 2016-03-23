@@ -8,7 +8,7 @@
 		<div class="page-container">
 			<div class="page-sidebar-wrapper">
 				@include('dashboard.pages.includes.sections.left_nav')
-				@include('dashboard.pages.includes.contents.add_gym')
+				@include('dashboard.pages.includes.contents.add_class_category')
 			</div>
 		</div>
 @endsection

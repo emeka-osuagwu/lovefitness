@@ -69,20 +69,42 @@ Route::group(['prefix' => 'dashboard'], function () {
 	Route::get('/', function () {
 		return view('dashboard.pages.index');
 	});
+});
 
-
-	Route::group(['prefix' => 'gym'], function () {
-		
-		Route::get('/', function () {
-			return view('dashboard.pages.index');
-		});
-
-		Route::get('create', function () {
-			return view('dashboard.pages.index');
-		});
+Route::group(['prefix' => 'gym'], function () {
+	
+	Route::get('/', function () {
+		return view('dashboard.pages.index');
 	});
 
+	Route::get('create', function () {
+		return view('dashboard.pages.index');
+	});
 
+	Route::post('create', [
+		'uses' 	=> 'GymController@create',
+		'as' 	=> '/',
+	]);
+});
+
+
+Route::group(['prefix' => 'class'], function () {
+
+	Route::get('category', [
+		'uses' 	=> 'ClassController@getCreateCategory',
+		'as' 	=> '/',
+	]);
+
+	Route::post('category', [
+		'uses' 	=> 'ClassController@postCreateCategory',
+		'as' 	=> '/',
+	]);
+
+
+	Route::post('create', [
+		'uses' 	=> 'ClassController@create',
+		'as' 	=> '/',
+	]);
 });
 
 
