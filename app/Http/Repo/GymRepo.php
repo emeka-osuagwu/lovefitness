@@ -8,7 +8,7 @@ class GymRepo
 {
 	public function getAllGym()
 	{
-		return 3;
+		return Gym::all();
 	}	
 
 	public function createGym($data)

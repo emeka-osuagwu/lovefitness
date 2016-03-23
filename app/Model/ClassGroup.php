@@ -4,20 +4,15 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gym extends Model
+class ClassGroup extends Model
 {
+	protected $table = 'class_groups';
 
+	protected $primaryKey = 'id';
+	
 	protected $fillable = [	
-		"name",	
-		"address",	
-		"email",	
-		"location",	
-		"image",	
-		"number",	
-		"hours",	
-		"description",	
-		"price",	
-		"website",	
+		"name",
+		"description",
 	];
 
 	public function classes()

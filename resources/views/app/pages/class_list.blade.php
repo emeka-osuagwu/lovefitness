@@ -8,7 +8,7 @@
 	<div class="page-header">
 		<div class="row">
 			<div class="columns">
-				<h1>Book</h1>
+				<h1>Class</h1>
 			</div>
 		</div>
 	</div>
@@ -32,7 +32,9 @@
 		<div class="row">
 			<div class="medium-8 columns">
 				<main class="main-gym-list">
-					@include('app.pages.includes.contents.list_two')
+					@foreach($datas['classes'] as $data)
+						@include('app.pages.includes.contents.list_two')
+					@endforeach
 				</main>
 			</div>
 

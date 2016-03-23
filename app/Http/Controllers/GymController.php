@@ -10,10 +10,15 @@ use App\Http\Controllers\Controller;
 class GymController extends Controller
 {
 	
-
+	public function index()
+	{
+		$gyms = $this->gymRepo->getAllGym();
+		return view('dashboard.pages.gyms', compact('gyms'));
+	}
 
 	public function create(Request $request)
 	{
-		return $this->gymRepo->createGym($request->all());
+		$this->gymRepo->createGym($request->all());
+		return back();	
 	}
 }
