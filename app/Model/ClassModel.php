@@ -29,4 +29,9 @@ class ClassModel extends Model
 	{
 		return $this->belongsTo('App\Model\Gym');
 	}
+
+	public function review()
+	{
+		return $this->hasMany('App\Model\Review');
+	}
 }

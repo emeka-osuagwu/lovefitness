@@ -16,7 +16,7 @@ class ClassRepo extends GymRepo
 
 	public function getClassByName($class_name)
 	{
-		return ClassModel::with('gym')->where('name', $class_name)->get();
+		return ClassModel::with('gym', 'review')->where('name', $class_name)->get();
 	}
 
 	public function getAllCategory()
