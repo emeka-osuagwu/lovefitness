@@ -66,6 +66,12 @@ Route::group(['prefix' => 'class'], function () {
 });
 
 
+Route::post('review/create', [
+	'uses' 	=> 'ReviewController@create',
+	'as' 	=> '/',
+]);
+
+
 
 
 

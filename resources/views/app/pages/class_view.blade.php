@@ -56,44 +56,29 @@
 								<div class="medium-1 columns">
 									<img src="http://placehold.it/50x50" alt="">
 								</div>
-
-								<div class="medium-11 columns">
-									<h4>Victor Tihain 
-										<span class="stars">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star empty"></i>
-										</span>
-									</h4>
-									<h6>July 9, 2013 at 3:19 am</h6>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum molestiae soluta quaerat voluptatibus quas, rerum nemo libero ut, aspernatur labore, consequatur itaque officiis facilis hic repellendus sapiente. Ut quo enim, repudiandae mollitia deleniti, aut debitis ullam ipsam quos adipisci et.</p>
-								</div>
+								@foreach($class->review as $review)
+									<div class="medium-11 columns">
+										<h4>{{$review->name}} 
+											<span class="stars">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star empty"></i>
+											</span>
+										</h4>
+										<h6>{{$review->created_at->diffForHumans()}}</h6>
+										<p>{{$review->comment}}</p>
+									</div>
+								@endforeach
 							</div>
 
-							<div class="row collapse review-item">
-								<div class="medium-1 columns">
-									<img src="http://placehold.it/50x50" alt="">
-								</div>
-								<div class="medium-11 columns">
-									<h4>Victor Tihain 
-										<span class="stars">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star empty"></i>
-										</span>
-									</h4>
-									<h6>July 9, 2013 at 3:19 am</h6>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum molestiae soluta quaerat voluptatibus quas, rerum nemo libero ut, aspernatur labore, consequatur itaque officiis facilis hic repellendus sapiente. Ut quo enim, repudiandae mollitia deleniti, aut debitis ullam ipsam quos adipisci et.</p>
-								</div>
-							</div>
 							<div class="review-form">
 								<h5>Leave a review</h5>
 								<p>Your email address will not be published. Required fields are marked <em>*</em></p>
-								<form action="" id="review-form">
+								<form method="post" action="/review/create" id="review-form">
+									<input hidden="true"  name="_token" value="{{ csrf_token() }}">
+									<input hidden="true"  name="class_id" value="{{$class->id}}">
 									<p>
 										<label>Name <em>*</em></label>
 										<br />
