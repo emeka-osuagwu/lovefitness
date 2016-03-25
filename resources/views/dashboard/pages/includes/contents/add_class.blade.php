@@ -18,13 +18,13 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Name</label>
 										<div class="col-md-4">
-											<input type="text" name="name" class="form-control" value="">
+											<input type="text" name="name" class="form-control" value="" required="true">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Group</label>
 										<div class="col-md-4">
-											<select class="form-control" name="category_id">
+											<select class="form-control" name="category_id" required="true">
 												<option value="" >Select Group</option>
 												@foreach($groups as $group)
 													<option value="{{$groups->first()->id}}">{{$groups->first()->name}}</option>
@@ -35,7 +35,7 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Gym</label>
 										<div class="col-md-4">
-											<select class="form-control" name="gym_id">
+											<select class="form-control" name="gym_id" required="true">
 												<option value="">Select Gym</option>
 												@foreach($gyms as $gym)
 													<option value="{{$gym->id}}">{{ $gym->name }}</option>
@@ -46,46 +46,48 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Description</label>
 										<div class="col-md-4">
-											<textarea name="description" class="form-control" rows="3" data-gramm="" data-txt_gramm_id="a1087645-ec36-2af3-8dd4-b2fbe0ad0dfa"></textarea>
+											<textarea name="description" class="form-control" rows="3" data-gramm="" data-txt_gramm_id="a1087645-ec36-2af3-8dd4-b2fbe0ad0dfa" required="true"></textarea>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Price</label>
 										<div class="col-md-4">
-											<input type="text" name="price" class="form-control" value="">
+											<input type="text" name="price" class="form-control" value="" required="true">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Location</label>
 										<div class="col-md-4">
-											<input type="text" name="address" class="form-control" value="">
+											<input type="text" name="address" class="form-control" value="" required="true">
 										</div>
 									</div>
 								
 									<div class="form-group">
 										<label class="col-md-3 control-label">Class Time</label>
 										<div class="col-md-4">
-											<input type="text" name="time" class="form-control" value="">
+											<input type="text" name="time" class="form-control" value="" required="true">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Class Duration</label>
 										<div class="col-md-4">
-											<input type="text" name="duration" class="form-control" value="">
+											<input type="text" name="duration" class="form-control" value="" required="true">
 										</div>
 									</div>
 
 									<div class="form-group">
 										<label class="col-md-3 control-label">Instructor</label>
 										<div class="col-md-4">
-											<select class="form-control" name="instructor_id"><option value="" selected="selected">No instructor selected</option><option value="1">Trajnues i Zoti</option></select>
+											<select class="form-control" name="instructor_id" required="true">
+												<option value="" selected="selected">No instructor selected</option>
+											</select>
 										</div>
 									</div>
 																		
 									<div class="form-group">
 										<label class="col-md-3 control-label">Image</label>
 										<div class="col-md-4">
-											<input type="file" name="image">
+											<input type="file" name="image" required="true">
 										</div>
 									</div>
 																		

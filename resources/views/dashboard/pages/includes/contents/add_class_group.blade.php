@@ -19,7 +19,7 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Name</label>
 										<div class="col-md-4">
-											<input type="text" name="name" class="form-control">
+											<input type="text" name="name" class="form-control" required="true">
 										</div>
 									</div>
 
@@ -27,7 +27,7 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Description</label>
 										<div class="col-md-4">
-											<textarea name="description" class="form-control" rows="3" data-gramm="" data-txt_gramm_id="67df7919-3d09-a00d-edd4-fcb4e09a27a4"></textarea>
+											<textarea name="description" class="form-control" rows="3" data-gramm="" data-txt_gramm_id="67df7919-3d09-a00d-edd4-fcb4e09a27a4" required="true"></textarea>
 										</div>
 									</div>
 																
