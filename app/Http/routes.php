@@ -97,7 +97,23 @@ Route::group(['prefix' => 'dashboard'], function () {
 	Route::get('/', function () {
 		return view('dashboard.pages.index');
 	});
+
+	Route::group(['prefix' => 'gym'], function () {
+
+		Route::post('update', [
+			'uses' 	=> 'GymController@update',
+			'as' 	=> '/',
+		]);
+	});
 });
+
+
+
+
+
+
+
+
 
 
 Route::get('gyms', [

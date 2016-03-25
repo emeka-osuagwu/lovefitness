@@ -13,72 +13,63 @@
 
 						<div class="portlet-body form">
 							
-							<form method="post" action="/gym/create" enctype="multipart/form-data" class="form-horizontal">
+							<form method="post" action="/dashboard/gym/update" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
+								<input type="hidden" name="gym_id" value="{{ $gym->id }}">
 								<div class="form-body">
 									<div class="form-group">
 										<label class="col-md-3 control-label">Name</label>
 										<div class="col-md-4">
-											<input type="text" name="name" class="form-control" required="true">
-										</div>
-									</div>
-
-									<div class="form-group">
-										<label class="col-md-3 control-label">Owner</label>
-										<div class="col-md-4">
-											<select class="form-control" name="owner_id" required="true">
-												<option value="0" selected="selected">No owner selected</option>
-												<option value="1">Agli Panci</option>
-											</select>
+											<input type="text" name="name" class="form-control" value="{{$gym->name}}" required="true">
 										</div>
 									</div>
 
 									<div class="form-group">
 										<label class="col-md-3 control-label">Description</label>
 										<div class="col-md-4">
-											<textarea name="description" class="form-control" rows="3" data-gramm="" data-txt_gramm_id="67df7919-3d09-a00d-edd4-fcb4e09a27a4" required="true"></textarea>
+											<textarea name="description" class="form-control" rows="3"  value=""  required="true">{{$gym->description}}</textarea>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Opening Hours</label>
 										<div class="col-md-4">
-											<input type="text" name="hours" class="form-control" value="" required="true">
+											<input type="text" name="hours" class="form-control" value="{{$gym->hours}}" required="true">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Membership Price</label>
 										<div class="col-md-4">
-											<input type="text" name="price" class="form-control" value="" required="true">
+											<input type="text" name="price" class="form-control" value="{{$gym->price}}" required="true">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Address</label>
 										<div class="col-md-4">
-											<input type="text" name="address" class="form-control" value="" required="true">
+											<input type="text" name="address" class="form-control" value="{{$gym->address}}" required="true">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Location</label>
 										<div class="col-md-4">
-											<input type="text" name="location" class="form-control" value="" required="true">
+											<input type="text" name="location" class="form-control" value="{{$gym->location}}" required="true">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Phone</label>
 										<div class="col-md-4">
-											<input type="text" name="phone" class="form-control" value="" required="true">
+											<input type="text" name="phone" class="form-control" value="{{$gym->number}}" required="true">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Email</label>
 										<div class="col-md-4">
-											<input type="text" name="email" class="form-control" value="" required="true">
+											<input type="text" name="email" class="form-control" value="{{$gym->email}}" required="true">
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Website</label>
 										<div class="col-md-4">
-											<input type="text" name="website" class="form-control" value="" required="true">
+											<input type="text" name="website" class="form-control" value="{{$gym->website}}" required="true">
 										</div>
 									</div>
 									<div class="form-group">

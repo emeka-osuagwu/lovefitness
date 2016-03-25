@@ -37,7 +37,22 @@ class GymRepo
 
 	public function updateGym($data)
 	{
-		return $data;
+	
+		$update = [
+			"name"	=> $data['name'],
+			"address"	=> $data['address'],
+			"email"	=> $data['email'],
+			"location"	=> $data['location'],
+			//"image"	=> $data['image'],
+			"number"	=> json_encode($data['phone']),
+			"hours"	=> $data['hours'],
+			"description"	=> $data['description'],
+			"price"		=> $data['price'],
+			"website"	=> $data['website'],
+		];
+
+
+		Gym::where('id', $data['gym_id'])->update($update);
 	}
 
 }
