@@ -21,4 +21,10 @@ class GymController extends Controller
 		$this->gymRepo->createGym($request->all());
 		return back();	
 	}
+
+	public function edit($id)
+	{
+		$gym = $this->gymRepo->getGymById($id);
+		return view('dashboard.pages.edit_gym', compact('gym'));
+	}
 }

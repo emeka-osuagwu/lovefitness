@@ -45,8 +45,8 @@
 													<td>{{$gym->address}}</td>
 													<td>qewd</td>		
 													<td>
-														<a href="/backend/gyms/1/edit"><i class="fa fa-pencil" title="Edit"></i></a>
-														<a href="/backend/gyms/1/delete"><i class="fa fa-times" title="Remove"></i></a>
+														<a href="/gyms/{{$gym->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
+														<a href="/backend/gym/1/delete"><i class="fa fa-times" title="Remove"></i></a>
 													</td>
 												</tr>
 												@endforeach

@@ -11,6 +11,11 @@ class GymRepo
 		return Gym::all();
 	}	
 
+	public function getGymById($id)
+	{
+		return Gym::with('classes')->where('id', $id)->get();
+	}
+
 	public function createGym($data)
 	{
 		$create = [
@@ -28,6 +33,11 @@ class GymRepo
 		];
 
 		Gym::create($create);
-
 	}
+
+	public function updateGym($data)
+	{
+		return $data;
+	}
+
 }
