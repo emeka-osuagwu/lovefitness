@@ -79,7 +79,7 @@
 										<label class="col-md-3 control-label">Instructor</label>
 										<div class="col-md-4">
 											<select class="form-control" name="instructor_id" required="true">
-												<option value="" selected="selected">No instructor selected</option>
+												<option value="fwweqe" selected="selected">No instructor selected</option>
 											</select>
 										</div>
 									</div>

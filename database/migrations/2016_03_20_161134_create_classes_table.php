@@ -25,7 +25,8 @@ class CreateClassesTable extends Migration
 
 			$table->foreign('gym_id')
 				->references('id')
-				->on('gyms');
+				->on('gyms')
+				->onDelete('cascade');
 
 			$table->foreign('class_group_id')
 				->references('id')

@@ -51,8 +51,12 @@ class GymRepo
 			"website"	=> $data['website'],
 		];
 
-
 		Gym::where('id', $data['gym_id'])->update($update);
+	}
+
+	public function deleteGym($id)
+	{
+		Gym::find($id)->delete();
 	}
 
 }

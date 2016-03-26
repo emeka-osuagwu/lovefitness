@@ -100,8 +100,19 @@ Route::group(['prefix' => 'dashboard'], function () {
 
 	Route::group(['prefix' => 'gym'], function () {
 
+
+		Route::get('{id}/edit', [
+			'uses' 	=> 'GymController@edit',
+			'as' 	=> '/',
+		]);
+
 		Route::post('update', [
 			'uses' 	=> 'GymController@update',
+			'as' 	=> '/',
+		]);	
+
+		Route::get('{id}/delete', [
+			'uses' 	=> 'GymController@delete',
 			'as' 	=> '/',
 		]);
 	});
@@ -133,11 +144,6 @@ Route::group(['prefix' => 'gym'], function () {
 
 	Route::post('create', [
 		'uses' 	=> 'GymController@create',
-		'as' 	=> '/',
-	]);
-
-	Route::get('{id}/edit', [
-		'uses' 	=> 'GymController@edit',
 		'as' 	=> '/',
 	]);
 });

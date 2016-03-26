@@ -33,4 +33,10 @@ class GymController extends Controller
 		$gym = $this->gymRepo->updateGym($request->all());
 		return back();
 	}
+
+	public function delete($id)
+	{
+		$this->gymRepo->deleteGym($id);
+		return back();
+	}
 }
