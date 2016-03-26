@@ -14,7 +14,7 @@
 								<div class="portlet-input input-inline input-small">
 									<div class="input-icon right">
 										<i class="fa fa-plus"></i>
-										<a class="form-control" href="/backend/gyms/create">
+										<a class="form-control" href="/dashboard/gym/create">
 										Add new Gym </a>
 									</div>
 								</div>
@@ -45,8 +45,8 @@
 													<td>{{$gym->address}}</td>
 													<td>qewd</td>		
 													<td>
-														<a href="/backend/gyms/1/edit"><i class="fa fa-pencil" title="Edit"></i></a>
-														<a href="/backend/gyms/1/delete"><i class="fa fa-times" title="Remove"></i></a>
+														<a href="/dashboard/gym/{{$gym->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
+														<a href="/dashboard/gym/{{$gym->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>
 													</td>
 												</tr>
 												@endforeach

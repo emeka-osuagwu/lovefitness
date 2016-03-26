@@ -15,9 +15,6 @@ Route::get('/', function () {
 	return view('app.pages.index');
 });
 
-
-
-
 Route::get('classes', [
 	'uses' 	=> 'ClassController@class_group',
 	'as' 	=> '/',
@@ -65,7 +62,6 @@ Route::group(['prefix' => 'class'], function () {
 	]);
 });
 
-
 Route::post('review/create', [
 	'uses' 	=> 'ReviewController@create',
 	'as' 	=> '/',
@@ -96,18 +92,39 @@ Route::get('contact', [
 ]);
 
 
-
-
-
-
-
-
 Route::group(['prefix' => 'dashboard'], function () {
 
 	Route::get('/', function () {
 		return view('dashboard.pages.index');
 	});
+
+	Route::group(['prefix' => 'gym'], function () {
+
+
+		Route::get('{id}/edit', [
+			'uses' 	=> 'GymController@edit',
+			'as' 	=> '/',
+		]);
+
+		Route::post('update', [
+			'uses' 	=> 'GymController@update',
+			'as' 	=> '/',
+		]);	
+
+		Route::get('{id}/delete', [
+			'uses' 	=> 'GymController@delete',
+			'as' 	=> '/',
+		]);
+	});
 });
+
+
+
+
+
+
+
+
 
 
 Route::get('gyms', [
