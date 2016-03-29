@@ -38,7 +38,7 @@
 												@foreach($classes as $class)
 												<tr>
 													<td>10</td>
-													<td>Class 1(eg Aerobics)</td>
+													<td>{{$class->name}}</td>
 													<td>Cardio</td>
 													<td>orange</td>
 													<td>2</td>

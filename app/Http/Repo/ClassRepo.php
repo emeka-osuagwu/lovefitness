@@ -11,7 +11,7 @@ class ClassRepo extends GymRepo
 {
 	public function getAllClass()
 	{
-		return ClassModel::all();
+		return ClassModel::with('group')->get();
 	}
 
 	public function getClassByName($class_name)
