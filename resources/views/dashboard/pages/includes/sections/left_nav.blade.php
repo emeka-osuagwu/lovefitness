@@ -32,6 +32,7 @@
 					<span class="title">Classes</span>
 					<span class="arrow "></span>
 				</a>
+
 				<ul class="sub-menu">
 					<li>
 						<a href="/class/create">
@@ -49,9 +50,9 @@
 						Add class category</a>
 					</li>
 					<li>
-						<a href="/backend/gyms/">
+						<a href="/dashboard/class/">
 						<i class="icon-list"></i><span class="badge badge-info">3</span>
-						List all</a>
+						List all Classes</a>
 					</li>
 				</ul>
 			</li>

@@ -11,12 +11,17 @@ class ClassRepo extends GymRepo
 {
 	public function getAllClass()
 	{
-		return 3;
+		return ClassModel::all();
 	}
 
 	public function getClassByName($class_name)
 	{
 		return ClassModel::with('gym', 'review')->where('name', $class_name)->get();
+	}
+
+	public function getClassByid($id)
+	{
+		return ClassModel::with('gym', 'review')->where('id', $id)->get();
 	}
 
 	public function getAllCategory()
@@ -67,4 +72,19 @@ class ClassRepo extends GymRepo
 	{
 		return	ClassGroup::with('classes')->where('name', $group)->get();
 	}
+
+	public function updateClass($data)
+	{
+		$update = [
+			"name" 		=> $data['name'],
+			"gym_id" 		=> $data['gym_id'],
+			"time" 			=> $data['time'],
+			"duration" 		=> $data['duration'],
+			"price" 		=> $data['price'],
+			"class_group_id" 	=> $data['category_id'],
+		];
+		
+		ClassModel::where('id', $data['class_id'])->update($update);
+	}
+
 }

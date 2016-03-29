@@ -67,20 +67,6 @@ Route::post('review/create', [
 	'as' 	=> '/',
 ]);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('blogs', [
 	'uses' 	=> 'BlogController@index',
 	'as' 	=> '/',
@@ -100,7 +86,6 @@ Route::group(['prefix' => 'dashboard'], function () {
 
 	Route::group(['prefix' => 'gym'], function () {
 
-
 		Route::get('{id}/edit', [
 			'uses' 	=> 'GymController@edit',
 			'as' 	=> '/',
@@ -116,16 +101,28 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 	});
+
+	Route::group(['prefix' => 'class'], function () {
+
+		Route::get('/', [
+			'uses' 	=> 'ClassController@dashboardClasses',
+			'as' 	=> '/',
+		]);
+		
+		Route::get('{id}/edit', [
+			'uses' 	=> 'ClassController@getEditClass',
+			'as' 	=> '/',
+		]);
+
+		Route::post('update', [
+			'uses' 	=> 'ClassController@update',
+			'as' 	=> '/',
+		]);
+
+
+	});
+
 });
-
-
-
-
-
-
-
-
-
 
 Route::get('gyms', [
 	'uses' 	=> 'GymController@index',
