@@ -101,4 +101,10 @@ class ClassController extends Controller
 		$this->classRepo->updateGroup($request->all());
 		return back();
 	}
+
+	public function dashboardCategory()
+	{
+		$categorys=  $this->classRepo->getAllCategory();
+		return view('dashboard.pages.categorys', compact('categorys'));
+	}
 }

@@ -134,6 +134,11 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 
+		Route::get('categorys', [
+			'uses' 	=> 'ClassController@dashboardCategory',
+			'as' 	=> '/',
+		]);
+
 
 	});
 
