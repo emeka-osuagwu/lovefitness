@@ -115,12 +115,29 @@ Route::group(['prefix' => 'dashboard'], function () {
 		]);
 
 		Route::post('update', [
-			'uses' 	=> 'ClassController@update',
+			'uses' 	=> 'ClassController@updateClass',
+			'as' 	=> '/',
+		]);
+
+		Route::get('groups', [
+			'uses' 	=> 'ClassController@dashboardGroups',
+			'as' 	=> '/',
+		]);
+
+		Route::get('group/{id}/edit', [
+			'uses' 	=> 'ClassController@editClassGroup',
+			'as' 	=> '/',
+		]);
+
+		Route::post('group/update', [
+			'uses' 	=> 'ClassController@updateGroup',
 			'as' 	=> '/',
 		]);
 
 
 	});
+
+
 
 });
 

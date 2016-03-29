@@ -54,6 +54,11 @@
 						<i class="icon-list"></i><span class="badge badge-info">3</span>
 						List all Classes</a>
 					</li>
+					<li>
+						<a href="{{ Url('dashboard/class/groups') }}">
+						<i class="icon-list"></i><span class="badge badge-info">3</span>
+						List all Group</a>
+					</li>
 				</ul>
 			</li>
 		</ul>

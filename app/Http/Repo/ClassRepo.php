@@ -34,6 +34,11 @@ class ClassRepo extends GymRepo
 		return ClassGroup::all();
 	}
 
+	public function getGroupWhere($field, $value)
+	{
+		return ClassGroup::where($field, $value)->get();
+	}
+
 	public function createClassCategory($data)
 	{
 		$create = [
@@ -85,6 +90,16 @@ class ClassRepo extends GymRepo
 		];
 		
 		ClassModel::where('id', $data['class_id'])->update($update);
+	}
+
+	public function updateGroup($data)
+	{
+		$update = [
+			"name"	=> $data['name'],
+			"description"	=> $data['description'],
+		];
+		
+		ClassGroup::where('id', $data['group_id'])->update($update);
 	}
 
 }

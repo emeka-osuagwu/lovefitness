@@ -78,9 +78,27 @@ class ClassController extends Controller
 		return view('dashboard.pages.edit_class', compact('class', 'gyms', 'class_group'));
 	}
 
-	public function update(Request $request)
+	public function dashboardGroups()
+	{
+		$groups = $this->classRepo->classGroup();
+		return view('dashboard.pages.groups', compact('groups'));
+	}
+
+	public function editClassGroup($id)
+	{
+		$group =  $this->classRepo->getGroupWhere('id', $id);
+		return view('dashboard.pages.edit_group', compact('group'));
+	}
+
+	public function updateClass(Request $request)
 	{
 		$this->classRepo->updateClass($request->all());
+		return back();
+	}
+
+	public function updateGroup(Request $request)
+	{
+		$this->classRepo->updateGroup($request->all());
 		return back();
 	}
 }
