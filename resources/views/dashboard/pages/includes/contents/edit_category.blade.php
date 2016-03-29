@@ -7,7 +7,7 @@
 						<div class="portlet-title">
 							<div class="caption">
 								<i class="icon-basket font-red-sunglo"></i>
-								<span class="caption-subject font-red-sunglo bold uppercase">Add Class Category</span>
+								<span class="caption-subject font-red-sunglo bold uppercase">Edit Category</span>
 							</div>
 						</div>
 
@@ -29,7 +29,6 @@
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
 											<button type="submit" class="btn green">Submit</button>
-											<button type="button" class="btn default">Cancel</button>
 										</div>
 									</div>
 								</div>
