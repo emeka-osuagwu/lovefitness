@@ -13,7 +13,7 @@
 								<div class="portlet-input input-inline input-small">
 									<div class="input-icon right">
 										<i class="fa fa-plus"></i>
-										<a class="form-control" href="/dashboard/gym/create">
+										<a class="form-control" href="/dashboard/group/create">
 										Add new Gym </a>
 									</div>
 								</div>
@@ -27,25 +27,21 @@
 											<thead>
 												<tr>
 													<th width="10px">ID</th>
-													<th width="50px">Thumb</th>
 													<th>Name</th>
-													<th>Owner</th>
-													<th>Address</th>
+													<th>Class No</th>
 													<th width="80px">Action</th>
 												</tr>
 											</thead>
 											<tbody>
 												<i style="color: transparent;">{{$i = 1}}</i>
-												@foreach($gyms as $gym)
+												@foreach($categorys as $category)
 												<tr>
 													<td>{{$i++}}</td>
-													<td><img src="http://www.cotdigtest4.com/images/gyms/gym_1445689244_thumb.jpg" width="50px"></td>
-													<td>{{$gym->name}}</td>
-													<td>{{$gym->address}}</td>
-													<td>qewd</td>		
+													<td>{{$category->name}}</td>
+													<td>2</td>		
 													<td>
-														<a href="/dashboard/gym/{{$gym->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
-														<a href="/dashboard/gym/{{$gym->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>
+														<a href="/dashboard/class/category/{{$category->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
+														<a href="/dashboard/class/category/{{$category->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>
 													</td>
 												</tr>
 												@endforeach

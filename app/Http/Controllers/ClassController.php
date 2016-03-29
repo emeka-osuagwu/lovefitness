@@ -55,13 +55,68 @@ class ClassController extends Controller
 		$groups 	= $this->classRepo->classGroup();
 		$categories 	= $this->classRepo->getAllCategory();
 
-		return view('dashboard.pages.add_class', compact('categories', 'groups', 'gyms'));
-		
+		return view('dashboard.pages.add_class', compact('categories', 'groups', 'gyms'));	
 	}
 
 	public function postCreateClass(Request $request)
 	{
 		$this->classRepo->createClass($request->all());
+		return back();
+	}
+
+	public function dashboardClasses()
+	{
+		$classes =  $this->classRepo->getAllClass();
+		return view('dashboard.pages.classes', compact('classes'));
+	}
+
+	public function getEditClass($id)
+	{
+		$gyms 		=  $this->classRepo->getAllGym();
+		$class 		=  $this->classRepo->getClassByid($id)->first();	
+		$class_group 	=  $this->classRepo->classGroup();
+		return view('dashboard.pages.edit_class', compact('class', 'gyms', 'class_group'));
+	}
+
+	public function dashboardGroups()
+	{
+		$groups = $this->classRepo->classGroup();
+		return view('dashboard.pages.groups', compact('groups'));
+	}
+
+	public function editClassGroup($id)
+	{
+		$group =  $this->classRepo->getGroupWhere('id', $id);
+		return view('dashboard.pages.edit_group', compact('group'));
+	}
+
+	public function updateClass(Request $request)
+	{
+		$this->classRepo->updateClass($request->all());
+		return back();
+	}
+
+	public function updateGroup(Request $request)
+	{
+		$this->classRepo->updateGroup($request->all());
+		return back();
+	}
+
+	public function dashboardCategory()
+	{
+		$categorys=  $this->classRepo->getAllCategory();
+		return view('dashboard.pages.categorys', compact('categorys'));
+	}
+
+	public function editCategory($id)
+	{
+		$category =  $this->classRepo->getCategoryWhere('id', $id);
+		return view('dashboard.pages.edit_category', compact('category'));
+	}
+
+	public function updateCategory(Request $request)
+	{
+		$this->classRepo->updateCategory($request->all());
 		return back();
 	}
 }
