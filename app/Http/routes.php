@@ -148,8 +148,14 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'ClassController@updateCategory',
 			'as' 	=> '/',
 		]);
-		
+	});
 
+	Route::group(['prefix' => 'trainer'], function () {
+		
+		Route::get('/', [
+			'uses' 	=> 'TrainerController@getCreate',
+			'as' 	=> '/',
+		]);
 
 	});
 
