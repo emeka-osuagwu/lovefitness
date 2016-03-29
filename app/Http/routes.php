@@ -139,6 +139,17 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 
+		Route::get('category/{id}/edit', [
+			'uses' 	=> 'ClassController@editCategory',
+			'as' 	=> '/',
+		]);
+		
+		Route::post('category/update', [
+			'uses' 	=> 'ClassController@updateCategory',
+			'as' 	=> '/',
+		]);
+		
+
 
 	});
 

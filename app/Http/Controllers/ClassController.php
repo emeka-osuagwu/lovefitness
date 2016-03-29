@@ -107,4 +107,16 @@ class ClassController extends Controller
 		$categorys=  $this->classRepo->getAllCategory();
 		return view('dashboard.pages.categorys', compact('categorys'));
 	}
+
+	public function editCategory($id)
+	{
+		$category =  $this->classRepo->getCategoryWhere('id', $id);
+		return view('dashboard.pages.edit_category', compact('category'));
+	}
+
+	public function updateCategory(Request $request)
+	{
+		$this->classRepo->updateCategory($request->all());
+		return back();
+	}
 }

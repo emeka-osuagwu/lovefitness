@@ -38,7 +38,6 @@
 												<tr>
 													<td>{{$i++}}</td>
 													<td>{{$category->name}}</td>
-													
 													<td>2</td>		
 													<td>
 														<a href="/dashboard/class/category/{{$category->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
