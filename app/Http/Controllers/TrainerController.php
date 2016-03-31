@@ -11,7 +11,7 @@ class TrainerController extends Controller
 
 	public function create(Request $request)
 	{
-		return $request->all();
+		return $this->trainerRepo->createTrainer($request->all());
 	}
 
 	public function trainers()
