@@ -82,6 +82,11 @@
 						<i class="icon-plus"></i>
 						Add  Trainer</a>
 					</li>
+					<li>
+						<a href="{{ Url('dashboard/trainers') }}">
+						<i class="icon-plus"></i>
+						Trainers</a>
+					</li>
 				</ul>
 			</li>
 		

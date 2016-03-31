@@ -23,30 +23,57 @@
 							<div class="portlet">
 								<div class="portlet-body">
 									<div class="table-responsive">
+										<!-- 
 										<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th width="10px">ID</th>
-												<th>Name</th>
-												<th>Filter</th>
-												<th>Color</th>
-												<th>Class Count</th>
-												<th width="80px">Action</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>Test</td>
-												<td>Martial Arts</td>
-												<td>orange</td>
-												<td>1</td>
-												<td>
-													<a href="{{ Url('dashboard/trainer/1/edit') }}"><i class="fa fa-pencil" title="Edit"></i></a>
-													<a href="{{ Url('dashboard/trainer/1/delete') }}"><i class="fa fa-times" title="Remove"></i></a>
-												</td>
-											</tr>
-										</tbody>
+											<thead>
+												<tr>
+													<th width="10px">ID</th>
+													<th>Name</th>
+													<th>Filter</th>
+													<th>Color</th>
+													<th>Class Count</th>
+													<th width="80px">Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>Test</td>
+													<td>Martial Arts</td>
+													<td>orange</td>
+													<td>1</td>
+													<td>
+														<a href="{{ Url('dashboard/trainer/1/edit') }}"><i class="fa fa-pencil" title="Edit"></i></a>
+														<a href="{{ Url('dashboard/trainer/1/delete') }}"><i class="fa fa-times" title="Remove"></i></a>
+													</td>
+												</tr>
+											</tbody>
+										</table> 
+										-->
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="10px">ID</th>
+													<th width="50px">Thumb</th>
+													<th>Name</th>
+													<th>Brand Name</th>
+													<th>Address</th>
+													<th width="80px">Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td><img src="http://www.cotdigtest4.com/images/trainers/lunch_1446380909_thumb.jpg" width="50px"></td>
+													<td>Trajnues i Zoti</td>
+													<td>LoveFitness</td>
+													<td>Tiraneeee</td>
+													<td>
+														<a href="{{ Url('dashboard/trainer/1/edit') }}"><i class="fa fa-pencil" title="Edit"></i></a>
+														<a href="{{ Url('dashboard/trainer/1/delete') }}"><i class="fa fa-times" title="Remove"></i></a>
+													</td>
+												</tr>
+											</tbody>
 										</table>
 									</div>
 								</div>
