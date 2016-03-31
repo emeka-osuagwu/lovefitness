@@ -17,7 +17,8 @@ class TrainerController extends Controller
 
 	public function trainers()
 	{
-		return view('dashboard.pages.trainers');
+		$trainers =  $this->trainerRepo->getAllTrainers();
+		return view('dashboard.pages.trainers', compact('trainers'));
 	}
 
 	public function getEdit($id)

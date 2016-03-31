@@ -12,6 +12,11 @@ class TrainerRepo
 		return Trainer::where($field, $value)->get();
 	}
 
+	public function getAllTrainers()
+	{
+		return Trainer::all();
+	}
+
 	public function createTrainer($data)
 	{
 		$create = [

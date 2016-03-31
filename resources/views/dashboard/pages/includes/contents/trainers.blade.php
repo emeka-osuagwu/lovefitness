@@ -62,17 +62,20 @@
 												</tr>
 											</thead>
 											<tbody>
+												<i style="color: transparent;">{{$i = 1}}</i>
+												@foreach($trainers as $trainer)
 												<tr>
-													<td>1</td>
+													<td>{{$i++}}</td>
 													<td><img src="http://www.cotdigtest4.com/images/trainers/lunch_1446380909_thumb.jpg" width="50px"></td>
-													<td>Trajnues i Zoti</td>
-													<td>LoveFitness</td>
-													<td>Tiraneeee</td>
+													<td>{{$trainer->name}}</td>
+													<td>{{$trainer->brand_name}}</td>
+													<td>{{$trainer->address}}</td>
 													<td>
 														<a href="{{ Url('dashboard/trainer/1/edit') }}"><i class="fa fa-pencil" title="Edit"></i></a>
 														<a href="{{ Url('dashboard/trainer/1/delete') }}"><i class="fa fa-times" title="Remove"></i></a>
 													</td>
 												</tr>
+												@endforeach
 											</tbody>
 										</table>
 									</div>
