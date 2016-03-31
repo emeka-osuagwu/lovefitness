@@ -24,4 +24,8 @@ class Gym extends Model
 	{
 		return $this->hasMany('App\Model\ClassModel');
 	}
+
+	protected $casts = [
+		"number" => "json"
+	];
 }

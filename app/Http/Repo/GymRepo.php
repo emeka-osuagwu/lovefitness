@@ -25,7 +25,11 @@ class GymRepo
 			"email"	=> $data['email'],
 			"location"	=> $data['location'],
 			//"image"	=> $data['image'],
-			"number"	=> json_encode($data['phone']),
+			
+			"number"	=> explode(',', $data['phone']),
+			
+
+
 			"hours"	=> $data['hours'],
 			"description"	=> $data['description'],
 			"price"		=> $data['price'],
