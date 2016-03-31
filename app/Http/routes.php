@@ -171,6 +171,16 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 
+		Route::get('{id}/edit', [
+			'uses' 	=> 'TrainerController@getEdit',
+			'as' 	=> '/',
+		]);
+
+		Route::post('update', [
+			'uses' 	=> 'TrainerController@update',
+			'as' 	=> '/',
+		]);
+
 	});
 
 

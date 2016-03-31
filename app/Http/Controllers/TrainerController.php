@@ -11,11 +11,24 @@ class TrainerController extends Controller
 
 	public function create(Request $request)
 	{
-		return $this->trainerRepo->createTrainer($request->all());
+		$this->trainerRepo->createTrainer($request->all());
+		return view('dashboard.pages.trainers');
 	}
 
 	public function trainers()
 	{
 		return view('dashboard.pages.trainers');
+	}
+
+	public function getEdit($id)
+	{
+		$trainer = $this->trainerRepo->getTrainerWhere('id', $id)->first();
+		return view('dashboard.pages.edit_trainer', compact('trainer'));
+	}
+
+	public function update(Request $request)
+	{
+		$this->trainerRepo->update($request->all());
+		return back();
 	}
 }

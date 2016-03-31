@@ -1,12 +1,14 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Trainer extends Model
 {
 
+	protected $table = 'trainers';
+	
 	protected $fillable = [	
 		"price",
 		"name",

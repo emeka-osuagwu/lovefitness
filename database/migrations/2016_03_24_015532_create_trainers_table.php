@@ -31,6 +31,7 @@ class CreateTrainersTable extends Migration
 			$table->string('friday')->nullable();
 			$table->string('saturday')->nullable();
 			$table->string('sunday')->nullable();
+			$table->string('image')->nullable();
 			$table->timestamps();
 		});
 	}
