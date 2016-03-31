@@ -7,6 +7,7 @@
 					<span class="title">Dashboard</span>
 				</a>
 			</li>
+
 			<li>
 				<a href="javascript:;">
 					<i class="fa fa-fw fa-building"></i>
@@ -26,6 +27,7 @@
 					</li>
 				</ul>
 			</li>
+			
 			<li>
 				<a href="javascript:;">
 					<i class="fa fa-fw fa-building"></i>
@@ -66,6 +68,28 @@
 					</li>
 				</ul>
 			</li>
+			
+			<li>
+				<a href="javascript:;">
+					<i class="fa fa-fw fa-building"></i>
+					<span class="title">Personal Trainer</span>
+					<span class="arrow "></span>
+				</a>
+
+				<ul class="sub-menu">
+					<li>
+						<a href="{{ Url('dashboard/trainer/create') }}">
+						<i class="icon-plus"></i>
+						Add  Trainer</a>
+					</li>
+					<li>
+						<a href="{{ Url('dashboard/trainers') }}">
+						<i class="icon-plus"></i>
+						Trainers</a>
+					</li>
+				</ul>
+			</li>
+		
 		</ul>
 	</div>
 </div>

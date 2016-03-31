@@ -148,8 +148,38 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'ClassController@updateCategory',
 			'as' 	=> '/',
 		]);
-		
+	});
 
+	Route::get('trainers', [
+		'uses' 	=> 'TrainerController@trainers',
+		'as' 	=> '/',
+	]);
+
+	Route::group(['prefix' => 'trainer'], function () {
+		
+		Route::get('/', [
+			'uses' 	=> 'TrainerController@getCreate',
+			'as' 	=> '/',
+		]);
+
+		Route::get('create', function () {
+			return view('dashboard.pages.add_trainer');
+		});
+
+		Route::post('create', [
+			'uses' 	=> 'TrainerController@create',
+			'as' 	=> '/',
+		]);
+
+		Route::get('{id}/edit', [
+			'uses' 	=> 'TrainerController@getEdit',
+			'as' 	=> '/',
+		]);
+
+		Route::post('update', [
+			'uses' 	=> 'TrainerController@update',
+			'as' 	=> '/',
+		]);
 
 	});
 
