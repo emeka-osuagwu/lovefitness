@@ -39,7 +39,7 @@
 												@foreach($gyms as $gym)
 												<tr>
 													<td>{{$i++}}</td>
-													<td><img src="http://www.cotdigtest4.com/images/gyms/gym_1445689244_thumb.jpg" width="50px"></td>
+													<td><img src="{{$gym->image}}" width="50px"></td>
 													<td>{{$gym->name}}</td>
 													<td>{{$gym->address}}</td>
 													<td>qewd</td>		

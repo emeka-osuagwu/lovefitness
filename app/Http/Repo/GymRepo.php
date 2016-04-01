@@ -3,8 +3,9 @@
 namespace App\Http\Repo;
 
 use App\Model\Gym;
+use App\Http\Repo\CloudderRepo;
 
-class GymRepo
+class GymRepo extends CloudderRepo
 {
 	public function getAllGym()
 	{
@@ -19,17 +20,12 @@ class GymRepo
 	public function createGym($data)
 	{
 		$create = [
-			
 			"name"	=> $data['name'],
 			"address"	=> $data['address'],
 			"email"	=> $data['email'],
 			"location"	=> $data['location'],
-			//"image"	=> $data['image'],
-			
+			"image"	=> $this->getImageUrl(),			
 			"number"	=> explode(',', $data['phone']),
-			
-
-
 			"hours"	=> $data['hours'],
 			"description"	=> $data['description'],
 			"price"		=> $data['price'],

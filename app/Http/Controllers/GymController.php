@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Cloudder;
+
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Input as Input;
 
 class GymController extends Controller
 {
@@ -19,10 +18,6 @@ class GymController extends Controller
 
 	public function create(Request $request)
 	{
-
-		        $image = Input::file('image');
-        Cloudder::upload($image, null);
-        return $imgUrl = Cloudder::getResult()['url'];
 		$this->gymRepo->createGym($request->all());
 		return back();	
 	}
