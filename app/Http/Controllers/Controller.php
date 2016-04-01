@@ -6,6 +6,7 @@ use App\Http\Repo\GymRepo;
 use App\Http\Repo\ClassRepo;
 use App\Http\Repo\ReviewRepo;
 use App\Http\Repo\TrainerRepo;
+use App\Http\Repo\CloudderRepo;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -22,6 +23,6 @@ abstract class Controller extends BaseController
 		$this->classRepo 	= new ClassRepo;
 		$this->reviewRepo 	= new ReviewRepo;
 		$this->trainerRepo 	= new TrainerRepo;
-	}	
-
+		$this->cloudderRepo 	= new CloudderRepo;
+	}
 }
