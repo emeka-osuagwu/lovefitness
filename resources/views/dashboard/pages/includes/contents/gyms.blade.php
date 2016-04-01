@@ -39,7 +39,11 @@
 												@foreach($gyms as $gym)
 												<tr>
 													<td>{{$i++}}</td>
-													<td><img src="{{$gym->image}}" width="50px"></td>
+													@if($gym->image == '' || $gym->image == null)
+														<td><img src="{{ asset('images/noimage.png') }}" width="50px"></td>
+													@else
+														<td><img src="{{$gym->image}}" width="50px"></td>
+													@endif
 													<td>{{$gym->name}}</td>
 													<td>{{$gym->address}}</td>
 													<td>qewd</td>		
