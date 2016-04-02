@@ -25,7 +25,7 @@
 										<label class="col-md-3 control-label">Group</label>
 										<div class="col-md-4">
 											<select class="form-control" name="category_id" required="true">
-												<option value="" >Select Group</option>
+													<option value="{{$class->gym->first()->name}}" >{{$class->gym->first()->name}}</option>
 													@foreach($class_group as $group)
 													<option value="{{$group->first()->id}}">{{$group->first()->name}}</option>
 													@endforeach

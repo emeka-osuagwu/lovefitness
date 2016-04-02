@@ -87,7 +87,7 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Image</label>
 										<div class="col-md-4">
-											<input type="file" name="image" required="true">
+											<input type="file" name="image">
 										</div>
 									</div>
 																		

@@ -16,6 +16,8 @@ class ClassModel extends Model
 		"time",
 		"duration",
 		"gym_id",
+		"image",
+		"logo",
 		"price",
 		"class_group_id",
 	];
