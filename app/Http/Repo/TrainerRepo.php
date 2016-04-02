@@ -3,8 +3,9 @@
 namespace App\Http\Repo;
 
 use App\Model\Trainer;
+use App\Http\Repo\CloudderRepo;
 
-class TrainerRepo
+class TrainerRepo extends CloudderRepo
 {
 
 	public function getTrainerWhere($field, $value)
@@ -38,6 +39,10 @@ class TrainerRepo
 			"wednsday" 		=> $data['wednsday'],
 			"brand_name" 	=> $data['brand_name'],
 		];
+
+		if (isset($data['image']) && isset($data['image']) != null) {
+			$create['image'] = $this->getImageUrl();
+		}
 
 		Trainer::create($create);
 	}

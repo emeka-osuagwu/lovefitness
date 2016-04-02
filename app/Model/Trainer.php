@@ -12,6 +12,7 @@ class Trainer extends Model
 	protected $fillable = [	
 		"price",
 		"name",
+		"image",
 		"email" ,
 		"twitter", 
 		"friday",

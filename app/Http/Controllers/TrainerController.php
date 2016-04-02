@@ -12,7 +12,7 @@ class TrainerController extends Controller
 	public function create(Request $request)
 	{
 		$this->trainerRepo->createTrainer($request->all());
-		return view('dashboard.pages.trainers');
+		return back();
 	}
 
 	public function trainers()
