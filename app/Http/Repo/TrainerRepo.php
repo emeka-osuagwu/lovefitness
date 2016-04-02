@@ -70,6 +70,12 @@ class TrainerRepo extends CloudderRepo
 			"brand_name" 	=> $data['brand_name'],
 		];
 
+		if (isset($data['image']) && isset($data['image']) != null) {
+			$update['image'] = $this->getImageUrl();
+		}
+
+
+
 		Trainer::where('id', $data['trainer_id'])->update($update);
 
 	}

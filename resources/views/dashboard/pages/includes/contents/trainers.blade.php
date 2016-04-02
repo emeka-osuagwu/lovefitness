@@ -66,7 +66,7 @@
 												@foreach($trainers as $trainer)
 												<tr>
 													<td>{{$i++}}</td>
-													<td><img src="http://www.cotdigtest4.com/images/trainers/lunch_1446380909_thumb.jpg" width="50px"></td>
+													<td><img src="{{ $trainer->image == '' ? asset('images/noimage.png') : $trainer->image }}" width="50px"></td>
 													<td>{{$trainer->name}}</td>
 													<td>{{$trainer->brand_name}}</td>
 													<td>{{$trainer->address}}</td>
