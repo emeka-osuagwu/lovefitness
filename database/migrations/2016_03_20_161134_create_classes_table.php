@@ -18,8 +18,10 @@ class CreateClassesTable extends Migration
 			$table->integer('gym_id')->unsigned()->nullable();
 			$table->string('time');
 			$table->string('duration');
+			$table->string('image')->nullable();
+			$table->string('logo')->nullable();
 			$table->float('price');
-			$table->integer('class_group_id')->nullabel()->unsigned();
+			$table->integer('class_group_id')->nullable()->unsigned();
 			//$table->integer('Instructor')->nullabel()->unsigned();
 			$table->timestamps();
 

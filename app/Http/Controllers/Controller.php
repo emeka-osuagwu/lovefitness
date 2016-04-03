@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Repo\GymRepo;
+use App\Http\Repo\UserRepo;
 use App\Http\Repo\ClassRepo;
 use App\Http\Repo\ReviewRepo;
 use App\Http\Repo\TrainerRepo;
@@ -20,6 +21,7 @@ abstract class Controller extends BaseController
 	public function __construct()
 	{
 		$this->gymRepo 	= new GymRepo;
+		$this->userRepo 	= new UserRepo;
 		$this->classRepo 	= new ClassRepo;
 		$this->reviewRepo 	= new ReviewRepo;
 		$this->trainerRepo 	= new TrainerRepo;

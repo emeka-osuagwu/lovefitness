@@ -6,6 +6,7 @@ use App\Model\ClassGroup;
 use App\Model\ClassModel;
 use App\Http\Repo\GymRepo;
 use App\Model\ClassCategory;
+use App\Http\Repo\CloudderRepo as CloudderRepo;
 
 class ClassRepo extends GymRepo
 {
@@ -67,13 +68,17 @@ class ClassRepo extends GymRepo
 	public function createClass($data)
 	{
 		$create = [
-			"name" 	=> $data['name'],
-			"gym_id" 	=> $data['gym_id'],
-			"time" 		=> $data['time'],
-			"duration" 	=> $data['duration'],
-			"price" 	=> $data['price'],
+			"name" 		=> $data['name'],
+			"gym_id" 		=> $data['gym_id'],
+			"time" 			=> $data['time'],
+			"duration" 		=> $data['duration'],
+			"price" 		=> $data['price'],
 			"class_group_id" 	=> $data['category_id'],
 		];
+
+		if (isset($data['image']) && isset($data['image']) != null) {
+			$create['image'] = $this->getImageUrl();
+		}
 
 		ClassModel::create($create);
 	}
@@ -93,6 +98,10 @@ class ClassRepo extends GymRepo
 			"price" 		=> $data['price'],
 			"class_group_id" 	=> $data['category_id'],
 		];
+
+		if (isset($data['image']) && isset($data['image']) != null) {
+			$update['image'] = $this->getImageUrl();
+		}
 		
 		ClassModel::where('id', $data['class_id'])->update($update);
 	}

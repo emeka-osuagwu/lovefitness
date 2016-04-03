@@ -25,7 +25,7 @@
 										<label class="col-md-3 control-label">Group</label>
 										<div class="col-md-4">
 											<select class="form-control" name="category_id" required="true">
-												<option value="" >Select Group</option>
+													<option value="" >Select Group</option>
 													@foreach($class_group as $group)
 													<option value="{{$group->first()->id}}">{{$group->first()->name}}</option>
 													@endforeach
@@ -36,7 +36,7 @@
 										<label class="col-md-3 control-label">Gym</label>
 										<div class="col-md-4">
 											<select class="form-control" name="gym_id" required="true">
-												<option value="">Select Gym</option>
+													<option value="{{$class->gym->first()->id}}">{{$class->gym->first()->name}}</option>
 													@foreach($gyms as $gym)
 													<option value="{{$gym->id}}">{{$gym->name}}</option>
 													@endforeach
@@ -75,7 +75,7 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Image</label>
 										<div class="col-md-4">
-											<input type="file" name="image" required="true">
+											<input type="file" name="image" >
 										</div>
 									</div>
 																		

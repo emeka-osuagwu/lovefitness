@@ -24,14 +24,17 @@ class GymRepo extends CloudderRepo
 			"address"	=> $data['address'],
 			"email"	=> $data['email'],
 			"location"	=> $data['location'],
-			"image"	=> $this->getImageUrl(),			
 			"number"	=> explode(',', $data['phone']),
 			"hours"	=> $data['hours'],
 			"description"	=> $data['description'],
 			"price"		=> $data['price'],
 			"website"	=> $data['website'],
 		];
-
+		
+		if (isset($data['image']) && isset($data['image']) != null) {
+			$create['image'] = $this->getImageUrl();
+		}
+		
 		Gym::create($create);
 	}
 

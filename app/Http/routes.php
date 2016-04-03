@@ -15,6 +15,50 @@ Route::get('/', function () {
 	return view('app.pages.index');
 });
 
+
+Route::get('register', function () {
+	return view('app.pages.register');
+});
+
+Route::post('register', [
+	'uses' 	=> 'UserController@create',
+	'as' 	=> '/',
+]);
+
+Route::get('login', function () {
+	return view('app.pages.login');
+});
+
+Route::post('login', [
+	'uses' 	=> 'Auth\AuthController@login',
+	'as' 	=> '/',
+]);
+
+Route::get('logout', [
+	'uses' 	=> 'Auth\AuthController@getLogout',
+	'as' 	=> '/',
+]);
+
+Route::get('account', [
+	'uses' 	=> 'UserController@view',
+	'as' 	=> '/',
+        	'middleware' => ['auth'],
+]);
+
+Route::post('update', [
+	'uses' 	=> 'UserController@update',
+	'as' 	=> '/'
+]);
+
+
+
+
+
+
+
+
+
+
 Route::get('classes', [
 	'uses' 	=> 'ClassController@class_group',
 	'as' 	=> '/',
@@ -185,10 +229,7 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'TrainerController@update',
 			'as' 	=> '/',
 		]);
-
 	});
-
-
 
 });
 
