@@ -8,7 +8,7 @@
 				</div>
 				<div class="medium-3 columns medium-text-right">
 					<a href="{{ Url('user/register') }}" class="button">Sign up</a>
-					<a href="#" class="button secondary">Sign in</a>
+					<a href="{{ Url('user/login') }}" class="button secondary">Sign in</a>
 				</div>
 			</div>	
 		</div>

@@ -27,6 +27,15 @@ Route::group(['prefix' => 'user'], function () {
 		'as' 	=> '/',
 	]);
 
+	Route::get('login', function () {
+		return view('app.pages.login');
+	});
+
+	Route::post('login', [
+		'uses' 	=> 'UserController@login',
+		'as' 	=> '/',
+	]);
+
 });
 
 

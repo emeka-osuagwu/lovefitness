@@ -19,12 +19,17 @@ class UserController extends Controller
 		]);
 
 		if ($validator->fails()) {
-			$message = "bad";
+			$bad = "bad";
 			return view('app.pages.register', compact('message'));
 		}
 
 		$message = "good";
 		$this->userRepo->createUser($request->all());
-		return view('app.pages.register', compact('message'));
+		return redirect('/user/login');
+	}
+
+	public function login(Request $request)
+	{
+		return $this->userRepo->loginUser($request->all());
 	}
 }

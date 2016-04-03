@@ -25,18 +25,10 @@
 			<div class="medium-4 columns medium-centered">
 				<div class="register-box">
 					<h3>Register</h3>
-					<form method="POST" action="{{ Url('user/register') }}">
+					<form method="POST" action="{{ Url('user/login') }}">
 						<input name="_token" value="{{ csrf_token() }}" type="hidden">
 						<input name="email" value="" placeholder="Email" type="email" required="true">
-						<input name="firstname" value="" placeholder="First Name" type="text" required="true">
-						<input name="lastname" value="" placeholder="Last Name" type="text" required="true">
-						<input name="address" value="" placeholder="Address" type="text" required="true">
-						<input name="phone" value="" placeholder="Phone" type="text" required="true">
-						<input name="post_code" value="" placeholder="Post Code" type="text" required="true">
-						<input name="city" value="" placeholder="City" type="text" required="true">
-						<input name="country" value="" placeholder="Country" type="text" required="true"> 
 						<input name="password" id="password" placeholder="Password" type="password" required="true">
-						<input class="button" value="Register" type="submit">
 					</form>
 				</div>
 			</div>
