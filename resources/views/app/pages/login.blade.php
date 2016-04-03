@@ -16,7 +16,7 @@
 
 	@if(isset($message) == 'bad')
 		<script>
-			swal("Opps!", "Email already taken by another user", "error")
+			swal("Opps!", "Invalid email or password", "error")
 		</script>
 	@endif
 

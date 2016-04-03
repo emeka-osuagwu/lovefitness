@@ -34,6 +34,11 @@ Route::post('login', [
 	'as' 	=> '/',
 ]);
 
+Route::get('logout', [
+	'uses' 	=> 'Auth\AuthController@getLogout',
+	'as' 	=> '/',
+]);
+
 
 
 
