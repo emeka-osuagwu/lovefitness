@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
+use Auth;
 use Validator;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -26,10 +27,5 @@ class UserController extends Controller
 		$message = "good";
 		$this->userRepo->createUser($request->all());
 		return redirect('/user/login');
-	}
-
-	public function login(Request $request)
-	{
-		return $this->userRepo->loginUser($request->all());
 	}
 }

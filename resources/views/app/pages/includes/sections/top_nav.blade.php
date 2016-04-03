@@ -7,8 +7,8 @@
 					<a href="{{ Url('/') }}"><img class="logo" src="{{ asset('images/logo.png') }}" alt="LoveFitness Nigeria"></a>
 				</div>
 				<div class="medium-3 columns medium-text-right">
-					<a href="{{ Url('user/register') }}" class="button">Sign up</a>
-					<a href="{{ Url('user/login') }}" class="button secondary">Sign in</a>
+					<a href="{{ Url('register') }}" class="button">Sign up</a>
+					<a href="{{ Url('login') }}" class="button secondary">Sign in</a>
 				</div>
 			</div>	
 		</div>

@@ -16,28 +16,23 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix' => 'user'], function () {
-
-	Route::get('register', function () {
-		return view('app.pages.register');
-	});
-
-	Route::post('register', [
-		'uses' 	=> 'UserController@create',
-		'as' 	=> '/',
-	]);
-
-	Route::get('login', function () {
-		return view('app.pages.login');
-	});
-
-	Route::post('login', [
-		'uses' 	=> 'UserController@login',
-		'as' 	=> '/',
-	]);
-
+Route::get('register', function () {
+	return view('app.pages.register');
 });
 
+Route::post('register', [
+	'uses' 	=> 'UserController@create',
+	'as' 	=> '/',
+]);
+
+Route::get('login', function () {
+	return view('app.pages.login');
+});
+
+Route::post('login', [
+	'uses' 	=> 'Auth\AuthController@login',
+	'as' 	=> '/',
+]);
 
 
 

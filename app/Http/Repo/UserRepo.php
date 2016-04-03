@@ -23,9 +23,4 @@ class UserRepo extends CloudderRepo
 		User::create($create);
 	}
 
-	public function loginUser($data)
-	{
-		return $data;
-	}
-
 }
