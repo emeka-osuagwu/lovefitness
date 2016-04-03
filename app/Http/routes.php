@@ -15,6 +15,30 @@ Route::get('/', function () {
 	return view('app.pages.index');
 });
 
+
+Route::group(['prefix' => 'user'], function () {
+
+	Route::get('register', function () {
+		return view('app.pages.register');
+	});
+
+	Route::post('register', [
+		'uses' 	=> 'UserController@create',
+		'as' 	=> '/',
+	]);
+
+});
+
+
+
+
+
+
+
+
+
+
+
 Route::get('classes', [
 	'uses' 	=> 'ClassController@class_group',
 	'as' 	=> '/',
@@ -185,10 +209,7 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'TrainerController@update',
 			'as' 	=> '/',
 		]);
-
 	});
-
-
 
 });
 
