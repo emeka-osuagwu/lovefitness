@@ -29,7 +29,7 @@
 					<div class="alert alert-danger">
 						<ul>
 							<li>The firstname field is required.</li>
-							<li>The lastname field is required.</li>
+							<li>The lastname field is required	.</li>
 							<li>The email field is required.</li>
 							<li>The city field is required.</li>
 							<li>The country field is required.</li>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Repo;
 
-use App\Model\User;
+use App\User;
 
 class UserRepo extends CloudderRepo
 {
@@ -16,7 +16,7 @@ class UserRepo extends CloudderRepo
 			"address" 		=>$data['address'],
 			"lastname" 		=>$data['lastname'],
 			"firstname" 		=>$data['firstname'],
-			"password" 		=>$data['password'],
+			"password" 		=>bcrypt($data['password']),
 			"post_code" 		=>$data['post_code'],
 		];
 		

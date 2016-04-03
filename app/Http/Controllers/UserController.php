@@ -26,6 +26,6 @@ class UserController extends Controller
 
 		$message = "good";
 		$this->userRepo->createUser($request->all());
-		return redirect('/user/login');
+		return redirect('login');
 	}
 }
