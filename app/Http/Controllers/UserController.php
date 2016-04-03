@@ -28,4 +28,18 @@ class UserController extends Controller
 		$this->userRepo->createUser($request->all());
 		return redirect('login');
 	}
+
+
+	public function view()
+	{
+		$user =  $this->userRepo->getUserWhere('id', Auth::user()->id)->first();
+		return view('app.pages.account', compact('user'));
+	}
+
+	public function update(Request $request)
+	{
+		$request['user_id'] = Auth::user()->id;
+		$this->userRepo->updateUser($request->all());
+		return back();
+	}
 }

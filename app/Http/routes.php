@@ -39,6 +39,17 @@ Route::get('logout', [
 	'as' 	=> '/',
 ]);
 
+Route::get('account', [
+	'uses' 	=> 'UserController@view',
+	'as' 	=> '/',
+        	'middleware' => ['auth'],
+]);
+
+Route::post('update', [
+	'uses' 	=> 'UserController@update',
+	'as' 	=> '/'
+]);
+
 
 
 
