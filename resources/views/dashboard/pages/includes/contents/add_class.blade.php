@@ -11,12 +11,13 @@
 							</div>
 						</div>
 						<div class="portlet-body form">
-							<!-- BEGIN FORM-->
+
 							@if (Session::has('message'))
 					  	    	  	<script>
-									swal("Class Created", "", "success")
+									swal("Class  Created", "", "success")
 								</script>
-							@endif  
+							@endif  			
+							<!-- BEGIN FORM-->
 							<form method="post" action="{{ Url('dashboard/class/create') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="form-body">
@@ -113,4 +114,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>s

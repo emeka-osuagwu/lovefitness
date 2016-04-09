@@ -50,6 +50,9 @@ Route::post('update', [
 	'as' 	=> '/'
 ]);
 
+
+
+
 Route::get('classes', [
 	'uses' 	=> 'ClassController@class_group',
 	'as' 	=> '/',
@@ -64,10 +67,6 @@ Route::get('{group}/classes', [
 	'uses' 	=> 'ClassController@class_list',
 	'as' 	=> '/',
 ]);
-
-Route::group(['prefix' => 'class'], function () {
-
-});
 
 Route::post('review/create', [
 	'uses' 	=> 'ReviewController@create',
@@ -98,10 +97,6 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 
-		Route::get('create', function () {
-			return view('dashboard.pages.index');
-		});
-
 		Route::post('update', [
 			'uses' 	=> 'GymController@update',
 			'as' 	=> '/',
@@ -111,6 +106,11 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'GymController@delete',
 			'as' 	=> '/',
 		]);
+
+		Route::get('create', function () {
+			return view('dashboard.pages.index');
+		});
+
 
 		Route::post('create', [
 			'uses' 	=> 'GymController@create',
@@ -135,13 +135,12 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 
-
-		Route::get('group', [
+		Route::get('group/create', [
 			'uses' 	=> 'ClassController@addClassGroup',
 			'as' 	=> '/',
 		]);
 
-		Route::post('group', [
+		Route::post('group/create', [
 			'uses' 	=> 'ClassController@createGroup',
 			'as' 	=> '/',
 		]);
@@ -181,7 +180,7 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 
-		Route::get('category', [
+		Route::get('category/create', [
 			'uses' 	=> 'ClassController@getCreateCategory',
 			'as' 	=> '/',
 		]);
@@ -242,8 +241,6 @@ Route::group(['prefix' => 'gym'], function () {
 	Route::get('/', function () {
 		return view('dashboard.pages.index');
 	});
-
-
 });
 
 

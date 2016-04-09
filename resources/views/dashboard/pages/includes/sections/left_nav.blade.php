@@ -22,7 +22,6 @@
 					</li>
 					<li>
 						<a href="/gyms/">
-						<i class="icon-list"></i><span class="badge badge-info">3</span>
 						List all</a>
 					</li>
 				</ul>
@@ -37,33 +36,30 @@
 
 				<ul class="sub-menu">
 					<li>
-						<a href="{{ Url('dashboard/class/create') }}">
+						<a href="{{ Url('/dashboard/class/create') }}">
 						<i class="icon-plus"></i>
 						Add new class</a>
 					</li>
 					<li>
-						<a href="{{ Url('/dashboard/class/group') }}">
+						<a href="{{ Url('/dashboard/class/group/create') }}">
 						<i class="icon-plus"></i>
 						Add class group</a>
 					</li>
 					<li>
-						<a href="{{ Url('dashboard/class/category') }}">
+						<a href="{{ Url('dashboard/class/category/create') }}">
 						<i class="icon-plus"></i>
 						Add class category</a>
 					</li>
 					<li>
-						<a href="/dashboard/class/">
-						<i class="icon-list"></i><span class="badge badge-info">3</span>
+						<a href="{{ Url('/dashboard/class/')}}">
 						List all Classes</a>
 					</li>
 					<li>
 						<a href="{{ Url('dashboard/class/groups') }}">
-						<i class="icon-list"></i><span class="badge badge-info">3</span>
 						List all Group</a>
 					</li>
 					<li>
 						<a href="{{ Url('dashboard/class/categorys') }}">
-						<i class="icon-list"></i><span class="badge badge-info">3</span>
 						List all Category</a>
 					</li>
 				</ul>

@@ -12,9 +12,9 @@
 						</div>
 
 						<div class="portlet-body form">
-					  	    	  @if (Session::has('message'))
+							@if (Session::has('message'))
 					  	    	  	<script>
-									swal("Gyn Created", "", "success")
+									swal("Gym  Created", "", "success")
 								</script>
 							@endif  
 							<form method="post" action="{{ Url('dashboard/gym/create') }}" enctype="multipart/form-data" class="form-horizontal">

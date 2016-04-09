@@ -7,7 +7,7 @@
 						<div class="portlet-title">
 							<div class="caption">
 								<i class="icon-basket font-red-sunglo"></i>
-								<span class="caption-subject font-red-sunglo bold uppercase">Add a Class Group</span>
+								<span class="caption-subject font-red-sunglo bold uppercase">Add  Class Group</span>
 							</div>
 						</div>
 
@@ -17,7 +17,7 @@
 									swal("Class Group Created", "", "success")
 								</script>
 							@endif  
-							<form method="post" action="{{ Url('dashboard/class/group') }}" enctype="multipart/form-data" class="form-horizontal">
+							<form method="post" action="{{ Url('dashboard/class/group/create') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="form-body">
 									<div class="form-group">
