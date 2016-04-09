@@ -22,7 +22,6 @@
 					</li>
 					<li>
 						<a href="/gyms/">
-						<i class="icon-list"></i><span class="badge badge-info">3</span>
 						List all</a>
 					</li>
 				</ul>
@@ -53,17 +52,14 @@
 					</li>
 					<li>
 						<a href="/dashboard/class/">
-						<i class="icon-list"></i><span class="badge badge-info">3</span>
 						List all Classes</a>
 					</li>
 					<li>
 						<a href="{{ Url('dashboard/class/groups') }}">
-						<i class="icon-list"></i><span class="badge badge-info">3</span>
 						List all Group</a>
 					</li>
 					<li>
 						<a href="{{ Url('dashboard/class/categorys') }}">
-						<i class="icon-list"></i><span class="badge badge-info">3</span>
 						List all Category</a>
 					</li>
 				</ul>
