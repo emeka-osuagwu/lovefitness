@@ -16,7 +16,7 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="/gym/create">
+						<a href="{{ Url('dashboard/gym/create') }}">
 						<i class="icon-plus"></i>
 						Add new gym</a>
 					</li>
@@ -36,22 +36,22 @@
 
 				<ul class="sub-menu">
 					<li>
-						<a href="/class/create">
+						<a href="{{ Url('/dashboard/class/create') }}">
 						<i class="icon-plus"></i>
 						Add new class</a>
 					</li>
 					<li>
-						<a href="{{ Url('/dashboard/class/group') }}">
+						<a href="{{ Url('/dashboard/class/group/create') }}">
 						<i class="icon-plus"></i>
 						Add class group</a>
 					</li>
 					<li>
-						<a href="{{ Url('dashboard/class/category') }}">
+						<a href="{{ Url('dashboard/class/category/create') }}">
 						<i class="icon-plus"></i>
 						Add class category</a>
 					</li>
 					<li>
-						<a href="/dashboard/class/">
+						<a href="{{ Url('/dashboard/class/')}}">
 						List all Classes</a>
 					</li>
 					<li>

@@ -61,9 +61,6 @@ class ClassController extends Controller
 		return back();
 	}
 
-
-
-
 	public function getCreateClass($value='')
 	{
 		$gyms 		= $this->classRepo->getAllGym();
@@ -76,6 +73,7 @@ class ClassController extends Controller
 	public function postCreateClass(Request $request)
 	{
 		$this->classRepo->createClass($request->all());
+		Session::flash('message', 'good');
 		return back();
 	}
 
@@ -119,7 +117,7 @@ class ClassController extends Controller
 
 	public function dashboardCategory()
 	{
-		$categorys=  $this->classRepo->getAllCategory();
+		return $categorys=  $this->classRepo->getAllCategory();
 		return view('dashboard.pages.categorys', compact('categorys'));
 	}
 
