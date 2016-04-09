@@ -7,13 +7,17 @@
 						<div class="portlet-title">
 							<div class="caption">
 								<i class="icon-basket font-red-sunglo"></i>
-								<span class="caption-subject font-red-sunglo bold uppercase">Add a gym</span>
+								<span class="caption-subject font-red-sunglo bold uppercase">Add a Class Group</span>
 							</div>
 						</div>
 
 						<div class="portlet-body form">
-							
-							<form method="post" action="/class/group" enctype="multipart/form-data" class="form-horizontal">
+							@if (Session::has('message'))
+					  	    	  	<script>
+									swal("Class Group Created", "", "success")
+								</script>
+							@endif  
+							<form method="post" action="{{ Url('dashboard/class/group') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="form-body">
 									<div class="form-group">
@@ -22,6 +26,20 @@
 											<input type="text" name="name" class="form-control" required="true">
 										</div>
 									</div>
+
+
+									<div class="form-group">
+										<label class="col-md-3 control-label">Categories</label>
+										<div class="col-md-4">
+											<select class="form-control" name="category_id" required="true">
+												<option value="" >Select Category</option>
+												@foreach($categories as $category)
+													<option value="{{$category->id}}">{{$category->name}}</option>
+												@endforeach
+											</select>
+										</div>
+									</div>
+
 
 								
 									<div class="form-group">

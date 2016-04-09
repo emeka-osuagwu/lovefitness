@@ -12,8 +12,12 @@
 						</div>
 
 						<div class="portlet-body form">
-							
-							<form method="post" action="/class/category" enctype="multipart/form-data" class="form-horizontal">
+				  	    	  @if (Session::has('message'))
+				  	    	  	<script>
+								swal("Category Created", "", "success")
+							</script>
+						@endif      
+							<form method="post" action="{{ Url('dashboard/class/category/create') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="form-body">
 									<div class="form-group">

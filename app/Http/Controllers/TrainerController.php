@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,6 +13,7 @@ class TrainerController extends Controller
 	public function create(Request $request)
 	{
 		$this->trainerRepo->createTrainer($request->all());
+		Session::flash('message', 'good');
 		return back();
 	}
 

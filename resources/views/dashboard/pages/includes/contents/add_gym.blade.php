@@ -12,7 +12,11 @@
 						</div>
 
 						<div class="portlet-body form">
-							
+							@if (Session::has('message'))
+					  	    	  	<script>
+									swal("Gym  Created", "", "success")
+								</script>
+							@endif  
 							<form method="post" action="{{ Url('dashboard/gym/create') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="form-body">
@@ -20,16 +24,6 @@
 										<label class="col-md-3 control-label">Name</label>
 										<div class="col-md-4">
 											<input type="text" name="name" class="form-control" required="true">
-										</div>
-									</div>
-
-									<div class="form-group">
-										<label class="col-md-3 control-label">Owner</label>
-										<div class="col-md-4">
-											<select class="form-control" name="owner_id" required="true">
-												<option value="0" selected="selected">No owner selected</option>
-												<option value="1">Agli Panci</option>
-											</select>
 										</div>
 									</div>
 

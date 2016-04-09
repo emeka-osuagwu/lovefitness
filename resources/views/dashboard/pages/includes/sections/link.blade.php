@@ -28,3 +28,4 @@
         <link href="{!! load_asset('../assets/layouts/layout4/css/custom.min.css') !!}" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
         <link rel="shortcut icon" href="favicon.ico" />
+

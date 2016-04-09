@@ -3,7 +3,7 @@
 		
 		<div class="page-logo">
 			<a href="{{ Url('/dashboard') }}">
-			<img src="../assets/layouts/layout4/img/logo-light.png" alt="logo" class="logo-default" /> </a>
+			<img src="{{ asset('../assets/layouts/layout4/img/logo-light.png') }}" alt="logo" class="logo-default" /> </a>
 			<div class="menu-toggler sidebar-toggler"></div>
 		</div>
 
@@ -62,7 +62,7 @@
 					
 					<li class="separator hide"> </li>
 
-					<li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+			<!-- 		<li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
 						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 							<i class="icon-bell"></i>
 							<span class="badge badge-success"> 7 </span>
@@ -90,11 +90,11 @@
 								</ul>
 							</li>
 						</ul>
-					</li>
+					</li> -->
 
 					<li class="separator hide"> </li>
 
-					<li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">
+				<!-- 	<li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">
 						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 							<i class="icon-envelope-open"></i>
 							<span class="badge badge-danger"> 4 </span>
@@ -122,14 +122,14 @@
 							</li>
 						</ul>
 					</li>
-
+ -->
 					<li class="separator hide"> </li>
 
 					<li class="dropdown dropdown-user dropdown-dark">
 						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 						<span class="username username-hide-on-mobile"> Nick </span>
 
-						<img alt="" class="img-circle" src="../assets/layouts/layout4/img/avatar9.jpg" /> </a>
+						<img alt="" class="img-circle" src="{{ asset('../assets/layouts/layout4/img/avatar9.jpg') }}" /> </a>
 						<ul class="dropdown-menu dropdown-menu-default">
 							<li>
 								<a href="page_user_profile_1.html">
