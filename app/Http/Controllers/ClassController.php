@@ -117,7 +117,7 @@ class ClassController extends Controller
 
 	public function dashboardCategory()
 	{
-		return $categorys=  $this->classRepo->getAllCategory();
+		$categorys=  $this->classRepo->getAllCategory();
 		return view('dashboard.pages.categorys', compact('categorys'));
 	}
 
