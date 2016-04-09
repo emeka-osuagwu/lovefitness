@@ -42,7 +42,7 @@
 						Add new class</a>
 					</li>
 					<li>
-						<a href="/class/group">
+						<a href="{{ Url('/dashboard/class/group') }}">
 						<i class="icon-plus"></i>
 						Add class group</a>
 					</li>

@@ -24,16 +24,6 @@ class ClassController extends Controller
 		return view('app.pages.class_group', compact('groups', 'categories'));
 	}
 
-	public function addClassGroup()
-	{
-		$categories = $this->classRepo->getAllCategory();
-		return view('dashboard.pages.add_class_group', compact('categories'));
-	}
-
-
-
-
-
 	public function class_list($group)
 	{
 		$datas =  $this->classRepo->getGroupClass($group)->first();
@@ -58,11 +48,21 @@ class ClassController extends Controller
 		return back();
 	}
 
+	public function addClassGroup()
+	{
+		$categories = $this->classRepo->getAllCategory();
+		return view('dashboard.pages.add_class_group', compact('categories'));
+	}
+	
 	public function createGroup(Request $request)
 	{
 		$this->classRepo->createClassGroup($request->all());
+		Session::flash('message', 'good');
 		return back();
 	}
+
+
+
 
 	public function getCreateClass($value='')
 	{

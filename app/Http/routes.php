@@ -70,16 +70,6 @@ Route::get('{group}/classes', [
 
 Route::group(['prefix' => 'class'], function () {
 
-	Route::get('group', [
-		'uses' 	=> 'ClassController@addClassGroup',
-		'as' 	=> '/',
-	]);
-
-	Route::post('group', [
-		'uses' 	=> 'ClassController@createGroup',
-		'as' 	=> '/',
-	]);
-
 	Route::get('create', [
 		'uses' 	=> 'ClassController@getCreateClass',
 		'as' 	=> '/',
@@ -140,6 +130,16 @@ Route::group(['prefix' => 'dashboard'], function () {
 
 		Route::get('/', [
 			'uses' 	=> 'ClassController@dashboardClasses',
+			'as' 	=> '/',
+		]);
+
+		Route::get('group', [
+			'uses' 	=> 'ClassController@addClassGroup',
+			'as' 	=> '/',
+		]);
+
+		Route::post('group', [
+			'uses' 	=> 'ClassController@createGroup',
 			'as' 	=> '/',
 		]);
 

@@ -12,8 +12,12 @@
 						</div>
 
 						<div class="portlet-body form">
-							
-							<form method="post" action="/class/group" enctype="multipart/form-data" class="form-horizontal">
+							@if (Session::has('message'))
+					  	    	  	<script>
+									swal("Class Group Created", "", "success")
+								</script>
+							@endif  
+							<form method="post" action="{{ Url('dashboard/class/group') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="form-body">
 									<div class="form-group">
@@ -30,7 +34,7 @@
 											<select class="form-control" name="category_id" required="true">
 												<option value="" >Select Category</option>
 												@foreach($categories as $category)
-													<option value="{{$category->first()->id}}">{{$category->first()->name}}</option>
+													<option value="{{$category->id}}">{{$category->name}}</option>
 												@endforeach
 											</select>
 										</div>
