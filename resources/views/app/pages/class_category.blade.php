@@ -35,23 +35,24 @@
 			</span>
 			<label>Checkbox</label>
 		</div> -->
-			<div class="medium-7 columns">
-				@foreach($categories as $category)
-					<a href="#" class="button orange">{{$category->name}}</a>
-				@endforeach
-			</div>
+		<div class="medium-7 columns">
+			@foreach($categories as $category)
+			<a href="#" class="button orange">Martial Arts</a>
+			<a href="#" class="button blue">Cardio</a>
+			
+		</div>
 	</div>
 
 	<div class="row">
 		<div class="columns">
 			<main>
 				<ul class="medium-block-grid-3 class-categories">
-					@foreach($groups as $group)
+					@foreach($categories as $category)
 					<li>
-						<a href="/{{$group->name}}/classes">
-							<img src="images/swimming.jpg" alt="">
-							<h3 class="red"><a href="#">{{$group->name}}</a></h3>
-							<p>{{$group->description}}</p>
+
+						<a href="/{{$category->name}}/classes">
+							<img src="{{ asset('images/swimming.jpg') }}" alt="">
+							<h3 class="red"><a href="#">{{$category->name}}</a></h3>
 						</a>
 					</li>
 					@endforeach

@@ -2,6 +2,7 @@
 
 namespace App\Http\Repo;
 
+use DB;
 use App\Model\ClassGroup;
 use App\Model\ClassModel;
 use App\Http\Repo\GymRepo;
@@ -15,6 +16,28 @@ class ClassRepo extends GymRepo
 		return ClassModel::with('group')->get();
 	}
 
+	public function getAllCategory()
+	{
+		return ClassCategory::all();
+	}
+
+	public function classGroup()
+	{
+		return ClassGroup::all();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public function getClassByName($class_name)
 	{
 		return ClassModel::with('gym', 'review')->where('name', $class_name)->get();
@@ -25,15 +48,7 @@ class ClassRepo extends GymRepo
 		return ClassModel::with('gym', 'review')->where('id', $id)->get();
 	}
 
-	public function getAllCategory()
-	{
-		return ClassCategory::all();
-	}
 
-	public function classGroup()
-	{
-		return ClassGroup::all();
-	}
 
 	public function getGroupWhere($field, $value)
 	{

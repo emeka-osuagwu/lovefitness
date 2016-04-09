@@ -1,4 +1,7 @@
 <div class="page-content-wrapper">
+	
+
+	
 	<div class="page-content">
 		<div class="page-head">
 			<div class="row">
@@ -7,14 +10,14 @@
 						<div class="portlet-title">
 							<div class="caption">
 								<i class="icon-basket font-red-sunglo"></i>
-								<span class="caption-subject font-red-sunglo bold uppercase">Gyms</span>
+								<span class="caption-subject font-red-sunglo bold uppercase">Categories</span>
 							</div>
 							<div class="actions">
 								<div class="portlet-input input-inline input-small">
 									<div class="input-icon right">
 										<i class="fa fa-plus"></i>
-										<a class="form-control" href="/dashboard/group/create">
-										Add new Gym </a>
+										<a class="form-control" href="{{ Url('/dashboard/class/category') }}">
+										Add Category </a>
 									</div>
 								</div>
 							</div>

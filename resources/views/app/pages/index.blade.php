@@ -12,7 +12,7 @@
 			<img class="empty-ribbon" src="images/empty-ribbon.jpg" alt="">
 		</div>
 	</div>
-
+	
 	@include('app.pages.includes.contents.list_one')
 	
 @endsection

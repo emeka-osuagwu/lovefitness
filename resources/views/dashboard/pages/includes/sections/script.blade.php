@@ -29,3 +29,5 @@
         <script src="{!! load_asset('../assets/layouts/layout4/scripts/demo.min.js') !!}" type="text/javascript"></script>
         <script src="{!! load_asset('../assets/layouts/global/scripts/quick-sidebar.min.js') !!}" type="text/javascript"></script>
         <!-- END THEME LAYOUT SCRIPTS -->
+        
+        <script src="{!! load_asset('/Vue/vue.js') !!}" type="text/javascript"></script>

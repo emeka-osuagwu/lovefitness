@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Session;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class ClassController extends Controller
 {
+	public $new_class;
+
 	public function index()
 	{
 		return view('app.pages.class_group');
@@ -16,9 +19,20 @@ class ClassController extends Controller
 
 	public function class_group()
 	{
-		$groups = $this->classRepo->classGroup();
-		return view('app.pages.class_group', compact('groups'));
+		$groups 	= $this->classRepo->classGroup();
+		$categories 	= $this->classRepo->getAllCategory();
+		return view('app.pages.class_group', compact('groups', 'categories'));
 	}
+
+	public function addClassGroup()
+	{
+		$categories = $this->classRepo->getAllCategory();
+		return view('dashboard.pages.add_class_group', compact('categories'));
+	}
+
+
+
+
 
 	public function class_list($group)
 	{
@@ -40,6 +54,7 @@ class ClassController extends Controller
 	public function postCreateCategory(Request $request)
 	{
 		$this->classRepo->createClassCategory($request->all());
+		Session::flash('message', 'good');
 		return back();
 	}
 
