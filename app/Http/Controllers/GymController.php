@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use Session;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,7 +19,8 @@ class GymController extends Controller
 	public function create(Request $request)
 	{
 		$this->gymRepo->createGym($request->all());
-		return back();	
+		Session::flash('message', 'good');
+		return back();
 	}
 
 	public function edit($id)

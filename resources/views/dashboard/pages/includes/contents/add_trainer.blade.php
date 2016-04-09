@@ -14,6 +14,11 @@
 						</div>
 						<div class="portlet-body form">
 							<!-- BEGIN FORM-->
+							@if (Session::has('message'))
+					  	    	  	<script>
+									swal("Trainer Created", "", "success")
+								</script>
+							@endif  
 							<form method="post" action="{{ Url('dashboard/trainer/create') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="form-body">

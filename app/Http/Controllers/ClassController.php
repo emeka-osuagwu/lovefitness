@@ -76,6 +76,7 @@ class ClassController extends Controller
 	public function postCreateClass(Request $request)
 	{
 		$this->classRepo->createClass($request->all());
+		Session::flash('message', 'good');
 		return back();
 	}
 
