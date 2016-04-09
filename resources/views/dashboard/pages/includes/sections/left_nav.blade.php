@@ -47,7 +47,7 @@
 						Add class group</a>
 					</li>
 					<li>
-						<a href="/class/category">
+						<a href="{{ Url('dashboard/class/category') }}">
 						<i class="icon-plus"></i>
 						Add class category</a>
 					</li>

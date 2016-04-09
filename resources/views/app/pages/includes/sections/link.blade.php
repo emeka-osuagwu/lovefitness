@@ -9,3 +9,4 @@
   <link rel="stylesheet" href=" {!! load_asset('stylesheets/app.css') !!}">
   <link rel="stylesheet" href=" {!! load_asset('js/sweetalert.css') !!}">
   <script src="{!! load_asset('js/sweetalert.min.js') !!}"></script>
+

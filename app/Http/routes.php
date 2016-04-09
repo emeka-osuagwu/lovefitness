@@ -53,12 +53,6 @@ Route::post('update', [
 
 
 
-
-
-
-
-
-
 Route::get('classes', [
 	'uses' 	=> 'ClassController@class_group',
 	'as' 	=> '/',
@@ -76,19 +70,15 @@ Route::get('{group}/classes', [
 
 Route::group(['prefix' => 'class'], function () {
 
-	Route::get('category', [
-		'uses' 	=> 'ClassController@getCreateCategory',
-		'as' 	=> '/',
-	]);
-
 	Route::post('category', [
 		'uses' 	=> 'ClassController@postCreateCategory',
 		'as' 	=> '/',
 	]);
 
-	Route::get('group', function () {
-		return view('dashboard.pages.add_class_group');
-	});
+	Route::get('group', [
+		'uses' 	=> 'ClassController@addClassGroup',
+		'as' 	=> '/',
+	]);
 
 	Route::post('group', [
 		'uses' 	=> 'ClassController@createGroup',
@@ -187,6 +177,12 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'ClassController@dashboardCategory',
 			'as' 	=> '/',
 		]);
+
+		Route::get('category', [
+			'uses' 	=> 'ClassController@getCreateCategory',
+			'as' 	=> '/',
+		]);
+
 
 		Route::get('category/{id}/edit', [
 			'uses' 	=> 'ClassController@editCategory',
