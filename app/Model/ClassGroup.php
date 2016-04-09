@@ -13,6 +13,7 @@ class ClassGroup extends Model
 	protected $fillable = [	
 		"name",
 		"description",
+		"class_categories_id",
 	];
 
 	public function classes()

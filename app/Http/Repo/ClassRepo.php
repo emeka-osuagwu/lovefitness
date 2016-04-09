@@ -73,8 +73,9 @@ class ClassRepo extends GymRepo
 	public function createClassGroup($data)
 	{
 		$create = [
-			"name"	=> $data['name'],
-			"description"	=> $data['description'],
+			"name"		=> $data['name'],
+			"description"		=> $data['description'],
+			"class_categories_id"	=> $data['category_id'],
 		];
 		
 		ClassGroup::create($create);

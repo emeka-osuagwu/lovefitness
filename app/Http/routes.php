@@ -70,21 +70,6 @@ Route::get('{group}/classes', [
 
 Route::group(['prefix' => 'class'], function () {
 
-	Route::post('category', [
-		'uses' 	=> 'ClassController@postCreateCategory',
-		'as' 	=> '/',
-	]);
-
-	Route::get('group', [
-		'uses' 	=> 'ClassController@addClassGroup',
-		'as' 	=> '/',
-	]);
-
-	Route::post('group', [
-		'uses' 	=> 'ClassController@createGroup',
-		'as' 	=> '/',
-	]);
-
 	Route::get('create', [
 		'uses' 	=> 'ClassController@getCreateClass',
 		'as' 	=> '/',
@@ -147,7 +132,22 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'ClassController@dashboardClasses',
 			'as' 	=> '/',
 		]);
-		
+
+		Route::get('group', [
+			'uses' 	=> 'ClassController@addClassGroup',
+			'as' 	=> '/',
+		]);
+
+		Route::post('group', [
+			'uses' 	=> 'ClassController@createGroup',
+			'as' 	=> '/',
+		]);
+
+		Route::post('category/create', [
+			'uses' 	=> 'ClassController@postCreateCategory',
+			'as' 	=> '/',
+		]);
+
 		Route::get('{id}/edit', [
 			'uses' 	=> 'ClassController@getEditClass',
 			'as' 	=> '/',

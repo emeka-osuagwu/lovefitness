@@ -36,7 +36,7 @@
 			<label>Checkbox</label>
 		</div> -->
 			<div class="medium-7 columns">
-				@foreach($categories->take(3) as $category)
+				@foreach($categories as $category)
 					<a href="#" class="button orange">{{$category->name}}</a>
 				@endforeach
 			</div>
