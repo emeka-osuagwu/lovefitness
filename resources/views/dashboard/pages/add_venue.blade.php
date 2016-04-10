@@ -25,7 +25,7 @@
 										@if (Session::has('message'))
 								  	    	  	<script>
 												swal({
-													title: "Class Added",
+													title: "Venue Added",
 													type: "success",
 													confirmButtonColor: "#298829",
 													confirmButtonText: "OK",
@@ -36,7 +36,7 @@
 												function(isConfirm)
 												{
 													if (isConfirm) {
-												  		window.location="/dashboard/class";
+												  		window.location="/dashboard/venues";
 												  	}
 												});
 											</script>
