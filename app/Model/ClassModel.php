@@ -12,13 +12,11 @@ class ClassModel extends Model
 	
 	protected $fillable = [	
 		"name",
-		"location",
 		"time",
 		"duration",
-		"gym_id",
 		"image",
-		"logo",
 		"price",
+		"venue_id",
 		"class_group_id",
 	];
 
@@ -35,5 +33,10 @@ class ClassModel extends Model
 	public function review()
 	{
 		return $this->hasMany('App\Model\Review');
+	}
+
+	public function venue()
+	{
+		return $this->belongsTo('App\Model\Venue');
 	}
 }

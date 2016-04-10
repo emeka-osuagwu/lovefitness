@@ -11,6 +11,25 @@
 							</div>
 						</div>
 						<div class="portlet-body form">
+							@if (Session::has('message'))
+					  	    	  	<script>
+									swal({
+										title: "Class Updated",
+										type: "success",
+										confirmButtonColor: "#298829",
+										confirmButtonText: "OK",
+
+										closeOnConfirm: false,
+										closeOnCancel: false
+									},
+									function(isConfirm)
+									{
+										if (isConfirm) {
+									  		window.location="/dashboard/class";
+									  	}
+									});
+								</script>
+							@endif 
 							<form method="post" action="{{ Url('dashboard/class/update') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<input type="hidden" name="class_id" value="{{ $class->id }}">
@@ -21,28 +40,7 @@
 											<input type="text" name="name" class="form-control" value="{{$class->name}}" required="true">
 										</div>
 									</div>
-									<div class="form-group">
-										<label class="col-md-3 control-label">Group</label>
-										<div class="col-md-4">
-											<select class="form-control" name="category_id" required="true">
-													<option value="" >Select Group</option>
-													@foreach($class_group as $group)
-													<option value="{{$group->first()->id}}">{{$group->first()->name}}</option>
-													@endforeach
-											</select>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-3 control-label">Gym</label>
-										<div class="col-md-4">
-											<select class="form-control" name="gym_id" required="true">
-													<option value="{{$class->gym->first()->id}}">{{$class->gym->first()->name}}</option>
-													@foreach($gyms as $gym)
-													<option value="{{$gym->id}}">{{$gym->name}}</option>
-													@endforeach
-											</select>
-										</div>
-									</div>
+								
 									<div class="form-group">
 										<label class="col-md-3 control-label">Price</label>
 										<div class="col-md-4">
@@ -71,7 +69,30 @@
 											</select>
 										</div>
 									</div>
-																		
+													
+									<div class="form-group">
+										<label class="col-md-3 control-label">Group</label>
+										<div class="col-md-4">
+											<select class="form-control" name="group_id" required="true">
+												<option value="" >Select Group</option>
+												@foreach($class_group as $group)
+													<option value="{{$group->id}}">{{$group->name}}</option>
+												@endforeach
+											</select>
+										</div>
+									</div>						
+									<div class="form-group">
+										<label class="col-md-3 control-label">Venue</label>
+										<div class="col-md-4">
+											<select class="form-control" name="venue_id" required="true">
+												<option value="{{$class->venue->id}}" >{{$class->venue->name}}</option>
+												@foreach($venues as $venue)
+													<option value="{{$venue->id}}">{{$venue->name}}</option>
+												@endforeach
+											</select>
+										</div>
+									</div>	
+
 									<div class="form-group">
 										<label class="col-md-3 control-label">Image</label>
 										<div class="col-md-4">

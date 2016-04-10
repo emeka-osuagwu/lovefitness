@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClassGroup extends Model
 {
-	protected $table = 'class_groups';
+	protected $table = 'groups';
 
 	protected $primaryKey = 'id';
 	
@@ -21,7 +21,7 @@ class ClassGroup extends Model
 		return $this->hasMany('App\Model\ClassModel');
 	}
 
-	public function groups()
+	public function category()
 	{
 		return $this->belongsTo('App\Model\ClassCategory');
 	}

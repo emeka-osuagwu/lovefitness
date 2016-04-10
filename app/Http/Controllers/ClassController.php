@@ -31,30 +31,10 @@ class ClassController extends Controller
 
 
 
-	public function getCreateClass($value='')
-	{
-		$gyms 		= $this->classRepo->getAllGym();
-		$groups 	= $this->classRepo->classGroup();
-		$categories 	= $this->classRepo->getAllCategory();
-
-		return view('dashboard.pages.add_class', compact('categories', 'groups', 'gyms'));	
-	}
 
 
 
-	public function getEditClass($id)
-	{
-		$gyms 		=  $this->classRepo->getAllGym();
-		$class 		=  $this->classRepo->getClassByid($id)->first();	
-		$class_group 	=  $this->classRepo->classGroup();
-		return view('dashboard.pages.edit_class', compact('class', 'gyms', 'class_group'));
-	}
 
-	public function updateClass(Request $request)
-	{
-		$this->classRepo->updateClass($request->all());
-		return back();
-	}
 
 
 	public function editCategory($id)
@@ -81,12 +61,37 @@ class ClassController extends Controller
 			return view('dashboard.pages.classes', compact('classes'));
 		}
 
+		public function getCreateClass()
+		{
+			$groups 	= $this->classRepo->classGroup();
+			$venues 	= $this->venueRepo->getAllVenue();
+			$categories 	= $this->classRepo->getAllCategory();
+
+			return view('dashboard.pages.add_class', compact('categories', 'groups', 'venues'));	
+		}
+
 		public function postCreateClass(Request $request)
 		{
 			$this->classRepo->createClass($request->all());
 			Session::flash('message', 'good');
 			return back();
 		}
+
+		public function getEditClass($id)
+		{
+			$class 		=  $this->classRepo->getClassByid($id)->first();	
+			$venues 	= $this->venueRepo->getAllVenue();
+			$class_group 	=  $this->classRepo->classGroup();
+			return view('dashboard.pages.edit_class', compact('class', 'venues', 'class_group'));
+		}
+
+		public function updateClass(Request $request)
+		{
+			$this->classRepo->updateClass($request->all());
+			Session::flash('message', 'good');
+			return back();
+		}
+
 	/*=====================================
 	# Classes Methods
 	======================================*/

@@ -12,22 +12,66 @@ use App\Http\Repo\CloudderRepo as CloudderRepo;
 class ClassRepo extends GymRepo
 {
 
+	public function classGroup()
+	{
+		return ClassGroup::with('classes')->get();
+	}
 
-		public function classGroup()
-		{
-			return ClassGroup::with('classes')->get();
-		}
+	public function getClassByid($id)
+	{
+		return ClassModel::with('venue', 'review')->where('id', $id)->get();
+	}
 
 	/*=====================================
 	# Classes Methods
 	======================================*/
 		public function getAllClass()
 		{
-			return ClassModel::with('group')->get();
+			return ClassModel::with('group','venue')->get();
+		}
+
+		public function createClass($data)
+		{
+			$create = [
+				"name" 		=> $data['name'],
+				"time" 			=> $data['time'],
+				"duration" 		=> $data['duration'],
+				"price" 		=> $data['price'],
+				"venue_id" 		=> $data['venue_id'],
+				"class_group_id" 	=> $data['group_id'],
+			];
+
+			if (isset($data['image']) && isset($data['image']) != null) {
+				$create['image'] = $this->getImageUrl();
+			}
+
+			ClassModel::create($create);
+		}
+
+		public function updateClass($data)
+		{
+			$update = [
+				"name" 		=> $data['name'],
+				"time" 			=> $data['time'],
+				"duration" 		=> $data['duration'],
+				"price" 		=> $data['price'],
+				"venue_id" 		=> $data['venue_id'],
+				"class_group_id" 	=> $data['group_id'],
+			];
+
+			if (isset($data['image']) && isset($data['image']) != null) {
+				$update['image'] = $this->getImageUrl();
+			}
+			
+			ClassModel::where('id', $data['class_id'])->update($update);
 		}
 	/*=====================================
 	# Classes Methods
 	======================================*/
+
+
+
+
 
 
 	/*=====================================
@@ -48,8 +92,6 @@ class ClassRepo extends GymRepo
 			
 			ClassGroup::create($create);
 		}
-
-
 	/*=====================================
 	# Category Methods
 	======================================*/
@@ -65,10 +107,7 @@ class ClassRepo extends GymRepo
 		return ClassModel::with('gym', 'review')->where('name', $class_name)->get();
 	}
 
-	public function getClassByid($id)
-	{
-		return ClassModel::with('gym', 'review')->where('id', $id)->get();
-	}
+
 
 
 
@@ -92,46 +131,12 @@ class ClassRepo extends GymRepo
 
 	}
 
-	public function createClass($data)
-	{
-		$create = [
-			"name" 		=> $data['name'],
-			"gym_id" 		=> $data['gym_id'],
-			"time" 			=> $data['time'],
-			"duration" 		=> $data['duration'],
-			"price" 		=> $data['price'],
-			"class_group_id" 	=> $data['category_id'],
-		];
-
-		if (isset($data['image']) && isset($data['image']) != null) {
-			$create['image'] = $this->getImageUrl();
-		}
-
-		ClassModel::create($create);
-	}
-
 	public function getGroupClass($group)
 	{
 		return	ClassGroup::with('classes')->where('name', $group)->get();
 	}
 
-	public function updateClass($data)
-	{
-		$update = [
-			"name" 		=> $data['name'],
-			"gym_id" 		=> $data['gym_id'],
-			"time" 			=> $data['time'],
-			"duration" 		=> $data['duration'],
-			"price" 		=> $data['price'],
-			"class_group_id" 	=> $data['category_id'],
-		];
 
-		if (isset($data['image']) && isset($data['image']) != null) {
-			$update['image'] = $this->getImageUrl();
-		}
-		
-		ClassModel::where('id', $data['class_id'])->update($update);
-	}
 
 	public function updateGroup($data)
 	{
