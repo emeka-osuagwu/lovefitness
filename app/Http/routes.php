@@ -254,6 +254,16 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'VenueController@create',
 			'as' 	=> '/',
 		]);
+
+		Route::get('{id}/edit', [
+			'uses' 	=> 'VenueController@edit',
+			'as' 	=> '/',
+		]);
+
+		Route::post('update', [
+			'uses' 	=> 'VenueController@update',
+			'as' 	=> '/',
+		]);
 	});
 
 

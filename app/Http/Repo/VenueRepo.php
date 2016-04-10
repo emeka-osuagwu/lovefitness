@@ -13,6 +13,11 @@ class VenueRepo extends CloudderRepo
 		return Venue::all();
 	}
 
+	public function getVenueWhere($field, $value)
+	{
+		return Venue::where($field, $value)->get();
+	}
+
 	public function createVenue($data)
 	{
 		$create = [
@@ -30,5 +35,21 @@ class VenueRepo extends CloudderRepo
 		Venue::create($create);
 	}
 
+	public function updateVenue($data)
+	{
+		$update = [
+			"name" 		=> $data['name'],
+			"email" 		=> $data['email'],
+			"phone" 		=> $data['phone'],
+			"address" 		=> $data['address'],
+			"website" 		=> $data['website'],
+		];
+
+		if (isset($data['image']) && isset($data['image']) != null) {
+			$update['image'] = $this->getImageUrl();
+		}
+
+		Venue::where('id', $data['venue_id'])->update($update);
+	}
 
 }

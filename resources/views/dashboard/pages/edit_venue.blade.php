@@ -1,6 +1,6 @@
 @extends('dashboard.master')
 
-@section('title', 'Add Class')
+@section('title', 'Edit Venue')
 
 @section('content')
 	@include('dashboard.pages.includes.sections.top_nav')
@@ -17,7 +17,7 @@
 									<div class="portlet-title">
 										<div class="caption">
 											<i class="fa fa-slideshare font-red-sunglo"></i>
-											<span class="caption-subject font-red-sunglo bold uppercase">Add a class</span>
+											<span class="caption-subject font-red-sunglo bold uppercase">Edit Venue</span>
 										</div>
 									</div>
 									<div class="portlet-body form">
@@ -25,7 +25,7 @@
 										@if (Session::has('message'))
 								  	    	  	<script>
 												swal({
-													title: "Class Added",
+													title: "Venue Updated",
 													type: "success",
 													confirmButtonColor: "#298829",
 													confirmButtonText: "OK",
@@ -36,39 +36,48 @@
 												function(isConfirm)
 												{
 													if (isConfirm) {
-												  		window.location="/dashboard/class";
+												  		window.location="/dashboard/venues";
 												  	}
 												});
 											</script>
 										@endif  			
 										<!-- BEGIN FORM-->
-										<form method="post" action="{{ Url('dashboard/class/create') }}" enctype="multipart/form-data" class="form-horizontal">
+										<form method="post" action="{{ Url('dashboard/venue/update') }}" enctype="multipart/form-data" class="form-horizontal">
 											<input type="hidden" name="_token" value="{{ csrf_token() }}">
+											<input type="hidden" name="venue_id" value="{{$venue->id}}">
 											<div class="form-body">
 												<div class="form-group">
 													<label class="col-md-3 control-label">Name</label>
 													<div class="col-md-4">
-														<input type="text" name="name" class="form-control" value="" required="true">
+														<input type="text" name="name" class="form-control" value="{{$venue->name}}" required="true">
 													</div>
 												</div>
 					
 												<div class="form-group">
 													<label class="col-md-3 control-label">Address</label>
 													<div class="col-md-4">
-														<input type="text" name="address" class="form-control" value="" required="true">
+														<input type="text" name="address" class="form-control" value="{{$venue->address}}" required="true">
 													</div>
 												</div>
 											
 												<div class="form-group">
 													<label class="col-md-3 control-label">Phone Number</label>
 													<div class="col-md-4">
-														<input type="text" name="phone" class="form-control" value="" required="true">
+														<input type="text" name="phone" class="form-control" value="{{$venue->phone}}" required="true">
 													</div>
 												</div>
+
 												<div class="form-group">
 													<label class="col-md-3 control-label">Email</label>
 													<div class="col-md-4">
-														<input type="text" name="email" class="form-control" value="" required="true">
+														<input type="text" name="email" class="form-control" value="{{$venue->email}}" required="true">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-md-3 control-label">Website</label>
+													<div class="col-md-4">
+														<input type="text" name="website" class="form-control" value="{{$venue->website}}" required="true">
 													</div>
 												</div>
 

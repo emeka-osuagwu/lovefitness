@@ -25,5 +25,16 @@ class VenueController extends Controller
 		return back();
 	}
 
+	public function edit($id)
+	{
+		$venue = $this->venueRepo->getVenueWhere('id', $id)->first();
+		return view('dashboard.pages.edit_venue', compact('venue'));
+	}
 
+	public function update(Request $request)
+	{
+		$this->venueRepo->updateVenue($request->all());
+		Session::flash('message', 'good');
+		return back();
+	}
 }

@@ -19,7 +19,7 @@ class CreateVenueTable extends Migration
 			$table->string('image')->nullable();
 			$table->string('phone');
 			$table->string('email');
-			$table->string('website');
+			$table->string('website')->nullable();
 			$table->timestamps();
 		});
 	}
