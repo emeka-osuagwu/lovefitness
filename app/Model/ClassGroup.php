@@ -13,11 +13,16 @@ class ClassGroup extends Model
 	protected $fillable = [	
 		"name",
 		"description",
-		"class_categories_id",
+		"class_category_id",
 	];
 
 	public function classes()
 	{
 		return $this->hasMany('App\Model\ClassModel');
+	}
+
+	public function groups()
+	{
+		return $this->belongsTo('App\Model\ClassCategory');
 	}
 }

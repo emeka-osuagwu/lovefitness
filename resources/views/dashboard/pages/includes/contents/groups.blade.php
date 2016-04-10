@@ -6,14 +6,14 @@
 					<div class="portlet light bordered">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="icon-basket font-red-sunglo"></i>
-								<span class="caption-subject font-red-sunglo bold uppercase">Gyms</span>
+								<i class="fa fa-asterisk font-red-sunglo"></i>
+								<span class="caption-subject font-red-sunglo bold uppercase">Groups</span>
 							</div>
 							<div class="actions">
 								<div class="portlet-input input-inline input-small">
 									<div class="input-icon right">
 										<i class="fa fa-plus"></i>
-										<a class="form-control" href="/dashboard/group/create">
+										<a class="form-control" href="{{ Url('/dashboard/class/group/create') }}">
 										Add new Gym </a>
 									</div>
 								</div>
@@ -30,6 +30,7 @@
 													<th>Name</th>
 													<th>Description</th>
 													<th>Class No</th>
+													<th>View Class</th>
 													<th width="80px">Action</th>
 												</tr>
 											</thead>
@@ -40,7 +41,8 @@
 													<td>{{$i++}}</td>
 													<td>{{$group->name}}</td>
 													<td>{{$group->description}}</td>
-													<td>2</td>		
+													<td>{{$group->classes->count()}}</td>		
+													<td><a style="text-decoration: none" href="#">View</a></td>		
 													<td>
 														<a href="/dashboard/class/group/{{$group->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
 														<a href="/dashboard/class/group/{{$group->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>

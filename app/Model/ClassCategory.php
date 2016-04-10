@@ -11,4 +11,9 @@ class ClassCategory extends Model
 	protected $fillable = [	
 		"name",
 	];
+
+	public function groups()
+	{
+		return $this->hasMany('App\Model\ClassGroup');
+	}
 }

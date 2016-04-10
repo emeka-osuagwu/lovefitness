@@ -16,10 +16,10 @@ class CreateClassgroupsTable extends Migration
 			$table->increments('id');
 			$table->string('name')->unique();
 			$table->string('description');
-			$table->integer('class_categories_id')->unsigned();
+			$table->integer('class_category_id')->unsigned();
 			$table->timestamps();
 
-			$table->foreign('class_categories_id')
+			$table->foreign('class_category_id')
 				->references('id')
 				->on('class_categories');
 		});

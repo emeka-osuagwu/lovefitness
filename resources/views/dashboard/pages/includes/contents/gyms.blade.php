@@ -6,7 +6,7 @@
 					<div class="portlet light bordered">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="icon-basket font-red-sunglo"></i>
+								<i class="fa fa-map-marker font-red-sunglo"></i>
 								<span class="caption-subject font-red-sunglo bold uppercase">Gyms</span>
 							</div>
 							<div class="actions">

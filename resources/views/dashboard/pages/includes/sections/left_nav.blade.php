@@ -21,7 +21,7 @@
 						Add new gym</a>
 					</li>
 					<li>
-						<a href="/gyms/">
+						<a href="{{ Url('dashboard/gyms/') }}">
 						List all</a>
 					</li>
 				</ul>

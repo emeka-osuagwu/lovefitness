@@ -14,7 +14,21 @@
 
 							@if (Session::has('message'))
 					  	    	  	<script>
-									swal("Class  Created", "", "success")
+									swal({
+										title: "Class Added",
+										type: "success",
+										confirmButtonColor: "#298829",
+										confirmButtonText: "OK",
+
+										closeOnConfirm: false,
+										closeOnCancel: false
+									},
+									function(isConfirm)
+									{
+										if (isConfirm) {
+									  		window.location="/dashboard/class";
+									  	}
+									});
 								</script>
 							@endif  			
 							<!-- BEGIN FORM-->
@@ -33,7 +47,7 @@
 											<select class="form-control" name="category_id" required="true">
 												<option value="" >Select Group</option>
 												@foreach($groups as $group)
-													<option value="{{$groups->first()->id}}">{{$groups->first()->name}}</option>
+													<option value="{{$group->id}}">{{$group->name}}</option>
 												@endforeach
 											</select>
 										</div>

@@ -36,6 +36,6 @@ $factory->define(App\Model\ClassGroup::class, function (Faker\Generator $faker) 
 	return [
 		'name' => $faker->company,
 		'description' => $faker->address,
-		'class_categories_id' => 1,
+		'class_category_id' => 1,
 	];
 });

@@ -11,26 +11,48 @@ use App\Http\Repo\CloudderRepo as CloudderRepo;
 
 class ClassRepo extends GymRepo
 {
-	public function getAllClass()
-	{
-		return ClassModel::with('group')->get();
-	}
-
-	public function getAllCategory()
-	{
-		return ClassCategory::all();
-	}
-
-	public function classGroup()
-	{
-		return ClassGroup::all();
-	}
 
 
+		public function classGroup()
+		{
+			return ClassGroup::with('classes')->get();
+		}
+
+	/*=====================================
+	# Classes Methods
+	======================================*/
+		public function getAllClass()
+		{
+			return ClassModel::with('group')->get();
+		}
+	/*=====================================
+	# Classes Methods
+	======================================*/
 
 
+	/*=====================================
+	# Category Methods
+	======================================*/
+		public function getAllCategory()
+		{
+			return ClassCategory::with('groups')->get();
+		}
+	
+		public function createClassGroup($data)
+		{
+			$create = [
+				"name"		=> $data['name'],
+				"description"		=> $data['description'],
+				"class_category_id"	=> $data['category_id'],
+			];
+			
+			ClassGroup::create($create);
+		}
 
 
+	/*=====================================
+	# Category Methods
+	======================================*/
 
 
 
@@ -68,17 +90,6 @@ class ClassRepo extends GymRepo
 
 		ClassCategory::create($create);
 
-	}
-
-	public function createClassGroup($data)
-	{
-		$create = [
-			"name"		=> $data['name'],
-			"description"		=> $data['description'],
-			"class_categories_id"	=> $data['category_id'],
-		];
-		
-		ClassGroup::create($create);
 	}
 
 	public function createClass($data)

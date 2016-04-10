@@ -6,7 +6,7 @@
 					<div class="portlet light bordered">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="icon-basket font-red-sunglo"></i>
+								<i class="fa fa-asterisk font-red-sunglo"></i>
 								<span class="caption-subject font-red-sunglo bold uppercase">Add  Class Group</span>
 							</div>
 						</div>
@@ -14,7 +14,20 @@
 						<div class="portlet-body form">
 							@if (Session::has('message'))
 					  	    	  	<script>
-									swal("Class Group Created", "", "success")
+									swal({
+										title: "Group Added",
+										type: "success",
+										confirmButtonColor: "#298829",
+										confirmButtonText: "OK",
+										closeOnConfirm: false,
+										closeOnCancel: false
+									},
+									function(isConfirm)
+									{
+										if (isConfirm) {
+									  		window.location="/dashboard/class/groups";
+									  	}
+									});
 								</script>
 							@endif  
 							<form method="post" action="{{ Url('dashboard/class/group/create') }}" enctype="multipart/form-data" class="form-horizontal">
