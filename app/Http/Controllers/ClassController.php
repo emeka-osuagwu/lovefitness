@@ -91,7 +91,6 @@ class ClassController extends Controller
 			Session::flash('message', 'good');
 			return back();
 		}
-
 	/*=====================================
 	# Classes Methods
 	======================================*/

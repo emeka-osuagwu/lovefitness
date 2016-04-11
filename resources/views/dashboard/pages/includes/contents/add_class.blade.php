@@ -35,7 +35,13 @@
 							<form method="post" action="{{ Url('dashboard/class/create') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="form-body">
-
+<div class="form-group">
+                                                <label class="control-label col-md-3">Default Datepicker</label>
+                                                <div class="col-md-3">
+                                                    <input class="form-control form-control-inline input-medium date-picker" size="16" type="text" value="">
+                                                    <span class="help-block"> Select date </span>
+                                                </div>
+                                            </div>
 									<div class="form-group">
 										<label class="col-md-3 control-label">Name</label>
 										<div class="col-md-4">
