@@ -63,16 +63,17 @@ class ClassController extends Controller
 
 		public function getCreateClass()
 		{
+			$gyms 		= $this->gymRepo->getAllGym();
 			$groups 	= $this->classRepo->classGroup();
 			$venues 	= $this->venueRepo->getAllVenue();
 			$categories 	= $this->classRepo->getAllCategory();
 
-			return view('dashboard.pages.add_class', compact('categories', 'groups', 'venues'));	
+			return view('dashboard.pages.add_class', compact('categories', 'groups', 'venues', 'gyms'));	
 		}
 
 		public function postCreateClass(Request $request)
 		{
-			$this->classRepo->createClass($request->all());
+			return $this->classRepo->createClass($request->all());
 			Session::flash('message', 'good');
 			return back();
 		}

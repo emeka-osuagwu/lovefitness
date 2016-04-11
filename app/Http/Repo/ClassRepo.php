@@ -46,6 +46,7 @@ class ClassRepo extends GymRepo
 				$create['image'] = $this->getImageUrl();
 			}
 
+			return $create;
 			ClassModel::create($create);
 		}
 

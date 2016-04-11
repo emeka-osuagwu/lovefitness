@@ -17,7 +17,7 @@
 									<div class="portlet-title">
 										<div class="caption">
 											<i class="fa fa-slideshare font-red-sunglo"></i>
-											<span class="caption-subject font-red-sunglo bold uppercase">Add a class</span>
+											<span class="caption-subject font-red-sunglo bold uppercase">Add a venue</span>
 										</div>
 									</div>
 									<div class="portlet-body form">

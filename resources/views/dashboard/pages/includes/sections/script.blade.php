@@ -22,7 +22,17 @@
         <script src="{!! load_asset('../assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js') !!}" type="text/javascript"></script>
         <script src="{!! load_asset('../assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') !!}" type="text/javascript"></script>
         <script src="{!! load_asset('../assets/global/plugins/clockface/js/clockface.js') !!}" type="text/javascript"></script>
+
+        <script src="{!! load_asset('../assets/global/plugins/bootstrap-selectsplitter/bootstrap-selectsplitter.min.js') !!}" type="text/javascript"></script>
 <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="{!! load_asset('../assets/global/scripts/app.min.js') !!}" type="text/javascript"></script>
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="{!! load_asset('../assets/pages/scripts/components-bootstrap-select-splitter.min.js') !!}" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
 
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <script src="{!! load_asset('../assets/layouts/layout4/scripts/layout.min.js') !!}" type="text/javascript"></script>
@@ -31,7 +41,7 @@
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
    
 <!-- PLUGINS TRIGGER-->
-        <script src="{!! load_asset('../assets/pages/scripts/components-date-time-pickers.min.js        ') !!}" type="text/javascript"></script>
+        <script src="{!! load_asset('../assets/pages/scripts/components-date-time-pickers.min.js') !!}" type="text/javascript"></script>
 <!-- PLUGINS TRIGGER-->
 
 <!-- CUSTOM Script -->
