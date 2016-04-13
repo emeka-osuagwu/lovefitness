@@ -82,16 +82,25 @@
 										</div>
 									</div>						
 									<div class="form-group">
-										<label class="col-md-3 control-label">Venue</label>
+										<label class="col-md-3 control-label">Location</label>
 										<div class="col-md-4">
-											<select class="form-control" name="venue_id" required="true">
-												<option value="{{$class->venue->id}}" >{{$class->venue->name}}</option>
-												@foreach($venues as $venue)
-													<option value="{{$venue->id}}">{{$venue->name}}</option>
-												@endforeach
+											<select id="select_selectsplitter1" name="location" class="form-control" size="4" required="true">
+
+												<optgroup label="Gyms">
+													@foreach($gyms as $gym)
+														<option value="{{$gym->id}}">{{$gym->name}}</option>
+													@endforeach
+												</optgroup>
+
+												<optgroup label="Venue">
+													@foreach($venues as $venue)
+														<option value="9">{{$venue->name}}</option>
+													@endforeach
+												</optgroup>
 											</select>
+											
 										</div>
-									</div>	
+									</div>
 
 									<div class="form-group">
 										<label class="col-md-3 control-label">Image</label>

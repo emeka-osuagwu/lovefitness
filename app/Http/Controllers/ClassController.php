@@ -71,10 +71,11 @@ class ClassController extends Controller
 
 		public function getEditClass($id)
 		{
+			$gyms 		= $this->gymRepo->getAllGym();
 			$class 		=  $this->classRepo->getClassByid($id)->first();	
 			$venues 	= $this->venueRepo->getAllVenue();
 			$class_group 	=  $this->classRepo->classGroup();
-			return view('dashboard.pages.edit_class', compact('class', 'venues', 'class_group'));
+			return view('dashboard.pages.edit_class', compact('class', 'venues', 'class_group', 'gyms'));
 		}
 
 		public function updateClass(Request $request)
@@ -110,7 +111,7 @@ class ClassController extends Controller
 
 		public function class_group()
 		{
-			return $groups 	= $this->classRepo->classGroup();
+			$groups 	= $this->classRepo->classGroup();
 			$categories 	= $this->classRepo->getAllCategory();
 			return view('app.pages.class_group', compact('groups', 'categories'));
 		}

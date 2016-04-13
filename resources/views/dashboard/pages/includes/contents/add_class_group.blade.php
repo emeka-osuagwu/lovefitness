@@ -59,6 +59,14 @@
 											<textarea name="description" class="form-control" rows="3" data-gramm="" data-txt_gramm_id="67df7919-3d09-a00d-edd4-fcb4e09a27a4" required="true"></textarea>
 										</div>
 									</div>
+
+									
+									<div class="form-group">
+										<label class="col-md-3 control-label">Image</label>
+										<div class="col-md-4">
+											<input type="file" name="image">
+										</div>
+									</div>	
 																
 								</div>	
 								<div class="form-actions">

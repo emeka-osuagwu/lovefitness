@@ -57,8 +57,8 @@ class ClassRepo extends GymRepo
 				"time" 			=> $data['time'],
 				"duration" 		=> $data['duration'],
 				"price" 		=> $data['price'],
-				"table_id" 		=> $data['venue_id'],
-				"table_name" 		=> "venues",
+				"location_id" 		=> $data['location'],
+				"location_name" 	=> "venues",
 				"class_group_id" 	=> $data['group_id'],
 			];
 
@@ -84,6 +84,12 @@ class ClassRepo extends GymRepo
 				"description"		=> $data['description'],
 				"class_category_id"	=> $data['category_id'],
 			];
+			
+
+			if (isset($data['image']) && isset($data['image']) != null) {
+				$create['image'] = $this->getImageUrl();
+			}
+			
 			
 			ClassGroup::create($create);
 		}
