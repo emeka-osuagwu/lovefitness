@@ -29,13 +29,41 @@ $factory->define(App\Model\User::class, function (Faker\Generator $faker) {
 $factory->define(App\Model\ClassCategory::class, function (Faker\Generator $faker) {
 	return [
 		'name' => $faker->company,
+		'color' => "red",
 	];
 });
 
 $factory->define(App\Model\ClassGroup::class, function (Faker\Generator $faker) {
 	return [
-		'name' => $faker->company,
-		'description' => $faker->address,
-		'class_categories_id' => 1,
+		'name' 		=> $faker->company,
+		'description' 		=> $faker->address,
+		'class_category_id' 	=> 1,
+	];
+});
+
+$factory->define(App\Model\ClassModel::class, function (Faker\Generator $faker) {
+	return [
+		'time' 			=> "1:20pm - 10:30pm",
+		'price' 			=> 13434,
+		'name' 		=> $faker->company,
+		'duration' 		=> $faker->address,
+		'location_id' 		=> 1,
+		'location_name' 	=> "venues",
+		'class_group_id' 	=> 1,
+	];
+});
+
+$factory->define(App\Model\Gym::class, function (Faker\Generator $faker) {
+	return [
+		'name' 	=> $faker->name,
+		'address' 	=> $faker->address,
+		'email' 		=> $faker->email,
+		'location' 	=> $faker->address,
+		'image' 	=> $faker->image,
+		'number' 	=> 09984984938,
+		'hours' 	=> "1:20pm - 10:30pm",
+		'description' 	=> $faker->address,
+		'price' 		=> 122323,
+		'website' 	=> $faker->address,
 	];
 });

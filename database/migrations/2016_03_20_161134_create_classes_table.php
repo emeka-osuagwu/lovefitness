@@ -15,28 +15,19 @@ class CreateClassesTable extends Migration
 		Schema::create('classes', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('name')->unique();
-			$table->integer('gym_id')->unsigned()->nullable();
+			$table->float('price');
 			$table->string('time');
 			$table->string('duration');
+			$table->integer('class_group_id')->unsigned()->nullable();
+			$table->string('location_name');
+			$table->integer('location_id');
 			$table->string('image')->nullable();
-			$table->string('logo')->nullable();
-			$table->float('price');
-			$table->integer('class_group_id')->nullable()->unsigned();
-			//$table->integer('Instructor')->nullabel()->unsigned();
-			$table->timestamps();
-
-			$table->foreign('gym_id')
-				->references('id')
-				->on('gyms')
-				->onDelete('cascade');
 
 			$table->foreign('class_group_id')
 				->references('id')
-				->on('class_groups');
+				->on('groups');
 			
-			// $table->foreign('Instructor')
-			// 	->references('id')
-			// 	->on('users');
+			$table->timestamps();
 			
 		});
 	}

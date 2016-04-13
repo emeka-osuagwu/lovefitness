@@ -28,9 +28,8 @@
 												<tr>
 													<th width="10px">ID</th>
 													<th>Name</th>
-													<th>Filter</th>
-													<th>Color</th>
-													<th>Class Count</th>
+													<th>Group</th>
+													<th>Venue</th>
 													<th width="80px">Action</th>
 												</tr>
 											</thead>
@@ -40,8 +39,7 @@
 													<td>10</td>
 													<td>{{$class->name}}</td>
 													<td>Cardio</td>
-													<td>orange</td>
-													<td>2</td>
+													<td><a href="dashboard/venue/{{$class->id}}">{{$class->name}}</a></td>
 													<td>
 														<a href="/dashboard/class/{{$class->id}}/edit" ><i class="fa fa-pencil" title="Edit"></i></a>
 														<a href="/dashboard/class/{{$class->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>

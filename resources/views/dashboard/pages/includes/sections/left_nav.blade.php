@@ -21,7 +21,7 @@
 						Add new gym</a>
 					</li>
 					<li>
-						<a href="/gyms/">
+						<a href="{{ Url('dashboard/gyms/') }}">
 						List all</a>
 					</li>
 				</ul>
@@ -82,6 +82,27 @@
 						<a href="{{ Url('dashboard/trainers') }}">
 						<i class="icon-plus"></i>
 						Trainers</a>
+					</li>
+				</ul>
+			</li>
+		
+			<li>
+				<a href="javascript:;">
+					<i class="fa fa-fw fa-building"></i>
+					<span class="title">Venues</span>
+					<span class="arrow "></span>
+				</a>
+
+				<ul class="sub-menu">
+					<li>
+						<a href="{{ Url('dashboard/venue/create') }}">
+						<i class="icon-plus"></i>
+						Add  Venue</a>
+					</li>
+					<li>
+						<a href="{{ Url('dashboard/venues') }}">
+						<i class="icon-plus"></i>
+						Venues</a>
 					</li>
 				</ul>
 			</li>

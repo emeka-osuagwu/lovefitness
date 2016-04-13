@@ -6,17 +6,30 @@
 					<div class="portlet light bordered">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="icon-basket font-red-sunglo"></i>
+								<i class="fa fa-archive font-red-sunglo"></i>
 								<span class="caption-subject font-red-sunglo bold uppercase">Add Class Category</span>
 							</div>
 						</div>
 
 						<div class="portlet-body form">
-				  	    	  @if (Session::has('message'))
-				  	    	  	<script>
-								swal("Category Created", "", "success")
-							</script>
-						@endif      
+							@if (Session::has('message'))
+					  	    	  	<script>
+									swal({
+										title: "Category Added",
+										type: "success",
+										confirmButtonColor: "#298829",
+										confirmButtonText: "OK",
+										closeOnConfirm: false,
+										closeOnCancel: false
+									},
+									function(isConfirm)
+									{
+										if (isConfirm) {
+									  		window.location="/dashboard/class/categorys";
+									  	}
+									});
+								</script>
+							@endif      
 							<form method="post" action="{{ Url('dashboard/class/category/create') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<div class="form-body">
@@ -24,6 +37,19 @@
 										<label class="col-md-3 control-label">Name</label>
 										<div class="col-md-4">
 											<input type="text" name="name" class="form-control" required="true">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-md-3 control-label">Color</label>
+										<div class="col-md-4">
+											<select class="form-control" name="color" required="true">
+												<option value="default" >Select Color</option>
+												<option value="red" >Red</option>
+												<option value="blue" >Blue</option>
+												<option value="purple" >Purle</option>
+												<option value="Orange" >Orange</option>
+											</select>
 										</div>
 									</div>
 																

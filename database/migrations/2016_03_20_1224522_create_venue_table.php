@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGymsTable extends Migration
+class CreateVenueTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -12,21 +12,13 @@ class CreateGymsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('gyms', function (Blueprint $table) {
+		Schema::create('venues', function (Blueprint $table) {
 			$table->increments('id');
-			$table->string('name')->unique();
+			$table->string('name');
 			$table->string('address');
-			$table->string('email');
-			$table->string('location');
 			$table->string('image')->nullable();
-
-			$table->float('longitude')->nullable();
-			$table->float('latitude')->nullable();
-			
-			$table->integer('number')->nullable();
-			$table->string('hours');
-			$table->string('description');
-			$table->decimal('price');
+			$table->string('phone');
+			$table->string('email');
 			$table->string('website')->nullable();
 			$table->timestamps();
 		});
@@ -39,6 +31,6 @@ class CreateGymsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('gyms');
+		Schema::drop('venues');
 	}
 }

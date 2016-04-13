@@ -16,7 +16,7 @@
 								<div class="portlet-input input-inline input-small">
 									<div class="input-icon right">
 										<i class="fa fa-plus"></i>
-										<a class="form-control" href="{{ Url('/dashboard/class/category') }}">
+										<a class="form-control" href="{{ Url('/dashboard/class/category/create') }}">
 										Add Category </a>
 									</div>
 								</div>
@@ -32,6 +32,7 @@
 													<th width="10px">ID</th>
 													<th>Name</th>
 													<th>Class No</th>
+													<th>View Groups</th>
 													<th width="80px">Action</th>
 												</tr>
 											</thead>
@@ -41,7 +42,8 @@
 												<tr>
 													<td>{{$i++}}</td>
 													<td>{{$category->name}}</td>
-													<td>2</td>		
+													<td>{{$category->groups->count()}}</td>		
+													<td><a style="text-decoration: none" href="#">View</a></td>
 													<td>
 														<a href="/dashboard/class/category/{{$category->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
 														<a href="/dashboard/class/category/{{$category->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>

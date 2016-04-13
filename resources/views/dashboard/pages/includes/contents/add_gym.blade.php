@@ -6,7 +6,7 @@
 					<div class="portlet light bordered">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="icon-basket font-red-sunglo"></i>
+								<i class="fa fa-map-marker font-red-sunglo"></i>
 								<span class="caption-subject font-red-sunglo bold uppercase">Add a gym</span>
 							</div>
 						</div>
@@ -14,7 +14,20 @@
 						<div class="portlet-body form">
 							@if (Session::has('message'))
 					  	    	  	<script>
-									swal("Gym  Created", "", "success")
+									swal({
+										title: "Gym Added",
+										type: "success",
+										confirmButtonColor: "#298829",
+										confirmButtonText: "OK",
+										closeOnConfirm: false,
+										closeOnCancel: false
+									},
+									function(isConfirm)
+									{
+										if (isConfirm) {
+									  		window.location="/dashboard/gyms";
+									  	}
+									});
 								</script>
 							@endif  
 							<form method="post" action="{{ Url('dashboard/gym/create') }}" enctype="multipart/form-data" class="form-horizontal">

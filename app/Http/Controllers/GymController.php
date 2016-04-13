@@ -32,6 +32,7 @@ class GymController extends Controller
 	public function update(Request $request)
 	{
 		$gym = $this->gymRepo->updateGym($request->all());
+		Session::flash('message', 'good');
 		return back();
 	}
 

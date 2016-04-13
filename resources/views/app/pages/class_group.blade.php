@@ -36,8 +36,8 @@
 			<label>Checkbox</label>
 		</div> -->
 			<div class="medium-7 columns">
-				@foreach($categories as $category)
-					<a href="#" class="button orange">{{$category->name}}</a>
+				@foreach($categories->take(4) as $category)
+					<a href="#" class="button {{$category->color}}">{{$category->name}}</a>
 				@endforeach
 			</div>
 	</div>
@@ -48,8 +48,13 @@
 				<ul class="medium-block-grid-3 class-categories">
 					@foreach($groups as $group)
 					<li>
+												
 						<a href="/{{$group->name}}/classes">
-							<img src="images/swimming.jpg" alt="">
+							@if($group->image == '' || $group->image == null)
+								<img src="images/swimming.jpg" alt="">
+							@else
+							<img src="{{$group->image}}" width="50px">
+							@endif
 							<h3 class="red"><a href="#">{{$group->name}}</a></h3>
 							<p>{{$group->description}}</p>
 						</a>

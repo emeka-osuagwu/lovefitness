@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Gym extends Model
 {
 
+	protected $table = 'gyms';
+	protected $primaryKey = 'id';
 	protected $fillable = [	
 		"name",	
 		"address",	
@@ -25,7 +27,7 @@ class Gym extends Model
 		return $this->hasMany('App\Model\ClassModel');
 	}
 
-	protected $casts = [
-		"number" => "json"
-	];
+	// protected $casts = [
+	// 	"number" => "json"
+	// ];
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClassgroupsTable extends Migration
+class CreateGroupsTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -12,14 +12,15 @@ class CreateClassgroupsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('class_groups', function (Blueprint $table) {
+		Schema::create('groups', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('name')->unique();
+			$table->string('image');
 			$table->string('description');
-			$table->integer('class_categories_id')->unsigned();
+			$table->integer('class_category_id')->unsigned();
 			$table->timestamps();
 
-			$table->foreign('class_categories_id')
+			$table->foreign('class_category_id')
 				->references('id')
 				->on('class_categories');
 		});
@@ -32,6 +33,6 @@ class CreateClassgroupsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('class_groups');
+		Schema::drop('groups');
 	}
 }

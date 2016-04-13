@@ -6,7 +6,7 @@
 					<div class="portlet light bordered">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="icon-basket font-red-sunglo"></i>
+								<i class="fa fa-map-marker font-red-sunglo"></i>
 								<span class="caption-subject font-red-sunglo bold uppercase">Gyms</span>
 							</div>
 							<div class="actions">
@@ -29,8 +29,8 @@
 													<th width="10px">ID</th>
 													<th width="50px">Thumb</th>
 													<th>Name</th>
-													<th>Owner</th>
 													<th>Address</th>
+													<th>Class No</th>
 													<th width="80px">Action</th>
 												</tr>
 											</thead>
@@ -46,7 +46,7 @@
 													@endif
 													<td>{{$gym->name}}</td>
 													<td>{{$gym->address}}</td>
-													<td>qewd</td>		
+													<td>0</td>		
 													<td>
 														<a href="/dashboard/gym/{{$gym->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
 														<a href="/dashboard/gym/{{$gym->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>

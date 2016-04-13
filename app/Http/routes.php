@@ -50,9 +50,6 @@ Route::post('update', [
 	'as' 	=> '/'
 ]);
 
-
-
-
 Route::get('classes', [
 	'uses' 	=> 'ClassController@class_group',
 	'as' 	=> '/',
@@ -89,6 +86,12 @@ Route::group(['prefix' => 'dashboard'], function () {
 	Route::get('/', function () {
 		return view('dashboard.pages.index');
 	});
+
+
+	Route::get('gyms', [
+		'uses' 	=> 'GymController@index',
+		'as' 	=> '/',
+	]);
 
 	Route::group(['prefix' => 'gym'], function () {
 
@@ -170,6 +173,11 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 
+		Route::get('group/{id}/delete', [
+			'uses' 	=> 'ClassController@deleteGroup',
+			'as' 	=> '/',
+		]);
+
 		Route::post('group/update', [
 			'uses' 	=> 'ClassController@updateGroup',
 			'as' 	=> '/',
@@ -229,12 +237,39 @@ Route::group(['prefix' => 'dashboard'], function () {
 		]);
 	});
 
+
+	Route::get('venues', [
+		'uses' 	=> 'VenueController@venues',
+		'as' 	=> '/',
+	]);
+
+
+	Route::group(['prefix' => 'venue'], function () {
+		
+		Route::get('create', function () {
+			return view('dashboard.pages.add_venue');
+		});
+
+		Route::post('create', [
+			'uses' 	=> 'VenueController@create',
+			'as' 	=> '/',
+		]);
+
+		Route::get('{id}/edit', [
+			'uses' 	=> 'VenueController@edit',
+			'as' 	=> '/',
+		]);
+
+		Route::post('update', [
+			'uses' 	=> 'VenueController@update',
+			'as' 	=> '/',
+		]);
+	});
+
+
+
 });
 
-Route::get('gyms', [
-	'uses' 	=> 'GymController@index',
-	'as' 	=> '/',
-]);
 
 Route::group(['prefix' => 'gym'], function () {
 	

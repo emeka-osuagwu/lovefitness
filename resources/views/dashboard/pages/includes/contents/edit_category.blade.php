@@ -17,12 +17,44 @@
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<input type="hidden" name="category_id" value="{{ $category->first()->id }}">
 								<div class="form-body">
+								@if (Session::has('message'))
+					  	    	  	<script>
+									swal({
+										title: "Category updated",
+										type: "success",
+										confirmButtonColor: "#298829",
+										confirmButtonText: "OK",
+										closeOnConfirm: false,
+										closeOnCancel: false
+									},
+									function(isConfirm)
+									{
+										if (isConfirm) {
+									  		window.location="/dashboard/class/categorys";
+									  	}
+									});
+								</script>
+							@endif  
 									<div class="form-group">
 										<label class="col-md-3 control-label">Name</label>
 										<div class="col-md-4">
 											<input type="text" name="name" class="form-control" required="true" value="{{$category->first()->name}}">
 										</div>
 									</div>
+
+									<div class="form-group">
+										<label class="col-md-3 control-label">Color</label>
+										<div class="col-md-4">
+											<select class="form-control" name="color" required="true">
+												<option style="text-transform: capitalize" value="" >{{$category->first()->color}}</option>
+												<option value="red" >Red</option>
+												<option value="blue" >Blue</option>
+												<option value="purple" >Purle</option>
+												<option value="Orange" >Orange</option>
+											</select>
+										</div>
+									</div>
+
 																
 								</div>
 								<div class="form-actions">
