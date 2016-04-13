@@ -12,7 +12,24 @@
 						</div>
 
 						<div class="portlet-body form">
-							
+							@if (Session::has('message'))
+					  	    	  	<script>
+									swal({
+										title: "Gym updated",
+										type: "success",
+										confirmButtonColor: "#298829",
+										confirmButtonText: "OK",
+										closeOnConfirm: false,
+										closeOnCancel: false
+									},
+									function(isConfirm)
+									{
+										if (isConfirm) {
+									  		window.location="/dashboard/gyms";
+									  	}
+									});
+								</script>
+							@endif  
 							<form method="post" action="{{ Url('/dashboard/gym/update') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<input type="hidden" name="gym_id" value="{{ $gym->id }}">
@@ -23,7 +40,12 @@
 											<input type="text" name="name" class="form-control" value="{{$gym->name}}" required="true">
 										</div>
 									</div>
-
+									<div class="form-group">
+										<label class="col-md-3 control-label">Description</label>
+										<div class="col-md-4">
+											<textarea name="description" class="form-control" rows="3" data-gramm="" data-txt_gramm_id="67df7919-3d09-a00d-edd4-fcb4e09a27a4" required="true">{{$gym->description}}</textarea>
+										</div>
+									</div>
 
 									<div class="form-group">
 										<label class="col-md-3 control-label">Opening Hours</label>
@@ -52,7 +74,7 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Phone</label>
 										<div class="col-md-4">
-											<!-- <input type="text" name="phone" class="form-control"  value="{{$gym->location}}" required="true"> -->
+											<input type="text" name="phone" class="form-control"  value="{{$gym->number}}" required="true">
 										</div>
 									</div>
 									<div class="form-group">

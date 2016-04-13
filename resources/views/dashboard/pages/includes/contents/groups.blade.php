@@ -14,7 +14,7 @@
 									<div class="input-icon right">
 										<i class="fa fa-plus"></i>
 										<a class="form-control" href="{{ Url('/dashboard/class/group/create') }}">
-										Add new Gym </a>
+										Add Group </a>
 									</div>
 								</div>
 							</div>

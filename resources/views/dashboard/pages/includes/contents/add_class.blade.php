@@ -10,6 +10,7 @@
 								<span class="caption-subject font-red-sunglo bold uppercase">Add a class</span>
 							</div>
 						</div>
+						
 						<div class="portlet-body form">
 
 							@if (Session::has('message'))
@@ -83,7 +84,7 @@
 
 												<optgroup label="Gyms">
 													@foreach($gyms as $gym)
-														<option value="1">{{$gym->name}}</option>
+														<option value="{{$gym->id}}">{{$gym->name}}</option>
 													@endforeach
 												</optgroup>
 
@@ -97,19 +98,6 @@
 										</div>
 									</div>
 							
-									<div class="form-group">
-										<label class="col-md-3 control-label">Venue</label>
-										<div class="col-md-4">
-											<select class="form-control" name="venue_id" required="true">
-												<option value="" >Select Venue</option>
-												@foreach($venues as $venue)
-													<option value="{{$venue->id}}">{{$venue->name}}</option>
-												@endforeach
-											</select>
-										</div>
-									</div>
-							
-
 									<div class="form-group">
 										<label class="col-md-3 control-label">Instructor</label>
 										<div class="col-md-4">

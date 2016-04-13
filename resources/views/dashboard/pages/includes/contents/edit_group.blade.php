@@ -15,7 +15,7 @@
 							
 							<form method="post" action="{{ Url('dashboard/class/group/update') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
-								<input type="hidden" name="category_id" value="{{ $group->first()->id }}">
+								<input type="hidden" name="group_id" value="{{ $group->first()->id }}">
 								<div class="form-body">
 									<div class="form-group">
 										<label class="col-md-3 control-label">Name</label>
@@ -23,22 +23,19 @@
 											<input type="text" name="name" class="form-control" required="true" value="{{ $group->first()->name }}">
 										</div>
 									</div>
-
-
+									
 									<div class="form-group">
-										<label class="col-md-3 control-label">Color</label>
+										<label class="col-md-3 control-label">Categories</label>
 										<div class="col-md-4">
-											<select class="form-control" name="color" required="true">
-												<option style="text-transform: capitalize" value="" >{{$group->first()->color}}</option>
-												<option value="red" >Red</option>
-												<option value="blue" >Blue</option>
-												<option value="purple" >Purle</option>
-												<option value="Orange" >Orange</option>
+											<select class="form-control" name="category_id">
+												<option value="{{$category->first()->id}}" >{{$category->first()->name}}</option>
+												@foreach($categories as $category)
+													<option value="{{$category->id}}">{{$category->name}}</option>
+												@endforeach
 											</select>
 										</div>
 									</div>
 
-								
 									<div class="form-group">
 										<label class="col-md-3 control-label">Description</label>
 										<div class="col-md-4">

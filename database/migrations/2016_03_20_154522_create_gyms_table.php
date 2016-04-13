@@ -23,7 +23,7 @@ class CreateGymsTable extends Migration
 			$table->float('longitude')->nullable();
 			$table->float('latitude')->nullable();
 			
-			$table->json('number')->nullable();
+			$table->integer('number')->nullable();
 			$table->string('hours');
 			$table->string('description');
 			$table->decimal('price');

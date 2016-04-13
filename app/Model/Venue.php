@@ -14,4 +14,9 @@ class Venue extends Model
 		"email"
 	];
 
+
+	public function classes()
+	{
+		return $this->hasMany('App\Model\ClassModel');
+	}
 }

@@ -14,7 +14,7 @@ class ClassRepo extends GymRepo
 
 	public function classGroup()
 	{
-		return ClassGroup::with('classes')->get();
+		return ClassGroup::with('category')->get();
 	}
 
 	public function getClassByid($id)
@@ -38,15 +38,15 @@ class ClassRepo extends GymRepo
 				"time" 			=> $data['time'],
 				"duration" 		=> $data['duration'],
 				"price" 		=> $data['price'],
-				"venue_id" 		=> $data['venue_id'],
+				"location_id" 		=> $data['location'],
+				"location_name" 	=> "venues",
 				"class_group_id" 	=> $data['group_id'],
 			];
 
 			if (isset($data['image']) && isset($data['image']) != null) {
 				$create['image'] = $this->getImageUrl();
 			}
-
-			return $create;
+			
 			ClassModel::create($create);
 		}
 
@@ -57,7 +57,8 @@ class ClassRepo extends GymRepo
 				"time" 			=> $data['time'],
 				"duration" 		=> $data['duration'],
 				"price" 		=> $data['price'],
-				"venue_id" 		=> $data['venue_id'],
+				"table_id" 		=> $data['venue_id'],
+				"table_name" 		=> "venues",
 				"class_group_id" 	=> $data['group_id'],
 			];
 
@@ -80,7 +81,6 @@ class ClassRepo extends GymRepo
 		{
 			$create = [
 				"name"		=> $data['name'],
-				"color"			=> $data['color'],
 				"description"		=> $data['description'],
 				"class_category_id"	=> $data['category_id'],
 			];
@@ -93,14 +93,12 @@ class ClassRepo extends GymRepo
 			$update = [
 				
 				"name"		=> $data['name'],
-				"color"			=> $data['color'],
 				"description"		=> $data['description'],
 				"class_category_id"	=> $data['category_id'],
 			];
 			
 			ClassGroup::where('id', $data['group_id'])->update($update);
 		}
-
 	/*=====================================
 	# Category Methods
 	======================================*/
@@ -110,10 +108,29 @@ class ClassRepo extends GymRepo
 	/*=====================================
 	# Category Methods
 	======================================*/
+		public function getCategoryWhere($field, $value)
+		{
+			return ClassCategory::where($field, $value)->get();
+		}
+
 		public function getAllCategory()
 		{
 			return ClassCategory::with('groups')->get();
 		}
+	
+		public function createClassCategory($data)
+		{
+			$create = [
+				"name"	=> $data['name'],
+				"color"		=> $data['color'],
+			];
+
+			ClassCategory::create($create);
+
+		}
+
+
+
 
 	/*=====================================
 	# Category Methods
@@ -139,20 +156,8 @@ class ClassRepo extends GymRepo
 		return ClassGroup::where($field, $value)->get();
 	}
 
-	public function getCategoryWhere($field, $value)
-	{
-		return ClassGroup::where($field, $value)->get();
-	}
 
-	public function createClassCategory($data)
-	{
-		$create = [
-			"name"	=> $data['name'],
-		];
 
-		ClassCategory::create($create);
-
-	}
 
 	public function getGroupClass($group)
 	{
@@ -165,6 +170,7 @@ class ClassRepo extends GymRepo
 	{
 		$update = [
 			"name"	=> $data['name'],
+			"color"		=> $data['color'],
 		];
 
 		ClassCategory::where('id', $data['category_id'])->update($update);

@@ -37,17 +37,7 @@ class ClassController extends Controller
 
 
 
-	public function editCategory($id)
-	{
-		$category =  $this->classRepo->getCategoryWhere('id', $id);
-		return view('dashboard.pages.edit_category', compact('category'));
-	}
 
-	public function updateCategory(Request $request)
-	{
-		$this->classRepo->updateCategory($request->all());
-		return back();
-	}
 
 
 
@@ -57,6 +47,7 @@ class ClassController extends Controller
 
 		public function dashboardClasses()
 		{
+			
 			$classes =  $this->classRepo->getAllClass();
 			return view('dashboard.pages.classes', compact('classes'));
 		}
@@ -73,7 +64,7 @@ class ClassController extends Controller
 
 		public function postCreateClass(Request $request)
 		{
-			return $this->classRepo->createClass($request->all());
+			$this->classRepo->createClass($request->all());
 			Session::flash('message', 'good');
 			return back();
 		}
@@ -119,7 +110,7 @@ class ClassController extends Controller
 
 		public function class_group()
 		{
-			$groups 	= $this->classRepo->classGroup();
+			return $groups 	= $this->classRepo->classGroup();
 			$categories 	= $this->classRepo->getAllCategory();
 			return view('app.pages.class_group', compact('groups', 'categories'));
 		}
@@ -127,7 +118,9 @@ class ClassController extends Controller
 		public function editClassGroup($id)
 		{
 			$group =  $this->classRepo->getGroupWhere('id', $id);
-			return view('dashboard.pages.edit_group', compact('group'));
+			$category 	= $this->classRepo->getCategoryWhere('id', $group->first()->class_category_id);
+			$categories 	= $this->classRepo->getAllCategory();
+			return view('dashboard.pages.edit_group', compact('group', 'category','categories'));
 		}
 
 		public function updateGroup(Request $request)
@@ -172,6 +165,19 @@ class ClassController extends Controller
 		public function postCreateCategory(Request $request)
 		{
 			$this->classRepo->createClassCategory($request->all());
+			Session::flash('message', 'good');
+			return back();
+		}
+
+		public function editCategory($id)
+		{
+			$category =  $this->classRepo->getCategoryWhere('id', $id);
+			return view('dashboard.pages.edit_category', compact('category'));
+		}
+
+		public function updateCategory(Request $request)
+		{
+			$this->classRepo->updateCategory($request->all());
 			Session::flash('message', 'good');
 			return back();
 		}

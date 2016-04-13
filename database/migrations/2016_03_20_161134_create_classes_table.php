@@ -19,24 +19,15 @@ class CreateClassesTable extends Migration
 			$table->string('time');
 			$table->string('duration');
 			$table->integer('class_group_id')->unsigned()->nullable();
-			$table->integer('venue_id')->unsigned()->nullable();
+			$table->string('location_name');
+			$table->integer('location_id');
 			$table->string('image')->nullable();
-			
-
-			$table->foreign('venue_id')
-				->references('id')
-				->on('venues')
-				->onDelete('cascade');
 
 			$table->foreign('class_group_id')
 				->references('id')
 				->on('groups');
 			
 			$table->timestamps();
-			//$table->integer('Instructor')->nullabel()->unsigned();
-			// $table->foreign('Instructor')
-			// 	->references('id')
-			// 	->on('users');
 			
 		});
 	}

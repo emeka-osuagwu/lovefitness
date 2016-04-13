@@ -14,9 +14,9 @@ class ClassModel extends Model
 		"name",
 		"time",
 		"duration",
-		"image",
 		"price",
-		"venue_id",
+		"location_name",
+		"location_id",
 		"class_group_id",
 	];
 

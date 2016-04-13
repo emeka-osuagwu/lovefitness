@@ -6,13 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClassGroup extends Model
 {
-	protected $table = 'groups';
-
-	protected $primaryKey = 'id';
+	protected $table		= 'groups';
+	protected $primaryKey 	= 'id';
 	
 	protected $fillable = [	
 		"name",
-		"color",
 		"description",
 		"class_category_id",
 	];

@@ -14,7 +14,7 @@ class GymRepo extends CloudderRepo
 
 	public function getGymById($id)
 	{
-		return Gym::with('classes')->where('id', $id)->get();
+		return Gym::where('id', $id)->get();
 	}
 
 	public function createGym($data)
@@ -24,7 +24,7 @@ class GymRepo extends CloudderRepo
 			"address"	=> $data['address'],
 			"email"	=> $data['email'],
 			"location"	=> $data['location'],
-			"number"	=> explode(',', $data['phone']),
+			"number"	=> $data['phone'],
 			"hours"	=> $data['hours'],
 			"description"	=> $data['description'],
 			"price"		=> $data['price'],
@@ -45,7 +45,7 @@ class GymRepo extends CloudderRepo
 			"address"	=> $data['address'],
 			"email"	=> $data['email'],
 			"location"	=> $data['location'],
-			"number"	=> json_encode($data['phone']),
+			"number"	=> $data['phone'],
 			"hours"	=> $data['hours'],
 			"description"	=> $data['description'],
 			"price"		=> $data['price'],
@@ -55,6 +55,7 @@ class GymRepo extends CloudderRepo
 		if (isset($data['image']) && isset($data['image']) != null) {
 			$update['image'] = $this->getImageUrl();
 		}
+
 
 		Gym::where('id', $data['gym_id'])->update($update);
 	}
