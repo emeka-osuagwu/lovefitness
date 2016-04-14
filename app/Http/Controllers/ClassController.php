@@ -17,33 +17,21 @@ class ClassController extends Controller
 		return view('app.pages.class_group');
 	}
 
-	public function class_list($group)
-	{
-		$datas =  $this->classRepo->getGroupClass($group)->first();
-		return view('app.pages.class_list', compact('datas'));
-	}
-
 	public function view($class_name)
 	{
-		$class =  $this->classRepo->getClassByName($class_name)->first();
+		$class =  $this->classRepo->getClassWhere('name', $class_name)->first();
 		return view('app.pages.class_view', compact('class'));
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 	/*=====================================
 	# Classes Methods
 	======================================*/
+
+		public function class_list($group)
+		{
+			$datas =  $this->classRepo->getGroupWhere('name', $group)->first();
+			return view('app.pages.class_list', compact('datas'));
+		}
 
 		public function dashboardClasses()
 		{
@@ -54,12 +42,12 @@ class ClassController extends Controller
 
 		public function getCreateClass()
 		{
-			$gyms 		= $this->gymRepo->getAllGym();
+			
 			$groups 	= $this->classRepo->classGroup();
-			$venues 	= $this->venueRepo->getAllVenue();
+			$locations 	= $this->locationRepo->getAllLocation();
 			$categories 	= $this->classRepo->getAllCategory();
 
-			return view('dashboard.pages.add_class', compact('categories', 'groups', 'venues', 'gyms'));	
+			return view('dashboard.pages.add_class', compact('categories', 'groups', 'locations'));	
 		}
 
 		public function postCreateClass(Request $request)
@@ -84,6 +72,7 @@ class ClassController extends Controller
 			Session::flash('message', 'good');
 			return back();
 		}
+
 	/*=====================================
 	# Classes Methods
 	======================================*/
@@ -165,7 +154,7 @@ class ClassController extends Controller
 
 		public function postCreateCategory(Request $request)
 		{
-			$this->classRepo->createClassCategory($request->all());
+			$this->classRepo->createCategory($request->all());
 			Session::flash('message', 'good');
 			return back();
 		}

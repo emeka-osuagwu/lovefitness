@@ -8,7 +8,7 @@
 	<div class="page-header">
 		<div class="row">
 			<div class="columns">
-				<h1>Book</h1>
+				<h1>{{$class->name}}</h1>
 			</div>
 		</div>
 	</div>
@@ -17,17 +17,25 @@
 		<div class="row">
 
 			<div class="medium-8 columns">
-				<main class="main-gym">
+				<main class="main-gym-list">
 
 					<div class="gym-item">
-						<img class="gym-image" src="{{ asset('images/gym.jpg') }}" alt="">
-						<img class="gym-logo" src="{{asset('images/gym-logo.png')}}" alt="">
+						@if($class->image == '' || $class->image == null)
+							<img class="gym-image" src="https://images7.alphacoders.com/671/671281.jpg" alt="">
+						@else
+							<img class="gym-image" src="https://images7.alphacoders.com/671/671281.jpg" alt="">
+						@endif
+
+						@if($class->location->image != '' || $class->location->image != null)
+							<img class="gym-logo" src="{{$class->location->image}}" alt="">
+						@endif
+
 						<div class="meta red clearfix">
 							<a href="#" class="arrow"></a>
 							<a style="text-transform: uppercase;" href="#">CLASS: {{$class->name}}</a>
 							<a style="text-transform: uppercase;" href="#">DURATION: {{$class->duration}}</a>
-							<a style="text-transform: uppercase;" href="#">GYM: {{$class['gym']->name}}</a>
-							<a style="text-transform: uppercase;" href="#">LOCATION: {{$class['gym']->location}}</a>
+							<a style="text-transform: uppercase;" href="#">GYM: {{$class->location->name}}</a>
+							<a style="text-transform: uppercase;" href="#">LOCATION: {{$class->location->location}}</a>
 						</div>
 					</div>
 

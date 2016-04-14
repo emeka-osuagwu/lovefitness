@@ -18,15 +18,9 @@ class CreateClassesTable extends Migration
 			$table->float('price');
 			$table->string('time');
 			$table->string('duration');
-			$table->integer('class_group_id')->unsigned()->nullable();
-			$table->string('location_name');
+			$table->integer('group_id');
 			$table->integer('location_id');
 			$table->string('image')->nullable();
-
-			$table->foreign('class_group_id')
-				->references('id')
-				->on('groups');
-			
 			$table->timestamps();
 			
 		});

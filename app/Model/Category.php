@@ -4,9 +4,10 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ClassCategory extends Model
+class Category extends Model
 {
-	protected $table = 'class_categories';
+	protected $table = 'categories';
+	
 	protected $primaryKey = 'id';
 
 	protected $fillable = [	
@@ -16,6 +17,6 @@ class ClassCategory extends Model
 
 	public function groups()
 	{
-		return $this->hasMany('App\Model\ClassGroup');
+		return $this->hasMany('App\Model\Group');
 	}
 }

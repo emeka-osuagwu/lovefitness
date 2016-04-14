@@ -11,23 +11,17 @@ class ClassModel extends Model
 	protected $primaryKey = 'id';
 	
 	protected $fillable = [	
-		"name",
 		"time",
-		"duration",
 		"price",
-		"location_name",
+		"name",
+		"duration",
 		"location_id",
 		"class_group_id",
 	];
 
 	public function group()
 	{
-		return $this->belongsTo('App\Model\ClassGroup');
-	}
-
-	public function gym()
-	{
-		return $this->belongsTo('App\Model\Gym');
+		return $this->belongsTo('App\Model\Group');
 	}
 
 	public function review()
@@ -35,8 +29,9 @@ class ClassModel extends Model
 		return $this->hasMany('App\Model\Review');
 	}
 
-	public function venue()
+	public function location()
 	{
-		return $this->belongsTo('App\Model\Venue');
+		return $this->belongsTo('App\Model\Location');
 	}
+
 }

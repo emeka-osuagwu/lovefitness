@@ -3,10 +3,10 @@
 namespace App\Http\Repo;
 
 use DB;
-use App\Model\ClassGroup;
+use App\Model\Group;
+use App\Model\Category;
 use App\Model\ClassModel;
 use App\Http\Repo\GymRepo;
-use App\Model\ClassCategory;
 use App\Http\Repo\CloudderRepo as CloudderRepo;
 
 class ClassRepo extends GymRepo
@@ -14,7 +14,7 @@ class ClassRepo extends GymRepo
 
 	public function classGroup()
 	{
-		return ClassGroup::with('category')->get();
+		return Group::with('category')->get();
 	}
 
 	public function getClassByid($id)
@@ -28,8 +28,14 @@ class ClassRepo extends GymRepo
 		
 		public function getAllClass()
 		{
-			return ClassModel::with('group','venue')->get();
+			return ClassModel::with('group')->get();
 		}
+
+		public function getClassWhere($field, $value)
+		{
+			return ClassModel::with('location')->where($field, $value)->get();
+		}
+
 
 		public function createClass($data)
 		{
@@ -39,8 +45,7 @@ class ClassRepo extends GymRepo
 				"duration" 		=> $data['duration'],
 				"price" 		=> $data['price'],
 				"location_id" 		=> $data['location'],
-				"location_name" 	=> "venues",
-				"class_group_id" 	=> $data['group_id'],
+				"group_id" 		=> $data['group_id'],
 			];
 
 			if (isset($data['image']) && isset($data['image']) != null) {
@@ -68,30 +73,38 @@ class ClassRepo extends GymRepo
 			
 			ClassModel::where('id', $data['class_id'])->update($update);
 		}
+
+		public function getClassLocation($table, $value)
+		{
+			return DB::table($table)->where('id', $value);
+		}
 	/*=====================================
 	# Classes Methods
 	======================================*/
-
 
 	/*=====================================
 	# Group Methods
 	======================================*/
 		
+		
+		public function getGroupWhere($field, $value)
+		{
+			return Group::with('classes')->where($field, $value)->get();
+		}
+
 		public function createClassGroup($data)
 		{
 			$create = [
 				"name"		=> $data['name'],
 				"description"		=> $data['description'],
-				"class_category_id"	=> $data['category_id'],
+				"class_categories_id"	=> $data['category_id'],
 			];
 			
-
 			if (isset($data['image']) && isset($data['image']) != null) {
 				$create['image'] = $this->getImageUrl();
 			}
 			
-			
-			ClassGroup::create($create);
+			Group::create($create);
 		}
 
 		public function updateGroup($data)
@@ -103,41 +116,35 @@ class ClassRepo extends GymRepo
 				"class_category_id"	=> $data['category_id'],
 			];
 			
-			ClassGroup::where('id', $data['group_id'])->update($update);
+			Group::where('id', $data['group_id'])->update($update);
 		}
 	/*=====================================
 	# Category Methods
 	======================================*/
-
-
 
 	/*=====================================
 	# Category Methods
 	======================================*/
 		public function getCategoryWhere($field, $value)
 		{
-			return ClassCategory::where($field, $value)->get();
+			return Category::where($field, $value)->get();
 		}
 
 		public function getAllCategory()
 		{
-			return ClassCategory::with('groups')->get();
+			return Category::with('groups')->get();
 		}
 	
-		public function createClassCategory($data)
+		public function createCategory($data)
 		{
 			$create = [
 				"name"	=> $data['name'],
 				"color"		=> $data['color'],
 			];
 
-			ClassCategory::create($create);
+			Category::create($create);
 
 		}
-
-
-
-
 	/*=====================================
 	# Category Methods
 	======================================*/
@@ -148,27 +155,8 @@ class ClassRepo extends GymRepo
 
 
 
-	public function getClassByName($class_name)
-	{
-		return ClassModel::with('gym', 'review')->where('name', $class_name)->get();
-	}
 
 
-
-
-
-	public function getGroupWhere($field, $value)
-	{
-		return ClassGroup::where($field, $value)->get();
-	}
-
-
-
-
-	public function getGroupClass($group)
-	{
-		return	ClassGroup::with('classes')->where('name', $group)->get();
-	}
 
 
 
@@ -179,7 +167,6 @@ class ClassRepo extends GymRepo
 			"color"		=> $data['color'],
 		];
 
-		ClassCategory::where('id', $data['category_id'])->update($update);
+		Category::where('id', $data['category_id'])->update($update);
 	}
-
 }

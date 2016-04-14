@@ -8,7 +8,9 @@ class Gym extends Model
 {
 
 	protected $table = 'gyms';
+
 	protected $primaryKey = 'id';
+	
 	protected $fillable = [	
 		"name",	
 		"address",	
