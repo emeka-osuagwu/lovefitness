@@ -22,12 +22,7 @@ class ClassModel extends Model
 
 	public function group()
 	{
-		return $this->belongsTo('App\Model\ClassGroup');
-	}
-
-	public function gym()
-	{
-		return $this->belongsTo('App\Model\Gym');
+		return $this->belongsTo('App\Model\Group');
 	}
 
 	public function review()
@@ -35,8 +30,9 @@ class ClassModel extends Model
 		return $this->hasMany('App\Model\Review');
 	}
 
-	public function venue()
+	public function location()
 	{
-		return $this->belongsTo('App\Model\Venue');
+		return $this->belongsTo('App\Model\Location');
 	}
+
 }

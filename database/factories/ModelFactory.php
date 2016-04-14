@@ -26,18 +26,18 @@ $factory->define(App\Model\User::class, function (Faker\Generator $faker) {
 	];
 });
 
-$factory->define(App\Model\ClassCategory::class, function (Faker\Generator $faker) {
+$factory->define(App\Model\Category::class, function (Faker\Generator $faker) {
 	return [
 		'name' => $faker->company,
 		'color' => "red",
 	];
 });
 
-$factory->define(App\Model\ClassGroup::class, function (Faker\Generator $faker) {
+$factory->define(App\Model\Group::class, function (Faker\Generator $faker) {
 	return [
 		'name' 		=> $faker->company,
 		'description' 		=> $faker->address,
-		'class_category_id' 	=> 1,
+		'category_id' 	=> 1,
 	];
 });
 
@@ -48,14 +48,14 @@ $factory->define(App\Model\ClassModel::class, function (Faker\Generator $faker) 
 		'name' 		=> $faker->company,
 		'duration' 		=> $faker->address,
 		'location_id' 		=> 1,
-		'location_name' 	=> "venues",
-		'class_group_id' 	=> 1,
+		'group_id' 		=> 1,
 	];
 });
 
-$factory->define(App\Model\Gym::class, function (Faker\Generator $faker) {
+$factory->define(App\Model\Location::class, function (Faker\Generator $faker) {
 	return [
 		'name' 	=> $faker->name,
+		'name' 	=> 'gym',
 		'address' 	=> $faker->address,
 		'email' 		=> $faker->email,
 		'location' 	=> $faker->address,

@@ -1,6 +1,6 @@
 @extends('app.master')
 
-@section('title', 'Index')
+@section('title', 'Categories')
 
 @section('content')
 	@include('app.pages.includes.sections.top_nav')
@@ -8,7 +8,7 @@
 	<div class="page-header">
 		<div class="row">
 			<div class="columns">
-				<h1>Book</h1>
+				<h1>Class Category</h1>
 			</div>
 		</div>
 	</div
@@ -35,8 +35,8 @@
 			</span>
 			<label>Checkbox</label>
 		</div> -->
-			<div class="medium-7 columns">
-				@foreach($categories->take(4) as $category)
+			<div class="medium-12 columns">
+				@foreach($categories as $category)
 					<a href="#" class="button {{$category->color}}">{{$category->name}}</a>
 				@endforeach
 			</div>
@@ -55,7 +55,7 @@
 							@else
 							<img src="{{$group->image}}" width="50px">
 							@endif
-							<h3 class="red"><a href="#">{{$group->name}}</a></h3>
+							<h3 class="{{$group->category->color}}"><a href="#">{{$group->name}}</a></h3>
 							<p>{{$group->description}}</p>
 						</a>
 					</li>

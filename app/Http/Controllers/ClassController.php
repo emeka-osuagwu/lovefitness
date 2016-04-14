@@ -17,33 +17,21 @@ class ClassController extends Controller
 		return view('app.pages.class_group');
 	}
 
-	public function class_list($group)
-	{
-		$datas =  $this->classRepo->getGroupClass($group)->first();
-		return view('app.pages.class_list', compact('datas'));
-	}
-
 	public function view($class_name)
 	{
-		$class =  $this->classRepo->getClassByName($class_name)->first();
+		$class =  $this->classRepo->getClassWhere('name', $class_name)->first();
 		return view('app.pages.class_view', compact('class'));
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 	/*=====================================
 	# Classes Methods
 	======================================*/
+
+		public function class_list($group)
+		{
+			$datas =  $this->classRepo->getGroupWhere('name', $group)->first();
+			return view('app.pages.class_list', compact('datas'));
+		}
 
 		public function dashboardClasses()
 		{
@@ -84,6 +72,7 @@ class ClassController extends Controller
 			Session::flash('message', 'good');
 			return back();
 		}
+
 	/*=====================================
 	# Classes Methods
 	======================================*/

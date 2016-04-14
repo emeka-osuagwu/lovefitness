@@ -17,12 +17,8 @@ class CreateGroupsTable extends Migration
 			$table->string('name')->unique();
 			$table->string('image');
 			$table->string('description');
-			$table->integer('class_category_id')->unsigned();
+			$table->integer('category_id');
 			$table->timestamps();
-
-			$table->foreign('class_category_id')
-				->references('id')
-				->on('class_categories');
 		});
 	}
 

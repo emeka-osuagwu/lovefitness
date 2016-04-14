@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ClassGroup extends Model
+class Group extends Model
 {
 	protected $table		= 'groups';
 	protected $primaryKey 	= 'id';
@@ -13,7 +13,7 @@ class ClassGroup extends Model
 		"name",
 		"description",
 		"image",
-		"class_category_id",
+		"category_id",
 	];
 
 	public function classes()
@@ -23,6 +23,6 @@ class ClassGroup extends Model
 
 	public function category()
 	{
-		return $this->belongsTo('App\Model\ClassCategory');
+		return $this->belongsTo('App\Model\Category');
 	}
 }
