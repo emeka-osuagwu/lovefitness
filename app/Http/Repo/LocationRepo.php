@@ -18,7 +18,7 @@ class LocationRepo extends GymRepo
 	======================================*/
 		public function getAllGym()
 		{
-			return Location::all();
+			return Location::with('classes')->where('type', 'gym')->get();
 		}	
 
 		public function getGymById($id)
@@ -78,5 +78,54 @@ class LocationRepo extends GymRepo
 	# Gym Methods
 	======================================*/
 
+	/*=====================================
+	# Venue Methods
+	======================================*/
+
+		public function getAllVenue()
+		{
+			return Location::where('type', 'venue')->get();
+		}
+
+		public function getVenueWhere($field, $value)
+		{
+			return Location::where($field, $value)->get();
+		}
+
+		public function createVenue($data)
+		{
+			$create = [
+				"name" 		=> $data['name'],
+				"email" 		=> $data['email'],
+				"number" 		=> $data['phone'],
+				"address" 		=> $data['address'],
+				"website" 		=> $data['website'],
+				"type" 			=> "venue",
+			];
+
+			if (isset($data['image']) && isset($data['image']) != null) {
+				$create['image'] = $this->getImageUrl();
+			}
+
+			Location::create($create);
+		}
+
+		public function updateVenue($data)
+		{
+			$update = [
+				"name" 		=> $data['name'],
+				"email" 		=> $data['email'],
+				"number" 		=> $data['phone'],
+				"address" 		=> $data['address'],
+				"website" 		=> $data['website'],
+				"type" 			=> "venue",
+			];
+
+			if (isset($data['image']) && isset($data['image']) != null) {
+				$update['image'] = $this->getImageUrl();
+			}
+
+			Location::where('id', $data['venue_id'])->update($update);
+		}
 
 }

@@ -46,7 +46,7 @@
 										<label class="col-md-3 control-label">Color</label>
 										<div class="col-md-4">
 											<select class="form-control" name="color" required="true">
-												<option style="text-transform: capitalize" value="" >{{$category->first()->color}}</option>
+												<option style="text-transform: capitalize" value="{{$category->first()->color}}" >{{$category->first()->color}}</option>
 												<option value="red" >Red</option>
 												<option value="blue" >Blue</option>
 												<option value="purple" >Purle</option>

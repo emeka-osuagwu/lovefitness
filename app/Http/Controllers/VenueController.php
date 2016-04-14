@@ -11,29 +11,28 @@ use App\Http\Controllers\Controller;
 class VenueController extends Controller
 {
 	
-
 	public function venues()
 	{
-		$venues = $this->venueRepo->getAllVenue();
+		$venues = $this->locationRepo->getAllVenue();
 		return view('dashboard.pages.venues', compact('venues'));
 	}
 
 	public function create(Request $request)
 	{
-		$this->venueRepo->createVenue($request->all());
+		$this->locationRepo->createVenue($request->all());
 		Session::flash('message', 'good');
 		return back();
 	}
 
 	public function edit($id)
 	{
-		$venue = $this->venueRepo->getVenueWhere('id', $id)->first();
+		$venue = $this->locationRepo->getVenueWhere('id', $id)->first();
 		return view('dashboard.pages.edit_venue', compact('venue'));
 	}
 
 	public function update(Request $request)
 	{
-		$this->venueRepo->updateVenue($request->all());
+		$this->locationRepo->updateVenue($request->all());
 		Session::flash('message', 'good');
 		return back();
 	}

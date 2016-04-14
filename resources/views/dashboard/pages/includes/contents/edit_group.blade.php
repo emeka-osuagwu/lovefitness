@@ -12,7 +12,24 @@
 						</div>
 
 						<div class="portlet-body form">
-							
+							@if (Session::has('message'))
+					  	    	  	<script>
+									swal({
+										title: "Group updated",
+										type: "success",
+										confirmButtonColor: "#298829",
+										confirmButtonText: "OK",
+										closeOnConfirm: false,
+										closeOnCancel: false
+									},
+									function(isConfirm)
+									{
+										if (isConfirm) {
+									  		window.location="/dashboard/class/groups";
+									  	}
+									});
+								</script>
+							@endif  
 							<form method="post" action="{{ Url('dashboard/class/group/update') }}" enctype="multipart/form-data" class="form-horizontal">
 								<input type="hidden" name="_token" value="{{ csrf_token() }}">
 								<input type="hidden" name="group_id" value="{{ $group->first()->id }}">
@@ -28,8 +45,8 @@
 										<label class="col-md-3 control-label">Categories</label>
 										<div class="col-md-4">
 											<select class="form-control" name="category_id">
-												<option value="{{$category->first()->id}}" >{{$category->first()->name}}</option>
-												@foreach($categories as $category)
+												<option value="{{$group->first()->category->id}}" >{{$group->first()->category->name}}</option>
+												@foreach($categories->except($group->first()->category->id) as $category)
 													<option value="{{$category->id}}">{{$category->name}}</option>
 												@endforeach
 											</select>

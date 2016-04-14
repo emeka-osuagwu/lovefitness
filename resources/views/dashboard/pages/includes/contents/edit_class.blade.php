@@ -74,33 +74,24 @@
 										<label class="col-md-3 control-label">Group</label>
 										<div class="col-md-4">
 											<select class="form-control" name="group_id" required="true">
-												<option value="" >Select Group</option>
-												@foreach($class_group as $group)
+												<option value="{{$class->group->id}}" >{{$class->group->name}}</option>
+												@foreach($groups->except($class->group->id) as $group)
 													<option value="{{$group->id}}">{{$group->name}}</option>
 												@endforeach
 											</select>
 										</div>
-									</div>						
+									</div>				
 									<div class="form-group">
 										<label class="col-md-3 control-label">Location</label>
 										<div class="col-md-4">
-											<select id="select_selectsplitter1" name="location" class="form-control" size="4" required="true">
-
-												<optgroup label="Gyms">
-													@foreach($gyms as $gym)
-														<option value="{{$gym->id}}">{{$gym->name}}</option>
-													@endforeach
-												</optgroup>
-
-												<optgroup label="Venue">
-													@foreach($venues as $venue)
-														<option value="9">{{$venue->name}}</option>
-													@endforeach
-												</optgroup>
+											<select class="form-control" name="location" required="true">
+												<option value="{{$class->location->id}}" >{{$class->location->name}}</option>
+												@foreach($locations->except($class->location->id) as $location)
+													<option value="{{$location->id}}">{{$location->name}}</option>
+												@endforeach
 											</select>
-											
 										</div>
-									</div>
+									</div>						
 
 									<div class="form-group">
 										<label class="col-md-3 control-label">Image</label>
