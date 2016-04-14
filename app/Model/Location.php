@@ -26,4 +26,5 @@ class Location extends Model
 	{
 		return $this->hasMany('App\Model\ClassModel');
 	}
+
 }

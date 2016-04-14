@@ -31,7 +31,7 @@
 												<tr>
 													<th width="10px">ID</th>
 													<th>Name</th>
-													<th>Class No</th>
+													<th>Class Group No</th>
 													<th>View Groups</th>
 													<th width="80px">Action</th>
 												</tr>

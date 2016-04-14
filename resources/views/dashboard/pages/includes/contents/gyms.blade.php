@@ -46,7 +46,7 @@
 													@endif
 													<td>{{$gym->name}}</td>
 													<td>{{$gym->address}}</td>
-													<td>0</td>		
+													<td>{{$gym->classes->count()}}</td>		
 													<td>
 														<a href="/dashboard/gym/{{$gym->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
 														<a href="/dashboard/gym/{{$gym->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>

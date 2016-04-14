@@ -59,11 +59,10 @@ class ClassController extends Controller
 
 		public function getEditClass($id)
 		{
-			$gyms 		= $this->gymRepo->getAllGym();
 			$class 		=  $this->classRepo->getClassByid($id)->first();	
-			$venues 	= $this->venueRepo->getAllVenue();
-			$class_group 	=  $this->classRepo->classGroup();
-			return view('dashboard.pages.edit_class', compact('class', 'venues', 'class_group', 'gyms'));
+			$groups 	=  $this->classRepo->classGroup();
+			$locations 	=  $this->locationRepo->getAllLocation();
+			return view('dashboard.pages.edit_class', compact('class', 'locations', 'groups'));
 		}
 
 		public function updateClass(Request $request)
@@ -72,7 +71,6 @@ class ClassController extends Controller
 			Session::flash('message', 'good');
 			return back();
 		}
-
 	/*=====================================
 	# Classes Methods
 	======================================*/
@@ -107,15 +105,15 @@ class ClassController extends Controller
 
 		public function editClassGroup($id)
 		{
-			$group =  $this->classRepo->getGroupWhere('id', $id);
-			$category 	= $this->classRepo->getCategoryWhere('id', $group->first()->class_category_id);
+			$group 	=  $this->classRepo->getGroupWhere('id', $id);
 			$categories 	= $this->classRepo->getAllCategory();
-			return view('dashboard.pages.edit_group', compact('group', 'category','categories'));
+			return view('dashboard.pages.edit_group', compact('group','categories'));
 		}
 
 		public function updateGroup(Request $request)
 		{
 			$this->classRepo->updateGroup($request->all());
+			Session::flash('message', 'good');
 			return back();
 		}
 

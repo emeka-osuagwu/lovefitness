@@ -19,7 +19,7 @@ class ClassRepo extends GymRepo
 
 	public function getClassByid($id)
 	{
-		return ClassModel::with('venue', 'review')->where('id', $id)->get();
+		return ClassModel::with('review','location','group')->where('id', $id)->get();
 	}
 
 	/*=====================================
@@ -63,8 +63,7 @@ class ClassRepo extends GymRepo
 				"duration" 		=> $data['duration'],
 				"price" 		=> $data['price'],
 				"location_id" 		=> $data['location'],
-				"location_name" 	=> "venues",
-				"class_group_id" 	=> $data['group_id'],
+				"group_id" 		=> $data['group_id'],
 			];
 
 			if (isset($data['image']) && isset($data['image']) != null) {
@@ -89,7 +88,7 @@ class ClassRepo extends GymRepo
 		
 		public function getGroupWhere($field, $value)
 		{
-			return Group::with('classes')->where($field, $value)->get();
+			return Group::with('classes', 'category')->where($field, $value)->get();
 		}
 
 		public function createClassGroup($data)
@@ -97,7 +96,7 @@ class ClassRepo extends GymRepo
 			$create = [
 				"name"		=> $data['name'],
 				"description"		=> $data['description'],
-				"class_categories_id"	=> $data['category_id'],
+				"category_id"		=> $data['category_id'],
 			];
 			
 			if (isset($data['image']) && isset($data['image']) != null) {
@@ -113,7 +112,7 @@ class ClassRepo extends GymRepo
 				
 				"name"		=> $data['name'],
 				"description"		=> $data['description'],
-				"class_category_id"	=> $data['category_id'],
+				"category_id"		=> $data['category_id'],
 			];
 			
 			Group::where('id', $data['group_id'])->update($update);

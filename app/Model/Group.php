@@ -12,8 +12,8 @@ class Group extends Model
 	protected $fillable = [	
 		"name",
 		"description",
-		"image",
 		"category_id",
+		"image",
 	];
 
 	public function classes()
@@ -25,4 +25,5 @@ class Group extends Model
 	{
 		return $this->belongsTo('App\Model\Category');
 	}
+
 }
