@@ -28,7 +28,7 @@ class ClassRepo extends GymRepo
 		
 		public function getAllClass()
 		{
-			return ClassModel::with('group','venue')->get();
+			return ClassModel::with('group')->get();
 		}
 
 		public function getClassWhere($field, $value)
@@ -45,8 +45,7 @@ class ClassRepo extends GymRepo
 				"duration" 		=> $data['duration'],
 				"price" 		=> $data['price'],
 				"location_id" 		=> $data['location'],
-				"location_name" 	=> "venues",
-				"class_group_id" 	=> $data['group_id'],
+				"group_id" 		=> $data['group_id'],
 			];
 
 			if (isset($data['image']) && isset($data['image']) != null) {
@@ -82,7 +81,6 @@ class ClassRepo extends GymRepo
 	/*=====================================
 	# Classes Methods
 	======================================*/
-
 
 	/*=====================================
 	# Group Methods
@@ -123,8 +121,6 @@ class ClassRepo extends GymRepo
 	/*=====================================
 	# Category Methods
 	======================================*/
-
-
 
 	/*=====================================
 	# Category Methods

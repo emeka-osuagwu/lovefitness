@@ -14,7 +14,7 @@
 									<div class="input-icon right">
 										<i class="fa fa-plus"></i>
 										<a class="form-control" href="/dashboard/class/create">
-										New Category </a>
+										New Class </a>
 									</div>
 								</div>
 							</div>
@@ -38,7 +38,7 @@
 												<tr>
 													<td>10</td>
 													<td>{{$class->name}}</td>
-													<td>Cardio</td>
+													<td>{{$class->group->name}}</td>
 													<td><a href="dashboard/venue/{{$class->id}}">{{$class->name}}</a></td>
 													<td>
 														<a href="/dashboard/class/{{$class->id}}/edit" ><i class="fa fa-pencil" title="Edit"></i></a>

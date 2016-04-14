@@ -12,33 +12,33 @@ class GymController extends Controller
 	
 	public function index()
 	{
-		$gyms = $this->gymRepo->getAllGym();
+		$gyms = $this->locationRepo->getAllGym();
 		return view('dashboard.pages.gyms', compact('gyms'));
 	}
 
 	public function create(Request $request)
 	{
-		$this->gymRepo->createGym($request->all());
+		$this->locationRepo->createGym($request->all());
 		Session::flash('message', 'good');
 		return back();
 	}
 
 	public function edit($id)
 	{
-		$gym = $this->gymRepo->getGymById($id)->first();
+		$gym = $this->locationRepo->getGymById($id)->first();
 		return view('dashboard.pages.edit_gym', compact('gym'));
 	}
 
 	public function update(Request $request)
 	{
-		$gym = $this->gymRepo->updateGym($request->all());
+		$gym = $this->locationRepo->updateGym($request->all());
 		Session::flash('message', 'good');
 		return back();
 	}
 
 	public function delete($id)
 	{
-		$this->gymRepo->deleteGym($id);
+		$this->locationRepo->deleteGym($id);
 		return back();
 	}
 }

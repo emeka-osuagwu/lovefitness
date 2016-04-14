@@ -11,11 +11,10 @@ class ClassModel extends Model
 	protected $primaryKey = 'id';
 	
 	protected $fillable = [	
-		"name",
 		"time",
-		"duration",
 		"price",
-		"location_name",
+		"name",
+		"duration",
 		"location_id",
 		"class_group_id",
 	];

@@ -44,7 +44,7 @@
 										<label class="col-md-3 control-label">Color</label>
 										<div class="col-md-4">
 											<select class="form-control" name="color" required="true">
-												<option value="default" >Select Color</option>
+												<option>Select Color</option>
 												<option value="red" >Red</option>
 												<option value="blue" >Blue</option>
 												<option value="purple" >Purle</option>
