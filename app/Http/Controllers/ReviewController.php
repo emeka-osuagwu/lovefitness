@@ -14,4 +14,10 @@ class ReviewController extends Controller
  		 $this->reviewRepo->createReview($request->all());
  		return back();
  	}
+
+ 	public function delete($id)
+ 	{
+ 		$this->reviewRepo->deleteReview($id);
+ 		return back();
+ 	}
 }

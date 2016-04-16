@@ -4,22 +4,22 @@ namespace App\Http\Repo;
 
 use DB;
 use App\Model\Group;
+use App\Model\Classes;
 use App\Model\Category;
-use App\Model\ClassModel;
 use App\Http\Repo\GymRepo;
 use App\Http\Repo\CloudderRepo as CloudderRepo;
 
 class ClassRepo extends GymRepo
 {
 
-	public function classGroup()
+	public function getAllGroup()
 	{
 		return Group::with('category')->get();
 	}
 
 	public function getClassByid($id)
 	{
-		return ClassModel::with('review','location','group')->where('id', $id)->get();
+		return Classes::with('review','location','group')->where('id', $id)->get();
 	}
 
 	/*=====================================
@@ -28,12 +28,12 @@ class ClassRepo extends GymRepo
 		
 		public function getAllClass()
 		{
-			return ClassModel::with('group')->get();
+			return Classes::with('group')->get();
 		}
 
 		public function getClassWhere($field, $value)
 		{
-			return ClassModel::with('location')->where($field, $value)->get();
+			return Classes::with('location')->where($field, $value)->get();
 		}
 
 
@@ -52,7 +52,7 @@ class ClassRepo extends GymRepo
 				$create['image'] = $this->getImageUrl();
 			}
 			
-			ClassModel::create($create);
+			Classes::create($create);
 		}
 
 		public function updateClass($data)
@@ -70,7 +70,7 @@ class ClassRepo extends GymRepo
 				$update['image'] = $this->getImageUrl();
 			}
 			
-			ClassModel::where('id', $data['class_id'])->update($update);
+			Classes::where('id', $data['class_id'])->update($update);
 		}
 
 		public function getClassLocation($table, $value)

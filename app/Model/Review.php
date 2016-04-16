@@ -15,13 +15,13 @@ class Review extends Model
 		"name",	
 		"email",	
 		"website",	
-		"class_model_id",	
 		"comment",	
+		"classes_id",	
 	];
 
 	public function classes()
 	{
-		return $this->belongsTo('App\Model\ClassModel');
+		return $this->belongsTo('App\Model\Classes');
 	}
 
 }

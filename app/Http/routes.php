@@ -11,33 +11,38 @@
 |
 */
 
-Route::get('/', function () {
-	return view('app.pages.index');
+Route::group(['prefix' => '/'], function () {
+
+	Route::get('/', function () {
+		return view('app.pages.index');
+	});
+
+	Route::get('login', function () {
+		return view('app.pages.login');
+	});
+
+	Route::post('login', [
+		'uses' 	=> 'Auth\AuthController@login',
+		'as' 	=> '/',
+	]);
+
+	Route::get('register', function () {
+		return view('app.pages.register');
+	});
+
+	Route::post('register', [
+		'uses' 	=> 'UserController@create',
+		'as' 	=> '/',
+	]);
+
+	Route::get('logout', [
+		'uses' 	=> 'Auth\AuthController@getLogout',
+		'as' 	=> '/',
+	]);
+
+
 });
 
-
-Route::get('register', function () {
-	return view('app.pages.register');
-});
-
-Route::post('register', [
-	'uses' 	=> 'UserController@create',
-	'as' 	=> '/',
-]);
-
-Route::get('login', function () {
-	return view('app.pages.login');
-});
-
-Route::post('login', [
-	'uses' 	=> 'Auth\AuthController@login',
-	'as' 	=> '/',
-]);
-
-Route::get('logout', [
-	'uses' 	=> 'Auth\AuthController@getLogout',
-	'as' 	=> '/',
-]);
 
 Route::get('account', [
 	'uses' 	=> 'UserController@view',
@@ -70,6 +75,11 @@ Route::post('review/create', [
 	'as' 	=> '/',
 ]);
 
+Route::get('review/delete/{id}', [
+	'uses' 	=> 'ReviewController@delete',
+	'as' 	=> '/',
+]);
+
 Route::get('blogs', [
 	'uses' 	=> 'BlogController@index',
 	'as' 	=> '/',
@@ -83,10 +93,10 @@ Route::get('contact', [
 
 Route::group(['prefix' => 'dashboard'], function () {
 
-	Route::get('/', function () {
-		return view('dashboard.pages.index');
-	});
-
+	Route::get('/', [
+		'uses' 	=> 'AdminController@index',
+		'as' 	=> '/',
+	]);
 
 	Route::get('gyms', [
 		'uses' 	=> 'GymController@index',
@@ -262,15 +272,6 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'VenueController@update',
 			'as' 	=> '/',
 		]);
-	});
-
-});
-
-
-Route::group(['prefix' => 'gym'], function () {
-	
-	Route::get('/', function () {
-		return view('dashboard.pages.index');
 	});
 });
 

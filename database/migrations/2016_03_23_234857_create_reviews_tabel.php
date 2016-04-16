@@ -18,13 +18,8 @@ class CreateReviewsTabel extends Migration
 			$table->string('email');
 			$table->string('comment');
 			$table->string('website')->nullable();
-			$table->integer('class_model_id')->unsigned();
+			$table->integer('classes_id')->unsigned();
 			$table->timestamps();
-
-			
-			$table->foreign('class_model_id')
-				->references('id')
-				->on('classes');
 			
 		});
 	}
