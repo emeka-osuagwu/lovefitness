@@ -29,7 +29,6 @@ class UserController extends Controller
 		return redirect('login');
 	}
 
-
 	public function view()
 	{
 		$user =  $this->userRepo->getUserWhere('id', Auth::user()->id)->first();
@@ -41,5 +40,16 @@ class UserController extends Controller
 		$request['user_id'] = Auth::user()->id;
 		$this->userRepo->updateUser($request->all());
 		return back();
+	}
+
+
+	public function login()
+	{
+		return view('dashboard.pages.login');
+	}
+
+	public function register()
+	{
+		# code...
 	}
 }

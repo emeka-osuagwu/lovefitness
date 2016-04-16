@@ -17,4 +17,10 @@ class AdminController extends Controller
 		$catetgories 	= $this->classRepo->getAllCategory();
 		return view('dashboard.pages.index', compact('groups', 'classes', 'catetgories', 'users', 'reviews'));
 	}
+
+
+	public function login()
+	{
+		return 2;
+	}
 }
