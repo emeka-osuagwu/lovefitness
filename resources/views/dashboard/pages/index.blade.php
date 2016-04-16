@@ -79,40 +79,39 @@
 											<span class="caption-subject font-dark bold uppercase">Reviews</span>
 										</div>
 									</div>
-
-									<div class="portlet-body">
-										<div class="tab-content">
-											<div class="tab-pane active" id="portlet_comments_1">
-												<div class="mt-comments">
-													<div class="mt-comment">
-														<div class="mt-comment-img">
-															<img src="../assets/pages/media/users/avatar1.jpg"> </div>
-														<div class="mt-comment-body">
-															<div class="mt-comment-info">
-																<span class="mt-comment-author">Michael Baker</span>
-																<span class="mt-comment-date">26 Feb, 10:30AM</span>
-															</div>
-															<div class="mt-comment-text"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. </div>
-															<div class="mt-comment-details">
-																<span class="mt-comment-status mt-comment-status-pending">Pending</span>
-																<ul class="mt-comment-actions">
-																	<li>
-																		<a href="#">Quick Edit</a>
-																	</li>
-																	<li>
-																		<a href="#">View</a>
-																	</li>
-																	<li>
-																		<a href="#">Delete</a>
-																	</li>
-																</ul>
+									@if($reviews->count() > 0)
+										<div class="portlet-body">
+											<div class="tab-content">
+												<div class="tab-pane active" id="portlet_comments_1">
+													<div class="mt-comments">
+														@foreach($reviews as $review)
+														<div class="mt-comment">
+															<div class="mt-comment-img">
+																<img src="../assets/pages/media/users/avatar1.jpg"> </div>
+															<div class="mt-comment-body">
+																<div class="mt-comment-info">
+																	<span class="mt-comment-author">{{$review->name}}</span>
+																	<span class="mt-comment-date">{{$review->created_at->diffForHumans()}}</span>
+																</div>
+																<div class="mt-comment-text">{{$review->comment}}</div>
+																<div class="mt-comment-details">
+																	<a target="_blank"  href="/classes/{{$review->classes->name}}" class="mt-comment-status mt-comment-status-pending">{{$review->classes->name}}</span>
+																	<ul class="mt-comment-actions">
+																		<li>
+																			<a href="{{ Url('review/delete', [1]) }}">Delete</a>
+																		</li>
+																	</ul>
+																</div>
 															</div>
 														</div>
-													</div>
-											</div>
+														@endforeach
+												</div>
 
+											</div>
 										</div>
-									</div>
+									@else
+										<h1>No Class Review</h1>
+									@endif
 								</div>
 							</div>
 

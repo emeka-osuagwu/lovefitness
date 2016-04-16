@@ -18,7 +18,7 @@ class Group extends Model
 
 	public function classes()
 	{
-		return $this->hasMany('App\Model\ClassModel');
+		return $this->hasMany('App\Model\Classes');
 	}
 
 	public function category()

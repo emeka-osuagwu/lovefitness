@@ -98,7 +98,7 @@ class ClassController extends Controller
 
 		public function class_group()
 		{
-			$groups 	= $this->classRepo->classGroup();
+			$groups 	= $this->classRepo->getAllGroup();
 			$categories 	= $this->classRepo->getAllCategory();
 			return view('app.pages.class_group', compact('groups', 'categories'));
 		}

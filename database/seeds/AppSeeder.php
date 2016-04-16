@@ -14,7 +14,7 @@ class AppSeeder extends Seeder
 		factory(App\Model\User::class, 1)->create();
 		factory(App\Model\Category::class, 1)->create();
 		factory(App\Model\Group::class, 1)->create();
-		factory(App\Model\ClassModel::class, 1)->create();
+		factory(App\Model\Classes::class, 1)->create();
 		factory(App\Model\Location::class, 1)->create();
 	}
 }

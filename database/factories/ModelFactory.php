@@ -41,7 +41,7 @@ $factory->define(App\Model\Group::class, function (Faker\Generator $faker) {
 	];
 });
 
-$factory->define(App\Model\ClassModel::class, function (Faker\Generator $faker) {
+$factory->define(App\Model\Classes::class, function (Faker\Generator $faker) {
 	return [
 		'time' 			=> "1:20pm - 10:30pm",
 		'price' 			=> 13434,

@@ -13,6 +13,10 @@
 
 Route::group(['prefix' => '/'], function () {
 
+	Route::get('/', function () {
+		return view('app.pages.index');
+	});
+
 	Route::get('login', function () {
 		return view('app.pages.login');
 	});
@@ -38,8 +42,6 @@ Route::group(['prefix' => '/'], function () {
 
 
 });
-
-
 
 
 Route::get('account', [
@@ -70,6 +72,11 @@ Route::get('{group}/classes', [
 
 Route::post('review/create', [
 	'uses' 	=> 'ReviewController@create',
+	'as' 	=> '/',
+]);
+
+Route::get('review/delete/{id}', [
+	'uses' 	=> 'ReviewController@delete',
 	'as' 	=> '/',
 ]);
 
