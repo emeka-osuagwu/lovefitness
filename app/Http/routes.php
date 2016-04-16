@@ -42,9 +42,6 @@ Route::group(['prefix' => '/'], function () {
 
 
 
-
-
-
 Route::get('account', [
 	'uses' 	=> 'UserController@view',
 	'as' 	=> '/',

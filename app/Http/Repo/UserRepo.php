@@ -6,6 +6,12 @@ use App\User;
 
 class UserRepo extends CloudderRepo
 {
+	
+	public function getAllUser()
+	{
+		return User::all();
+	}
+
 	public function createUser($data)
 	{
 		$create = [

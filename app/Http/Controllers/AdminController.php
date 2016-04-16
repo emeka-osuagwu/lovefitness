@@ -10,9 +10,10 @@ class AdminController extends Controller
 {
 	public function index()
 	{
+		$users		= $this->userRepo->getAllUser();
 		$groups 	= $this->classRepo->getAllGroup();
 		$classes 	= $this->classRepo->getAllClass();
 		$catetgories 	= $this->classRepo->getAllCategory();
-		return view('dashboard.pages.index', compact('groups', 'classes', 'catetgories'));
+		return view('dashboard.pages.index', compact('groups', 'classes', 'catetgories', 'users'));
 	}
 }

@@ -20,7 +20,7 @@
 									</div>
 									<div class="details">
 										<div class="number">
-											<span data-counter="counterup" data-value="1349">0</span>
+											<span data-counter="counterup" data-value="1349">{{$users->count()}}</span>
 										</div>
 										<div class="desc"> Users </div>
 									</div>
@@ -34,8 +34,8 @@
 									</div>
 									<div class="details">
 										<div class="number">
-											<span data-counter="counterup" data-value="12,5">12,5</span>M$ </div>
-										<div class="desc"> Total Profit </div>
+											<span data-counter="counterup" data-value="12,5">{{$catetgories->count()}}</span></div>
+										<div class="desc"> Categories</div>
 									</div>
 								</a>
 							</div>
@@ -47,9 +47,9 @@
 									</div>
 									<div class="details">
 										<div class="number">
-											<span data-counter="counterup" data-value="549">549</span>
+											<span data-counter="counterup" data-value="549">{{$groups->count()}}</span>
 										</div>
-										<div class="desc"> New Orders </div>
+										<div class="desc"> Groups</div>
 									</div>
 								</a>
 							</div>
@@ -60,9 +60,9 @@
 										<i class="fa fa-globe"></i>
 									</div>
 									<div class="details">
-										<div class="number"> +
-											<span data-counter="counterup" data-value="89">89</span>% </div>
-										<div class="desc"> Brand Popularity </div>
+										<div class="number">
+											<span data-counter="counterup" data-value="89">{{$classes->count()}}</span></div>
+										<div class="desc">Classes </div>
 									</div>
 								</a>
 							</div>
