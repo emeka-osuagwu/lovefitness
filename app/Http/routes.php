@@ -13,10 +13,6 @@
 
 Route::group(['prefix' => '/'], function () {
 
-	Route::get('/', function () {
-		return view('app.pages.index');
-	});
-	
 	Route::get('login', function () {
 		return view('app.pages.login');
 	});
@@ -93,10 +89,10 @@ Route::get('contact', [
 
 Route::group(['prefix' => 'dashboard'], function () {
 
-	Route::get('/', function () {
-		return view('dashboard.pages.index');
-	});
-
+	Route::get('/', [
+		'uses' 	=> 'AdminController@index',
+		'as' 	=> '/',
+	]);
 
 	Route::get('gyms', [
 		'uses' 	=> 'GymController@index',

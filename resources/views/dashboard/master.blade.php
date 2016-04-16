@@ -1,6 +1,6 @@
 <html class="no-js" lang="en">
 	<head>
-		<title>App Name - @yield('title')</title>
+		<title>Lovefitness - @yield('title')</title>
 		@include('dashboard.pages.includes.sections.link')
 		@include('dashboard.pages.includes.sections.script')
 	</head>

@@ -12,7 +12,7 @@ use App\Http\Repo\CloudderRepo as CloudderRepo;
 class ClassRepo extends GymRepo
 {
 
-	public function classGroup()
+	public function getAllGroup()
 	{
 		return Group::with('category')->get();
 	}
