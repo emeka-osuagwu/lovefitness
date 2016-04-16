@@ -18,7 +18,7 @@ Route::group(['prefix' => '/'], function () {
 	});
 
 	Route::get('login', function () {
-		return view('app.pages.login');
+		return view('dashboard.pages.login');
 	});
 
 	Route::post('login', [
@@ -27,7 +27,7 @@ Route::group(['prefix' => '/'], function () {
 	]);
 
 	Route::get('register', function () {
-		return view('app.pages.register');
+		return view('dashboard.pages.register');
 	});
 
 	Route::post('register', [
@@ -39,8 +39,6 @@ Route::group(['prefix' => '/'], function () {
 		'uses' 	=> 'Auth\AuthController@getLogout',
 		'as' 	=> '/',
 	]);
-
-
 });
 
 
@@ -92,6 +90,16 @@ Route::get('contact', [
 
 
 Route::group(['prefix' => 'dashboard'], function () {
+
+	Route::get('login', [
+		'uses' 	=> 'UserController@login',
+		'as' 	=> '/',
+	]);
+
+	Route::get('register', [
+		'uses' 	=> 'UserController@register',
+		'as' 	=> '/',
+	]);
 
 	Route::get('/', [
 		'uses' 	=> 'AdminController@index',
