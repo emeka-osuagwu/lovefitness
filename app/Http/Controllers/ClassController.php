@@ -119,7 +119,7 @@ class ClassController extends Controller
 
 		public function dashboardGroups()
 		{
-			$groups = $this->classRepo->classGroup();
+			$groups = $this->classRepo->getAllGroup();
 			return view('dashboard.pages.groups', compact('groups'));
 		}
 

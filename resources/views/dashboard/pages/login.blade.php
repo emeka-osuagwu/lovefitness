@@ -1,6 +1,6 @@
 @extends('dashboard.auth')
 
-@section('title', 'login')
+@section('title', 'Login')
 
 <body class=" login" style="overflow:hidden">
 
