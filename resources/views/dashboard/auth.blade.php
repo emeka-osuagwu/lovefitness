@@ -2,7 +2,7 @@
 	
 	<head>
 		<meta charset="utf-8" />
-		<title>Metronic | User Login 6</title>
+		<title>Lovefitness | @yield('title') </title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		<meta content="" name="description" />
@@ -33,7 +33,7 @@
 
 	@yield('content')
 
-			
+
 		<!--[if lt IE 9]>
 			<script src="{!! load_asset('../assets/global/plugins/respond.min.js') !!}"></script>
 			<script src="{!! load_asset('../assets/global/plugins/excanvas.min.js') !!}"></script> 
