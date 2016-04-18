@@ -50,23 +50,16 @@
 											<input type="text" name="price" class="form-control" value="" required="true">
 										</div>
 									</div>
-							
+						
 									<div class="form-group">
-										<label class="col-md-3 control-label">Class Time</label>
+										<label class="control-label col-md-3">Class Time</label>
 										<div class="col-md-4">
-											<input type="text" name="time" class="form-control" value="" required="true">
+											<input type="text" name="time" class="form-control timepicker timepicker-no-seconds">
 										</div>
 									</div>
 
 									<div class="form-group">
 										<label class="col-md-3 control-label">Class Duration</label>
-										<div class="col-md-4">
-											<input type="text" name="duration" class="form-control" value="" required="true">
-										</div>
-									</div>
-
-									<div class="form-group">
-										<label class="col-md-3 control-label">Groups</label>
 										<div class="col-md-4">
 											<select class="form-control" name="group_id" required="true">
 												<option value="" >Select Venue</option>
@@ -76,17 +69,16 @@
 											</select>
 										</div>
 									</div>
-									<!-- 							
-									<div class="form-group ">
-										<label class="control-label col-md-3">Location</label>
+						
+									<div class="form-group">
+										<label class="col-md-3 control-label">Groups</label>
 										<div class="col-md-4">
-											<select class="bs-select form-control" data-show-subtext="true">
-												<option data-content="Mustard 
-													<span class='label lable-sm label-success'>fresh </span>">Mustard
-												</option>
+											<select class="form-control" name="group_id" required="true">
+												<option value="" >Select Duration</option>
+												<option value="">1 - 30min</option>
 											</select>
 										</div>
-									</div> -->
+									</div>
 
 									<div class="form-group">
 										<label class="col-md-3 control-label">Location</label>
