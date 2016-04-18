@@ -129,7 +129,7 @@ Route::group(['prefix' => 'dashboard'], function () {
 		]);
 
 		Route::get('create', function () {
-			return view('dashboard.pages.index');
+			return view('dashboard.pages.add_gym');
 		});
 
 

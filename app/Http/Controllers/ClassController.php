@@ -43,7 +43,7 @@ class ClassController extends Controller
 		public function getCreateClass()
 		{
 			
-			$groups 	= $this->classRepo->classGroup();
+			$groups 	= $this->classRepo->getAllGroup();
 			$locations 	= $this->locationRepo->getAllLocation();
 			$categories 	= $this->classRepo->getAllCategory();
 
@@ -60,7 +60,7 @@ class ClassController extends Controller
 		public function getEditClass($id)
 		{
 			$class 		=  $this->classRepo->getClassByid($id)->first();	
-			$groups 	=  $this->classRepo->classGroup();
+			$groups 	=  $this->classRepo->getAllGroup();
 			$locations 	=  $this->locationRepo->getAllLocation();
 			return view('dashboard.pages.edit_class', compact('class', 'locations', 'groups'));
 		}
