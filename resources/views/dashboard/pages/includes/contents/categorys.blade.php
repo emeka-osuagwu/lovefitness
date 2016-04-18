@@ -32,6 +32,7 @@
 													<th width="10px">ID</th>
 													<th>Name</th>
 													<th>Class Group No</th>
+													<th>Color</th>
 													<th>View Groups</th>
 													<th width="80px">Action</th>
 												</tr>
@@ -43,6 +44,7 @@
 													<td>{{$i++}}</td>
 													<td>{{$category->name}}</td>
 													<td>{{$category->groups->count()}}</td>		
+													<td width="10px;"><span  class="color-{{$category->color}}" style="padding:4px 40px;"></span></td>
 													<td><a style="text-decoration: none" href="#">View</a></td>
 													<td>
 														<a href="/dashboard/class/category/{{$category->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>

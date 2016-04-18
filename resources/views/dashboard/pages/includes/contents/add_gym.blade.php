@@ -46,12 +46,14 @@
 											<textarea name="description" class="form-control" rows="3" data-gramm="" data-txt_gramm_id="67df7919-3d09-a00d-edd4-fcb4e09a27a4" required="true"></textarea>
 										</div>
 									</div>
+
 									<div class="form-group">
-										<label class="col-md-3 control-label">Opening Hours</label>
+										<label class="control-label col-md-3">Opening Hours</label>
 										<div class="col-md-4">
-											<input type="text" name="hours" class="form-control" value="" required="true">
+											<input type="text" name="time" class="form-control timepicker timepicker-no-seconds">
 										</div>
 									</div>
+
 									<div class="form-group">
 										<label class="col-md-3 control-label">Membership Price</label>
 										<div class="col-md-4">
@@ -70,12 +72,28 @@
 											<input type="text" name="location" class="form-control" value="" required="true">
 										</div>
 									</div>
+									
 									<div class="form-group">
 										<label class="col-md-3 control-label">Phone</label>
 										<div class="col-md-4">
 											<input type="text" name="phone" class="form-control" value="" required="true">
 										</div>
 									</div>
+									
+									<div class="form-group">
+										<label class="col-md-3 control-label">longitude</label>
+										<div class="col-md-4">
+											<input type="text" name="longitude" class="form-control" value="" required="true">
+										</div>
+									</div>	
+
+									<div class="form-group">
+										<label class="col-md-3 control-label">latitude</label>
+										<div class="col-md-4">
+											<input type="text" name="latitude" class="form-control" value="" required="true">
+										</div>
+									</div>
+
 									<div class="form-group">
 										<label class="col-md-3 control-label">Email</label>
 										<div class="col-md-4">

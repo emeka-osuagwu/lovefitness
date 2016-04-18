@@ -28,7 +28,9 @@
 												<tr>
 													<th width="10px">ID</th>
 													<th>Name</th>
+													<th>Image</th>
 													<th>Description</th>
+													<th>Category</th>
 													<th>Class No</th>
 													<th>View Class</th>
 													<th width="80px">Action</th>
@@ -39,8 +41,10 @@
 												@foreach($groups as $group)
 												<tr>
 													<td>{{$i++}}</td>
+													<td><img  width="40" src="{{$group->image}}"></td>
 													<td>{{$group->name}}</td>
 													<td>{{$group->description}}</td>
+													<td>{{$group->category->name}}</td>
 													<td>{{$group->classes->count()}}</td>		
 													<td><a style="text-decoration: none" href="#">View</a></td>		
 													<td>

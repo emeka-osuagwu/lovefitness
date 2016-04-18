@@ -40,6 +40,8 @@
         <link href="{!! load_asset('../assets/layouts/layout4/css/custom.min.css') !!}" rel="stylesheet" type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 
+<link href="{!! load_asset('js/sweetalert.css') !!}" rel="stylesheet" type="text/css" />
+<link href="{!! load_asset('stylesheets/custom.css') !!}" rel="stylesheet" type="text/css" />
 
 <link rel="shortcut icon" href="favicon.ico" />
 

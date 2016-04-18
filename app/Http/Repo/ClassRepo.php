@@ -115,6 +115,10 @@ class ClassRepo extends GymRepo
 				"category_id"		=> $data['category_id'],
 			];
 			
+			if (isset($data['image']) && isset($data['image']) != null) {
+				$update['image'] = $this->getImageUrl();
+			}
+			
 			Group::where('id', $data['group_id'])->update($update);
 		}
 	/*=====================================

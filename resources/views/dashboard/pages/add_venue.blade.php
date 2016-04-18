@@ -58,6 +58,21 @@
 														<input type="text" name="address" class="form-control" value="" required="true">
 													</div>
 												</div>
+
+
+												<div class="form-group">
+													<label class="col-md-3 control-label">longitude</label>
+													<div class="col-md-4">
+														<input type="text" name="longitude" class="form-control" value="" required="true">
+													</div>
+												</div>	
+
+												<div class="form-group">
+													<label class="col-md-3 control-label">latitude</label>
+													<div class="col-md-4">
+														<input type="text" name="latitude" class="form-control" value="" required="true">
+													</div>
+												</div>
 											
 												<div class="form-group">
 													<label class="col-md-3 control-label">Phone Number</label>

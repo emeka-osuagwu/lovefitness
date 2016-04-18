@@ -48,4 +48,7 @@
 <!-- PLUGINS TRIGGER-->
 
 <!-- CUSTOM Script -->
+        <script src="{!! load_asset('/js/sweetalert.min.js') !!}" type="text/javascript"></script>
+      
         <script src="{!! load_asset('/Vue/vue.js') !!}" type="text/javascript"></script>
+        <script src="{!! load_asset('vue/app/ClassController.js') !!}" type="text/javascript"></script>

@@ -11,9 +11,9 @@ class Group extends Model
 	
 	protected $fillable = [	
 		"name",
+		"image",
 		"description",
 		"category_id",
-		"image",
 	];
 
 	public function classes()
