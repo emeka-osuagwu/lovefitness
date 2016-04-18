@@ -59,11 +59,25 @@
 														<input type="text" name="address" class="form-control" value="{{$venue->address}}" required="true">
 													</div>
 												</div>
+
+												<div class="form-group">
+													<label class="col-md-3 control-label">longitude</label>
+													<div class="col-md-4">
+														<input type="text" value="{{$venue->longitude}}" name="longitude" class="form-control" value="" required="true">
+													</div>
+												</div>	
+
+												<div class="form-group">
+													<label class="col-md-3 control-label">latitude</label>
+													<div class="col-md-4">
+														<input type="text"  value="{{$venue->latitude}}" name="latitude" class="form-control" value="" required="true">
+													</div>
+												</div>
 											
 												<div class="form-group">
 													<label class="col-md-3 control-label">Phone Number</label>
 													<div class="col-md-4">
-														<input type="text" name="phone" class="form-control" value="{{$venue->phone}}" required="true">
+														<input type="text"  value="{{$venue->number}}" name="phone" class="form-control" value="{{$venue->phone}}" required="true">
 													</div>
 												</div>
 
@@ -94,7 +108,7 @@
 												<div class="row">
 													<div class="col-md-offset-3 col-md-9">
 														<button type="submit" class="btn green">Submit</button>
-														<button type="button" class="btn default">Cancel</button>
+														<a href="{{ Url('dashboard/venues') }}"  class="btn default">Cancel</a>
 													</div>
 												</div>
 											</div>

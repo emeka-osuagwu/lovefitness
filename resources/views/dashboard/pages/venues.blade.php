@@ -1,3 +1,4 @@
+
 @extends('dashboard.master')
 
 @section('title', 'Add Venue')
@@ -58,7 +59,7 @@
 																	@endif
 																	<td>{{$venue->name}}</td>
 																	<td>{{$venue->address}}</td>
-																	<td>{{$venue->phone}}</td>
+																	<td>{{$venue->number}}</td>
 																	<td>{{$venue->email}}</td>
 																	<td>{{$venue->website}}</td>
 																	<td>

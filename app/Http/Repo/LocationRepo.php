@@ -123,6 +123,14 @@ class LocationRepo extends GymRepo
 				$create['image'] = $this->getImageUrl();
 			}
 
+			if (isset($data['longitude']) && isset($data['longitude']) != null) {
+				$create['longitude'] = $data['website'];
+			}
+				
+			if (isset($data['latitude']) && isset($data['latitude']) != null) {
+				$create['latitude'] = $data['latitude'];
+			}
+
 			Location::create($create);
 		}
 
@@ -139,6 +147,14 @@ class LocationRepo extends GymRepo
 
 			if (isset($data['image']) && isset($data['image']) != null) {
 				$update['image'] = $this->getImageUrl();
+			}
+
+			if (isset($data['longitude']) && isset($data['longitude']) != null) {
+				$update['longitude'] = $data['website'];
+			}
+				
+			if (isset($data['latitude']) && isset($data['latitude']) != null) {
+				$update['latitude'] = $data['latitude'];
 			}
 
 			Location::where('id', $data['venue_id'])->update($update);
