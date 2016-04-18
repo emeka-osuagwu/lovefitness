@@ -30,6 +30,7 @@
 													<th>Name</th>
 													<th>Image</th>
 													<th>Description</th>
+													<th>Category</th>
 													<th>Class No</th>
 													<th>View Class</th>
 													<th width="80px">Action</th>
@@ -43,6 +44,7 @@
 													<td><img  width="40" src="{{$group->image}}"></td>
 													<td>{{$group->name}}</td>
 													<td>{{$group->description}}</td>
+													<td>{{$group->category->name}}</td>
 													<td>{{$group->classes->count()}}</td>		
 													<td><a style="text-decoration: none" href="#">View</a></td>		
 													<td>
