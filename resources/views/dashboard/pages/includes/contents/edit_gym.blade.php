@@ -50,7 +50,7 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Opening Hours</label>
 										<div class="col-md-4">
-											<input type="text" name="hours" class="form-control" value="{{$gym->hours}}" required="true">
+											<input type="text" name="time" class="form-control" value="{{$gym->hours}}" required="true">
 										</div>
 									</div>
 									<div class="form-group">
@@ -77,6 +77,21 @@
 											<input type="text" name="phone" class="form-control"  value="{{$gym->number}}" required="true">
 										</div>
 									</div>
+
+									<div class="form-group">
+										<label class="col-md-3 control-label">longitude</label>
+										<div class="col-md-4">
+											<input type="text" value="{{$gym->longitude}}" name="longitude" class="form-control" value="" required="true">
+										</div>
+									</div>	
+
+									<div class="form-group">
+										<label class="col-md-3 control-label">latitude</label>
+										<div class="col-md-4">
+											<input type="text" value="{{$gym->latitude}}" name="latitude" class="form-control" value="" required="true">
+										</div>
+									</div>
+
 									<div class="form-group">
 										<label class="col-md-3 control-label">Email</label>
 										<div class="col-md-4">

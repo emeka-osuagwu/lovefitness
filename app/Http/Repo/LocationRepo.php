@@ -31,7 +31,7 @@ class LocationRepo extends GymRepo
 			$create = [
 				"name"	=> $data['name'],
 				"description"	=> $data['description'],
-				"hours"	=> $data['hours'],
+				"hours"	=> $data['time'],
 				"price"		=> $data['price'],
 				"address"	=> $data['address'],
 				"location"	=> $data['location'],
@@ -43,6 +43,14 @@ class LocationRepo extends GymRepo
 			
 			if (isset($data['image']) && isset($data['image']) != null) {
 				$create['image'] = $this->getImageUrl();
+			}
+				
+			if (isset($data['longitude']) && isset($data['longitude']) != null) {
+				$create['longitude'] = $data['website'];
+			}
+				
+			if (isset($data['latitude']) && isset($data['latitude']) != null) {
+				$create['latitude'] = $data['latitude'];
 			}
 			
 			Location::create($create);
@@ -56,7 +64,7 @@ class LocationRepo extends GymRepo
 				"email"	=> $data['email'],
 				"location"	=> $data['location'],
 				"number"	=> $data['phone'],
-				"hours"	=> $data['hours'],
+				"hours"	=> $data['time'],
 				"description"	=> $data['description'],
 				"price"		=> $data['price'],
 				"website"	=> $data['website'],
@@ -66,6 +74,14 @@ class LocationRepo extends GymRepo
 				$update['image'] = $this->getImageUrl();
 			}
 
+
+			if (isset($data['longitude']) && isset($data['longitude']) != null) {
+				$update['longitude'] = $data['website'];
+			}
+				
+			if (isset($data['latitude']) && isset($data['latitude']) != null) {
+				$update['latitude'] = $data['latitude'];
+			}
 
 			Location::where('id', $data['gym_id'])->update($update);
 		}
