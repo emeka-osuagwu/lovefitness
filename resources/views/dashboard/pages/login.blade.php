@@ -7,7 +7,7 @@
 	<div class="user-login-5">
 		<div class="row bs-reset">
 			<div class="col-md-6 login-container bs-reset">
-				<img class="login-logo login-6" src="../assets/pages/img/login/login-invert.png" />
+				<img class="login-logo login-6" src="{{ asset('images/logo.png') }}" />
 				<div class="login-content">
 					<h1>Lovefitness Login</h1>
 					<p> Lorem ipsum dolor sit amet, coectetuer adipiscing elit sed diam nonummy et nibh euismod aliquam erat volutpat. Lorem ipsum dolor sit amet, coectetuer adipiscing. </p>

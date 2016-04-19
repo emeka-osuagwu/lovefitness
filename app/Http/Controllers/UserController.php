@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Auth;
+use Session;
 use Validator;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -20,8 +21,8 @@ class UserController extends Controller
 		]);
 
 		if ($validator->fails()) {
-			$bad = "bad";
-			return view('app.pages.register', compact('message'));
+			Session::flash('error-register', 'error-register');
+			return back();
 		}
 
 		$message = "good";

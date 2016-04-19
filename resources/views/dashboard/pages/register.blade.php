@@ -1,12 +1,49 @@
 @extends('dashboard.auth')
 
 @section('title', 'Register')
+    	  	<script>
+		swal({
+			title: "Gym Added",
+			type: "success",
+			confirmButtonColor: "#298829",
+			confirmButtonText: "OK",
+			closeOnConfirm: false,
+			closeOnCancel: false
+		},
+		function(isConfirm)
+		{
+			if (isConfirm) {
+		  		window.location="/dashboard/gyms";
+		  	}
+		});
+	</script>
+
+@if (Session::has('error-register'))
+    	  	<script>
+		swal({
+			title: "Gym Added",
+			type: "success",
+			confirmButtonColor: "#298829",
+			confirmButtonText: "OK",
+			closeOnConfirm: false,
+			closeOnCancel: false
+		},
+		function(isConfirm)
+		{
+			if (isConfirm) {
+		  		window.location="/dashboard/gyms";
+		  	}
+		});
+	</script>
+@endif  
+
+
 
 <body class=" login" style="overflow:hidden">
 	<div class="user-login-5">
 		<div class="row bs-reset">
 			<div class="col-md-6 login-container bs-reset">
-				<img class="login-logo login-6" src="../assets/pages/img/login/login-invert.png" />
+				<img class="login-logo login-6" src="{{ asset('images/logo.png') }}" />
 				<div class="login-content">
 					<h1>Lovefitness Register</h1>
 					<p> Lorem ipsum dolor sit amet, coectetuer adipiscing elit sed diam nonummy et nibh euismod aliquam erat volutpat. Lorem ipsum dolor sit amet, coectetuer adipiscing. </p>
@@ -14,11 +51,7 @@
 
 					<form action="{{ Url('register') }}" class="login-form" method="post">
 						
-						<div class="alert alert-danger display-hide" style="display: block;">
-							<span class="close" data-close="alert"></span>
-							<span>Enter any username and password. </span>
-						</div>
-						
+		
 						<input hidden="true" value="{{ csrf_token() }}" name="_token">
 						<div class="alert alert-danger display-hide">
 							<button class="close" data-close="alert"></button>
@@ -26,7 +59,7 @@
 						</div>
 						<div class="row">
 							<div class="col-xs-6">
-								<input class="form-control form-control-solid placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Email" name="email" required/>
+								<input class="form-control form-control-solid placeholder-no-fix form-group" type="email" autocomplete="off" placeholder="Email" name="email" required/>
 							 </div>
 							<div class="col-xs-6">
 								<input class="form-control form-control-solid placeholder-no-fix form-group" type="password" autocomplete="off" placeholder="Password" name="password" required/>
