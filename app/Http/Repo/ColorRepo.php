@@ -14,6 +14,11 @@ class ColorRepo
 		return Color::get();
 	}
 
+	public function getColorWhere($field, $value)
+	{
+		return Color::where($field, $value)->get();
+	}
+
 	public function checkColorExist($name)
 	{
 		return Color::where('name', $name)->get();
@@ -30,5 +35,14 @@ class ColorRepo
 			];
 		}
 		DB::table('colors')->insert($create);
+	}
+
+	public function updateColor($data)
+	{
+		$update = [
+			"name" => $data['name']
+		];
+
+		Color::where('id', $data['color_id'])->update($update);
 	}
 }

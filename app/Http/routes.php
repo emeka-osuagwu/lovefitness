@@ -283,13 +283,28 @@ Route::group(['prefix' => 'dashboard'], function () {
 	});
 
 	Route::group(['prefix' => 'setting'], function () {
-		
+
+		Route::get('colors', [
+			'uses' 	=> 'ColorController@index',
+			'as' 	=> '/',
+		]);
+
 		Route::get('add/color', function () {
 			return view('dashboard.pages.add_color');
 		});
 
 		Route::post('add/color', [
 			'uses' 	=> 'ColorController@create',
+			'as' 	=> '/',
+		]);
+
+		Route::get('color/{id}/edit', [
+			'uses' 	=> 'ColorController@edit',
+			'as' 	=> '/',
+		]);
+
+		Route::post('color/update', [
+			'uses' 	=> 'ColorController@update',
 			'as' 	=> '/',
 		]);
 

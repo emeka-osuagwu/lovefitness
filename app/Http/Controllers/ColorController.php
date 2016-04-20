@@ -31,4 +31,17 @@ class ColorController extends Controller
 		return back();
 	}
 
+	public function edit($id)
+	{
+		$color = $this->colorRepo->getColorWhere('id', $id);
+		return view('dashboard.pages.edit_color',  compact('color'));	
+	}	
+
+	public function update(Request $request)
+	{
+		$this->colorRepo->updateColor($request->all());
+		Session::flash('updated', 'updated');
+		return  back();
+	}
+
 }
