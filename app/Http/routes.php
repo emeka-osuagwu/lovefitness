@@ -281,6 +281,28 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 	});
+	
+	Route::group(['prefix' => 'venue'], function () {
+		
+		Route::get('create', function () {
+			return view('dashboard.pages.add_venue');
+		});
+
+		Route::post('create', [
+			'uses' 	=> 'VenueController@create',
+			'as' 	=> '/',
+		]);
+
+		Route::get('{id}/edit', [
+			'uses' 	=> 'VenueController@edit',
+			'as' 	=> '/',
+		]);
+
+		Route::post('update', [
+			'uses' 	=> 'VenueController@update',
+			'as' 	=> '/',
+		]);
+	});
 });
 
 

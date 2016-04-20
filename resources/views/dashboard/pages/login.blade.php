@@ -30,8 +30,8 @@
 								<div class="forgot-password">
 									<a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
 								</div>
-								<button class="btn blue" type="submit">Sign In</button>
 								<a href="/register" class="btn blue">Sign Up</a>
+								<button class="btn blue" type="submit">Sign In</button>
 							</div>
 						</div>
 					</form>

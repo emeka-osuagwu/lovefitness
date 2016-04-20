@@ -106,6 +106,17 @@
 					</li>
 				</ul>
 			</li>
+
+			<li class="heading">
+                            		<h3 class="uppercase">Settings</h3>
+                        		</li>
+
+                        		<li class="start ">
+				<a href="{{ Url('dashboard/setting/add/color') }}">
+					<i class="fa fa-fw fa-home"></i>
+					<span class="title">Add Color</span>
+				</a>
+			</li>
 		
 		</ul>
 	</div>
