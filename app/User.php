@@ -30,6 +30,7 @@ class User extends Model implements AuthenticatableContract,
 	 */
 	protected $fillable = [
 		"city" 	,
+		"role" ,
 		"email" ,
 		"phone",
 		"country" ,

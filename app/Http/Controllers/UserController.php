@@ -17,7 +17,6 @@ class UserController extends Controller
 		return view('dashboard.pages.login');
 	}
 
-
 	public function create(Request $request)
 	{
 		$validator = Validator::make($request->all(), [

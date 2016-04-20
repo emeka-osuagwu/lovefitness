@@ -14,6 +14,7 @@ class SuperAdmin extends Seeder
 	{
 		DB::table('users')->insert([
 			'email' => "admin@gmail.com",
+			'role' => 1,
 			'password' => bcrypt('pass'),
 		]);
 	}
