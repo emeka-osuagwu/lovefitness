@@ -1,41 +1,8 @@
 @extends('dashboard.auth')
 
 @section('title', 'Register')
-    	  	<script>
-		swal({
-			title: "Gym Added",
-			type: "success",
-			confirmButtonColor: "#298829",
-			confirmButtonText: "OK",
-			closeOnConfirm: false,
-			closeOnCancel: false
-		},
-		function(isConfirm)
-		{
-			if (isConfirm) {
-		  		window.location="/dashboard/gyms";
-		  	}
-		});
-	</script>
 
-@if (Session::has('error-register'))
-    	  	<script>
-		swal({
-			title: "Gym Added",
-			type: "success",
-			confirmButtonColor: "#298829",
-			confirmButtonText: "OK",
-			closeOnConfirm: false,
-			closeOnCancel: false
-		},
-		function(isConfirm)
-		{
-			if (isConfirm) {
-		  		window.location="/dashboard/gyms";
-		  	}
-		});
-	</script>
-@endif  
+
 
 
 
@@ -51,7 +18,12 @@
 
 					<form action="{{ Url('register') }}" class="login-form" method="post">
 						
-		
+						@if (Session::has('error-register'))						
+							<div class="alert alert-danger display" style="display: block;">
+								<span>Invalid  email. </span>
+							</div>
+						@endif  
+
 						<input hidden="true" value="{{ csrf_token() }}" name="_token">
 						<div class="alert alert-danger display-hide">
 							<button class="close" data-close="alert"></button>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Auth;
+use Session;
 use Validator;
 use App\Model\User;
 use Illuminate\Http\Request;
@@ -68,8 +69,8 @@ class AuthController extends Controller
 	public function login(Request $request)
 	{
 		if (!Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
-			$message = "bad";
-			return view('app.pages.login', compact('message'));
+			Session::flash('error-login', 'error-login');
+			return view('dashboard.pages.login');
 		}
 
 		return redirect('/');

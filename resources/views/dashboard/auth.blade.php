@@ -29,8 +29,8 @@
 		<!-- BEGIN THEME LAYOUT STYLES -->
 		<!-- END THEME LAYOUT STYLES -->
 		<link rel="shortcut icon" href="favicon.ico" /> 
-		<link href="{!! load_asset('/js/sweetalert.css') !!}" rel="stylesheet" type="text/css" />
 		<script src="{!! load_asset('/js/sweetalert.min.js') !!}" type="text/javascript"></script>
+		<link href="{!! load_asset('/js/sweetalert.css') !!}" rel="stylesheet" type="text/css" />
       
 
 	</head>

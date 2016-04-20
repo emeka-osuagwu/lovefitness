@@ -45,9 +45,10 @@
 										<div class="col-md-4">
 											<select class="form-control" name="color" required="true">
 												<option>Select Color</option>
-												@foreach($colors as $color)
-													<option name="{{$color->name}}">{{$color->name}}</option>
-												@endforeach
+												<option value="red" >Red</option>
+												<option value="blue" >Blue</option>
+												<option value="purple" >Purle</option>
+												<option value="Orange" >Orange</option>
 											</select>
 										</div>
 									</div>

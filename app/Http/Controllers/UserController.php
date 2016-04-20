@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Auth;
 use Session;
 use Validator;
@@ -13,9 +12,14 @@ use App\Http\Controllers\Controller;
 class UserController extends Controller
 {
 
+	public function login()
+	{
+		return view('dashboard.pages.login');
+	}
+
+
 	public function create(Request $request)
 	{
-
 		$validator = Validator::make($request->all(), [
 			'email' => 'required|unique:users|max:255',
 		]);
@@ -25,7 +29,7 @@ class UserController extends Controller
 			return back();
 		}
 
-		$message = "good";
+		Session::flash('success-register', 'success-register');
 		$this->userRepo->createUser($request->all());
 		return redirect('login');
 	}
@@ -44,13 +48,4 @@ class UserController extends Controller
 	}
 
 
-	public function login()
-	{
-		return view('dashboard.pages.login');
-	}
-
-	public function register()
-	{
-		# code...
-	}
 }
