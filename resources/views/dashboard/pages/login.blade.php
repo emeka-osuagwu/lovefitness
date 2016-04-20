@@ -86,7 +86,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 bs-reset">
-				<img style="height:100%" src="http://larrynorthfitness.com/wp-content/blog/uploads/2015/03/5-Ways-to-Make-Your-Workout-Social.jpg">
+				<img style="height:100%" src="" c="http://larrynorthfitness.com/wp-content/blog/uploads/2015/03/5-Ways-to-Make-Your-Workout-Social.jpg">
 			</div>
 		</div>
 	</div>
