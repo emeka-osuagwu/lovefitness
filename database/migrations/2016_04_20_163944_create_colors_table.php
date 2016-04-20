@@ -12,9 +12,9 @@ class CreateColorsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('color', function (Blueprint $table) {
+		Schema::create('colors', function (Blueprint $table) {
 			$table->increments('id');
-			$table->string('name');
+			$table->string('name')->unique();
 			$table->integer('status');
 			$table->timestamps();
 		});
@@ -27,6 +27,6 @@ class CreateColorsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('color');
+		Schema::drop('colors');
 	}
 }

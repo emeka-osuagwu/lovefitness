@@ -281,27 +281,18 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 	});
-	
-	Route::group(['prefix' => 'venue'], function () {
+
+	Route::group(['prefix' => 'setting'], function () {
 		
-		Route::get('create', function () {
-			return view('dashboard.pages.add_venue');
+		Route::get('add/color', function () {
+			return view('dashboard.pages.add_color');
 		});
 
-		Route::post('create', [
-			'uses' 	=> 'VenueController@create',
+		Route::post('add/color', [
+			'uses' 	=> 'ColorController@create',
 			'as' 	=> '/',
 		]);
 
-		Route::get('{id}/edit', [
-			'uses' 	=> 'VenueController@edit',
-			'as' 	=> '/',
-		]);
-
-		Route::post('update', [
-			'uses' 	=> 'VenueController@update',
-			'as' 	=> '/',
-		]);
 	});
 });
 
