@@ -147,7 +147,8 @@ class ClassController extends Controller
 
 		public function getCreateCategory()
 		{
-			return view('dashboard.pages.add_class_category');	
+			$colors =  $this->colorRepo->getAllColor();
+			return view('dashboard.pages.add_class_category', compact('colors'));	
 		}
 
 		public function postCreateCategory(Request $request)

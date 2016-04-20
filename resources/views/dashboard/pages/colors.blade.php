@@ -1,6 +1,6 @@
 @extends('dashboard.master')
 
-@section('title', 'Index')
+@section('title', 'Colors')
 
 @section('content')
 	@include('dashboard.pages.includes.sections.top_nav')
@@ -48,7 +48,7 @@
 																<tr>
 																	<td>{{$i++}}</td>
 																	<td>{{$color->name}}</td>
-																	@if($color->image ==  0 )
+																	@if($color->status ==  0 )
 																		<td>In Active</td>
 																	@else
 																		<td>Active</td>

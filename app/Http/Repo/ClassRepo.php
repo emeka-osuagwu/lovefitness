@@ -128,6 +128,7 @@ class ClassRepo extends GymRepo
 	/*=====================================
 	# Category Methods
 	======================================*/
+		
 		public function getCategoryWhere($field, $value)
 		{
 			return Category::where($field, $value)->get();
