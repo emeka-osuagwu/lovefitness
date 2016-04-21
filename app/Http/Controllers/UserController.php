@@ -43,6 +43,7 @@ class UserController extends Controller
 	{
 		$request['user_id'] = Auth::user()->id;
 		$this->userRepo->updateUser($request->all());
+		Session::flash('message', 'good');
 		return back();
 	}
 

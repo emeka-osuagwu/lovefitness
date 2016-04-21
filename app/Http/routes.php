@@ -307,6 +307,14 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'ColorController@update',
 			'as' 	=> '/',
 		]);
+	});
+	
+	Route::group(['prefix' => 'user'], function () {
+		
+		Route::post('update', [
+			'uses' 	=> 'UserController@update',
+			'as' 	=> '/',
+		]);
 
 	});
 });
