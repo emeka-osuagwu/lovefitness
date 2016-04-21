@@ -15,7 +15,7 @@
 						
 						@if (Session::has('error-login'))						
 							<div class="alert alert-danger display" style="display: block;">
-								<span>Welcome Login to your account. </span>
+								<span>Invalid email or password. </span>
 							</div>
 						@endif  
 

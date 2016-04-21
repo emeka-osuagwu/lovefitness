@@ -27,6 +27,9 @@
         <link href="{!! load_asset('../assets/global/plugins/clockface/css/clockface.css') !!}" rel="stylesheet" type="text/css" />
       
         <link href="{!! load_asset('../assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css') !!}" rel="stylesheet" type="text/css" />
+      
+        <link href="{!! load_asset('../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css') !!}" rel="stylesheet" type="text/css" />
+        <link href="{!! load_asset('../assets/pages/css/profile-2.min.css') !!}" rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS -->
 
 <!-- BEGIN THEME GLOBAL STYLES -->
