@@ -88,7 +88,6 @@ Route::get('contact', [
 	'as' 	=> '/',
 ]);
 
-
 Route::group(['prefix' => 'dashboard'], function () {
 
 	Route::get('/', [
@@ -96,7 +95,6 @@ Route::group(['prefix' => 'dashboard'], function () {
 		'as' 	=> '/',
 		'middleware' => 'auth',
 	]);
-
 
 	Route::get('login', [
 		'uses' 	=> 'UserController@login',
