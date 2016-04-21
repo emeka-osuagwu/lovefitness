@@ -29,6 +29,10 @@
 		<!-- BEGIN THEME LAYOUT STYLES -->
 		<!-- END THEME LAYOUT STYLES -->
 		<link rel="shortcut icon" href="favicon.ico" /> 
+		<script src="{!! load_asset('/js/sweetalert.min.js') !!}" type="text/javascript"></script>
+		<link href="{!! load_asset('/js/sweetalert.css') !!}" rel="stylesheet" type="text/css" />
+      
+
 	</head>
 
 	@yield('content')
@@ -38,7 +42,8 @@
 			<script src="{!! load_asset('../assets/global/plugins/respond.min.js') !!}"></script>
 			<script src="{!! load_asset('../assets/global/plugins/excanvas.min.js') !!}"></script> 
 		<![endif]-->
-		
+	
+
 		<script src="{!! load_asset('../assets/global/plugins/jquery.min.js') !!}" type="text/javascript"></script>
 		<script src="{!! load_asset('../assets/global/plugins/bootstrap/js/bootstrap.min.js') !!}" type="text/javascript"></script>
 		<script src="{!! load_asset('../assets/global/plugins/js.cookie.min.js') !!}" type="text/javascript"></script>

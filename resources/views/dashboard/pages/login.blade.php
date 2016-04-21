@@ -7,18 +7,26 @@
 	<div class="user-login-5">
 		<div class="row bs-reset">
 			<div class="col-md-6 login-container bs-reset">
-				<img class="login-logo login-6" src="../assets/pages/img/login/login-invert.png" />
+				<img class="login-logo login-6" src="{{ asset('images/logo.png') }}" />
 				<div class="login-content">
 					<h1>Lovefitness Login</h1>
 					<p> Lorem ipsum dolor sit amet, coectetuer adipiscing elit sed diam nonummy et nibh euismod aliquam erat volutpat. Lorem ipsum dolor sit amet, coectetuer adipiscing. </p>
-					<form action="javascript:;" class="login-form" method="post">
+					<form action="{{ Url('login') }}" class="login-form" method="post">
+						
+						@if (Session::has('error-login'))						
+							<div class="alert alert-danger display" style="display: block;">
+								<span>Invalid email or password. </span>
+							</div>
+						@endif  
+
+						<input hidden="true" value="{{ csrf_token() }}" name="_token">
 						<div class="alert alert-danger display-hide">
 							<button class="close" data-close="alert"></button>
 							<span>Enter any username and password. </span>
 						</div>
 						<div class="row">
 							<div class="col-xs-6">
-								<input class="form-control form-control-solid placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Username" name="username" required/> </div>
+								<input class="form-control form-control-solid placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Username" name="email" required/> </div>
 							<div class="col-xs-6">
 								<input class="form-control form-control-solid placeholder-no-fix form-group" type="password" autocomplete="off" placeholder="Password" name="password" required/> </div>
 						</div>
@@ -30,8 +38,8 @@
 								<div class="forgot-password">
 									<a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
 								</div>
-								<button class="btn blue" type="submit">Sign In</button>
 								<a href="/register" class="btn blue">Sign Up</a>
+								<button class="btn blue" type="submit">Sign In</button>
 							</div>
 						</div>
 					</form>
@@ -78,7 +86,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 bs-reset">
-				<img style="height:100%" src="http://larrynorthfitness.com/wp-content/blog/uploads/2015/03/5-Ways-to-Make-Your-Workout-Social.jpg">
+				<img style="height:100%" src="" c="http://larrynorthfitness.com/wp-content/blog/uploads/2015/03/5-Ways-to-Make-Your-Workout-Social.jpg">
 			</div>
 		</div>
 	</div>

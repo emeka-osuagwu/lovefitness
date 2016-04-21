@@ -7,8 +7,9 @@
 					<a href="{{ Url('/') }}"><img class="logo" src="{{ asset('images/logo.png') }}" alt="LoveFitness Nigeria"></a>
 				</div>
 				<div class="medium-3 columns medium-text-right">
-					{{Auth::check()}}
+					
 					@if(Auth::check())
+						<a href="{{ Url('dashboard') }}" class="button secondary">Dashboard</a>
 						<a href="{{ Url('logout') }}" class="button secondary">Logout</a>
 					@else
 						<a href="{{ Url('register') }}" class="button">Sign up</a>

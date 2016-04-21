@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
 use Auth;
+use Session;
 use Validator;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -12,19 +12,23 @@ use App\Http\Controllers\Controller;
 class UserController extends Controller
 {
 
+	public function login()
+	{
+		return view('dashboard.pages.login');
+	}
+
 	public function create(Request $request)
 	{
-
 		$validator = Validator::make($request->all(), [
 			'email' => 'required|unique:users|max:255',
 		]);
 
 		if ($validator->fails()) {
-			$bad = "bad";
-			return view('app.pages.register', compact('message'));
+			Session::flash('error-register', 'error-register');
+			return back();
 		}
 
-		$message = "good";
+		Session::flash('success-register', 'success-register');
 		$this->userRepo->createUser($request->all());
 		return redirect('login');
 	}
@@ -39,17 +43,9 @@ class UserController extends Controller
 	{
 		$request['user_id'] = Auth::user()->id;
 		$this->userRepo->updateUser($request->all());
+		Session::flash('message', 'good');
 		return back();
 	}
 
 
-	public function login()
-	{
-		return view('dashboard.pages.login');
-	}
-
-	public function register()
-	{
-		# code...
-	}
 }

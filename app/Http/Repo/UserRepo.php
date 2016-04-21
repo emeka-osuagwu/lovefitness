@@ -29,12 +29,10 @@ class UserRepo extends CloudderRepo
 
 	public function updateUser($data)
 	{
-		
 		$update = [
 			"city" 			=>$data['city'],
 			"email" 		=>$data['email'],
 			"phone"	 	=>$data['phone'],
-			"country" 		=>$data['country'],
 			"address" 		=>$data['address'],
 			"lastname" 		=>$data['lastname'],
 			"firstname" 		=>$data['firstname'],
