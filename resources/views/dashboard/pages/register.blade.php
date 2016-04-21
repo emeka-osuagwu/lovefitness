@@ -18,13 +18,14 @@
 
 					<form action="{{ Url('register') }}" class="login-form" method="post">
 						
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						
 						@if (Session::has('error-register'))						
 							<div class="alert alert-danger display" style="display: block;">
 								<span>Invalid  email. </span>
 							</div>
 						@endif  
 
-						<input hidden="true" value="{{ csrf_token() }}" name="_token">
 						<div class="alert alert-danger display-hide">
 							<button class="close" data-close="alert"></button>
 							<span>Enter any username and password. </span>

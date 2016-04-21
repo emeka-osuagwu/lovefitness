@@ -12,13 +12,14 @@
 					<p> Lorem ipsum dolor sit amet, coectetuer adipiscing elit sed diam nonummy et nibh euismod aliquam erat volutpat. Lorem ipsum dolor sit amet, coectetuer adipiscing. </p>
 					<form action="{{ Url('login') }}" class="login-form" method="post">
 						
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						
 						@if (Session::has('error-login'))						
 							<div class="alert alert-danger display" style="display: block;">
 								<span>Invalid email or password. </span>
 							</div>
 						@endif  
 
-						<input hidden="true" value="{{ csrf_token() }}" name="_token">
 						<div class="alert alert-danger display-hide">
 							<button class="close" data-close="alert"></button>
 							<span>Enter any username and password. </span>
