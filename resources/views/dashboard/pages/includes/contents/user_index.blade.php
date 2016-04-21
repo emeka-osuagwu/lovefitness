@@ -25,6 +25,7 @@
 								</li>
 							</ul>
 						</div>
+						
 						<div class="col-md-9">
 							<div class="tab-content">
 								<div id="tab_1-1" class="tab-pane active">

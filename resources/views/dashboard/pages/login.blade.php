@@ -3,7 +3,6 @@
 @section('title', 'Login')
 
 <body class=" login" style="overflow:hidden">
-
 	<div class="user-login-5">
 		<div class="row bs-reset">
 			<div class="col-md-6 login-container bs-reset">
@@ -54,7 +53,7 @@
 							<button type="submit" class="btn blue btn-success uppercase pull-right">Submit</button>
 						</div>
 					</form>
-					<!-- END FORGOT PASSWORD FORM -->
+					
 				</div>
 				<div class="login-footer">
 					<div class="row bs-reset">
@@ -86,7 +85,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 bs-reset">
-				<img style="height:100%" src="" c="http://larrynorthfitness.com/wp-content/blog/uploads/2015/03/5-Ways-to-Make-Your-Workout-Social.jpg">
+				<img style="height:100%" src="http://larrynorthfitness.com/wp-content/blog/uploads/2015/03/5-Ways-to-Make-Your-Workout-Social.jpg">
 			</div>
 		</div>
 	</div>

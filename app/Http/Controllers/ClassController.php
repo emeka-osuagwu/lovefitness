@@ -133,8 +133,6 @@ class ClassController extends Controller
 
 
 
-
-
 	/*======================================
 	# Category Methods
 	=======================================*/
