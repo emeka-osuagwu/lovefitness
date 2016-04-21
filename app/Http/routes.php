@@ -317,6 +317,11 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 
+		Route::post('updatepassword', [
+			'uses' 	=> 'UserController@updatePassword',
+			'as' 	=> '/',
+		]);
+
 	});
 });
 

@@ -27,6 +27,8 @@
         
         <script src="{!! load_asset('../assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js') !!}" type="text/javascript"></script>
         <script src="{!! load_asset('../assets/pages/scripts/components-bootstrap-select.min.js') !!}" type="text/javascript"></script>
+      
+        <script src="{!! load_asset('../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') !!}" type="text/javascript"></script>
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 
 <!-- BEGIN THEME GLOBAL SCRIPTS -->

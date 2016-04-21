@@ -41,10 +41,13 @@ class UserController extends Controller
 
 	public function update(Request $request)
 	{
-		$request['user_id'] = Auth::user()->id;
 		$this->userRepo->updateUser($request->all());
 		Session::flash('message', 'good');
 		return back();
 	}
 
+	public function updatePassword(Request $request)
+	{
+		return $this->userRepo->checkUserPassword($request->all());
+	}
 }
