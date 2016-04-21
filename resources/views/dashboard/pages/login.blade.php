@@ -3,7 +3,6 @@
 @section('title', 'Login')
 
 <body class=" login" style="overflow:hidden">
-
 	<div class="user-login-5">
 		<div class="row bs-reset">
 			<div class="col-md-6 login-container bs-reset">
@@ -54,7 +53,7 @@
 							<button type="submit" class="btn blue btn-success uppercase pull-right">Submit</button>
 						</div>
 					</form>
-					<!-- END FORGOT PASSWORD FORM -->
+					
 				</div>
 				<div class="login-footer">
 					<div class="row bs-reset">
