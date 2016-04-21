@@ -312,6 +312,10 @@ Route::group(['prefix' => 'dashboard'], function () {
 	
 	Route::group(['prefix' => 'user'], function () {
 		
+		Route::get('edit', function () {
+			return view('dashboard.pages.edit_user');
+		});
+
 		Route::post('update', [
 			'uses' 	=> 'UserController@update',
 			'as' 	=> '/',

@@ -11,7 +11,7 @@ class AppSeeder extends Seeder
 	 */
 	public function run()
 	{
-		factory(App\Model\User::class, 1)->create();
+		factory(App\User::class, 1)->create();
 		factory(App\Model\Category::class, 1)->create();
 		factory(App\Model\Group::class, 1)->create();
 		factory(App\Model\Classes::class, 1)->create();

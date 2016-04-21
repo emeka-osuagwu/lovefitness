@@ -140,7 +140,7 @@
 
 						<ul class="dropdown-menu dropdown-menu-default">
 							<li>
-								<a href="{{ Url('dashboard/user') }}">
+								<a href="{{ Url('dashboard') }}">
 								<i class="icon-user"></i> My Profile </a>
 							</li>
 							<li>

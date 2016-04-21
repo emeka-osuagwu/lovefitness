@@ -90,7 +90,7 @@
 														<span class="label label-success label-sm"> Paid </span>
 													</td>
 													<td>
-														<a class="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
+														<a class="btn btn-sm grey-salsa btn-outline" href="{{ Url('') }}"> View </a>
 													</td>
 												</tr>
 											</tbody>

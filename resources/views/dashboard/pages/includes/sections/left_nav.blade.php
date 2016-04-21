@@ -130,25 +130,6 @@
 						<span class="title">Dashboard</span>
 					</a>
 				</li>
-
-				<li>
-					<a href="javascript:;">
-						<i class="fa fa-fw fa-building"></i>
-						<span class="title">Gyms</span>
-						<span class="arrow "></span>
-					</a>
-					<ul class="sub-menu">
-						<li>
-							<a href="{{ Url('dashboard/gym/create') }}">
-							<i class="icon-plus"></i>
-							Add new gym</a>
-						</li>
-						<li>
-							<a href="{{ Url('dashboard/gyms/') }}">
-							List all</a>
-						</li>
-					</ul>
-				</li>
 			
 			</ul>
 		@endif
