@@ -91,6 +91,13 @@ Route::get('contact', [
 
 Route::group(['prefix' => 'dashboard'], function () {
 
+	Route::get('/', [
+		'uses' 	=> 'AdminController@index',
+		'as' 	=> '/',
+		'middleware' => 'auth',
+	]);
+
+
 	Route::get('login', [
 		'uses' 	=> 'UserController@login',
 		'as' 	=> '/',
@@ -101,10 +108,6 @@ Route::group(['prefix' => 'dashboard'], function () {
 		'as' 	=> '/',
 	]);
 
-	Route::get('/', [
-		'uses' 	=> 'AdminController@index',
-		'as' 	=> '/',
-	]);
 
 	Route::get('gyms', [
 		'uses' 	=> 'GymController@index',
