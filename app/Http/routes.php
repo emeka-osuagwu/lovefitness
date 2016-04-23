@@ -221,10 +221,13 @@ Route::group(['prefix' => 'dashboard'], function () {
 		Route::post('category/update', [
 			'uses' 	=> 'ClassController@updateCategory',
 			'as' 	=> '/',
-		]);	
+		]);
+	});
 
-		Route::post('join', [
-			'uses' 	=> 'ClassController@joinClass',
+	Route::group(['prefix' => 'class/session'], function () {
+
+		Route::post('create', [
+			'uses' 	=> 'ClassController@createSession',
 			'as' 	=> '/',
 		]);
 	});

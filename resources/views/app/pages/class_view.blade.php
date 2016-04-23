@@ -42,7 +42,7 @@
 					<div class="gym-inner">
 						<div class="row">
 							<div class="medium-3 columns right text-center">
-								<form action="{{ Url('dashboard/class/join') }}" method="post">
+								<form action="{{ Url('dashboard/class/session/create') }}" method="post">
 									<input hidden="true" value="{{ $class->id}}" name="class_id">
 									<button  class="button" type="submit">Join Class</button>
 								</form>
