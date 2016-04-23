@@ -320,6 +320,10 @@ Route::group(['prefix' => 'dashboard'], function () {
 	
 	Route::group(['prefix' => 'user'], function () {
 		
+		Route::get('/', function () {
+			return view('dashboard.pages.admin_profile');
+		});
+
 		Route::get('edit', function () {
 			return view('dashboard.pages.edit_user');
 		});
