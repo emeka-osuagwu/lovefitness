@@ -52,12 +52,12 @@ class User extends Model implements AuthenticatableContract,
 
 	public function session()
 	{
-		return $this->hasMany('App/Model/Session');
+		return $this->hasMany('App\Model\Session');
 	}
 
 	public function classes()
 	{
-		return $this->hasMany('App/Model/Classes');
+		return $this->hasMany('App\Model\Classes');
 	}
 
 }

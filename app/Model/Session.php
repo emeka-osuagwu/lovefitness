@@ -21,6 +21,6 @@ class Session extends Model
 
 	public function classes()
 	{
-		return $this->belongsTo('App\Classes');
+		return $this->belongsTo('App\Model\Classes');
 	}
 }

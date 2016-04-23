@@ -6,7 +6,7 @@ use DB;
 use Auth;
 use App\Model\Group;
 use App\Model\Classes;
-use App\Model\UserClass;
+use App\Model\Session;
 use App\Model\Category;
 use App\Http\Repo\GymRepo;
 use App\Http\Repo\CloudderRepo as CloudderRepo;
@@ -37,7 +37,6 @@ class ClassRepo extends GymRepo
 		{
 			return Classes::with('location')->where($field, $value)->get();
 		}
-
 
 		public function createClass($data)
 		{
@@ -79,6 +78,22 @@ class ClassRepo extends GymRepo
 		{
 			return DB::table($table)->where('id', $value);
 		}
+
+		public function joinClass($data)
+		{
+			$create = [
+				"user_id" 	=> Auth::user()->id,
+				"classes_id" 	=> $data['class_id']
+			];
+		
+			Session::create($create);
+		}
+
+		public function getUserClass()
+		{
+			return Session::with('classes')->where('user_id', Auth::user()->id)->get();
+		}
+
 	/*=====================================
 	# Classes Methods
 	======================================*/
@@ -165,16 +180,6 @@ class ClassRepo extends GymRepo
 	# Category Methods
 	======================================*/
 
-
-	public function joinClass($data)
-	{
-		$create = [
-			"user_id" 	=> Auth::user()->id,
-			"classes_id" 	=> $data['class_id']
-		];
-	
-		UserClass::create($create);
-	}
 
 
 

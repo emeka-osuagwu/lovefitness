@@ -14,8 +14,10 @@ class AdminController extends Controller
 
 		if (Auth::user()->role == 0) 
 		{
-			return $this->userRepo->getLoginUser(); 			
-			return view('dashboard.pages.index', compact('groups', 'classes', 'catetgories', 'users', 'reviews'));
+			$user 		= $this->userRepo->getLoginUser(); 			
+			$session 	= $this->classRepo->getUserClass(); 			
+			$location 	= $this->locationRepo->getLocationWhere('id', $session->first()->classes->location_id); 			
+			return view('dashboard.pages.index', compact('user', 'session', 'location'));
 		}
 		elseif (Auth::user()->role == 1) 
 		{

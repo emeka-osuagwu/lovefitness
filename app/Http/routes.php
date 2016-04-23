@@ -333,7 +333,6 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'UserController@updatePassword',
 			'as' 	=> '/',
 		]);
-
 	});
 });
 

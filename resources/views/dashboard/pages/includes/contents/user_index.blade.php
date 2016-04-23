@@ -66,18 +66,20 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td>
-														<a href="javascript:;"> Pixel Ltd </a>
-													</td>
-													<td class="hidden-xs"> Server hardware purchase </td>
-													<td> 52560.10$
-														<span class="label label-success label-sm"> Paid </span>
-													</td>
-													<td>
-														<a class="btn btn-sm grey-salsa btn-outline" href="{{ Url('') }}"> View </a>
-													</td>
-												</tr>
+												@foreach($session as $class)
+													<tr>
+														<td>
+															<a href="javascript:;"> {{$class->classes->name}} </a>
+														</td>
+														<td class="hidden-xs"> {{$location->first()->location}} </td>
+														<td> {{$class->classes->price}}
+															<span class="label label-success label-sm"> Paid </span>
+														</td>
+														<td>
+															<a class="btn btn-sm grey-salsa btn-outline" href="{{ Url('') }}"> View </a>
+														</td>
+													</tr>
+												@endforeach
 											</tbody>
 										</table>
 									</div>

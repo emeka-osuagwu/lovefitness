@@ -15,7 +15,7 @@ class UserRepo extends CloudderRepo
 
 	public function getLoginUser()
 	{
-		return User::with('user_class')->find(Auth::user()->id)->get();
+		return User::where('id', Auth::user()->id)->get();
 	}
 
 	public function createUser($data)
