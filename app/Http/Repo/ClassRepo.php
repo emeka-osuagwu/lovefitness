@@ -3,8 +3,10 @@
 namespace App\Http\Repo;
 
 use DB;
+use Auth;
 use App\Model\Group;
 use App\Model\Classes;
+use App\Model\UserClass;
 use App\Model\Category;
 use App\Http\Repo\GymRepo;
 use App\Http\Repo\CloudderRepo as CloudderRepo;
@@ -149,28 +151,38 @@ class ClassRepo extends GymRepo
 			Category::create($create);
 
 		}
+
+		public function updateCategory($data)
+		{
+			$update = [
+				"name"	=> $data['name'],
+				"color"		=> $data['color'],
+			];
+
+			Category::where('id', $data['category_id'])->update($update);
+		}
 	/*=====================================
 	# Category Methods
 	======================================*/
 
 
-
-
-
-
-
-
-
-
-
-
-	public function updateCategory($data)
+	public function joinClass($data)
 	{
-		$update = [
-			"name"	=> $data['name'],
-			"color"		=> $data['color'],
+		$create = [
+			"user_id" 	=> Auth::user()->id,
+			"classes_id" 	=> $data['class_id']
 		];
-
-		Category::where('id', $data['category_id'])->update($update);
+	
+		UserClass::create($create);
 	}
+
+
+
+
+
+
+
+
+
+
 }

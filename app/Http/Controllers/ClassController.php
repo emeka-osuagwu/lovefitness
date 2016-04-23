@@ -170,4 +170,14 @@ class ClassController extends Controller
 		}
 	/*=====================================
 	======================================*/
+
+	public function joinClass(Request $request)
+	{
+		$this->classRepo->joinClass($request->all());
+		return back();
+	}
+
 }
+
+
+

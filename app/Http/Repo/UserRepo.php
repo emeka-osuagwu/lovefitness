@@ -13,21 +13,9 @@ class UserRepo extends CloudderRepo
 		return User::all();
 	}
 
-	public function checkUserPassword($data)
+	public function getLoginUser()
 	{
-		
-		$old_password 	=  bcrypt($data['old_password']);
-		
-		if ($old_password ==  Auth::user()->password) {
-			return 2;
-		}
-
-		// $new_password_1 	=  $data['new_password_1'];
-		// $new_password_2 	=  $data['new_password_2'];
-
-
-
-		return Auth::user()->password;
+		return User::with('user_class')->find(Auth::user()->id)->get();
 	}
 
 	public function createUser($data)
