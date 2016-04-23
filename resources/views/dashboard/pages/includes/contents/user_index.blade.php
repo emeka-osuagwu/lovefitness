@@ -72,8 +72,7 @@
 															<a href="javascript:;"> {{$class->classes->name}} </a>
 														</td>
 														<td class="hidden-xs"> {{$location->first()->location}} </td>
-														<td> {{$class->classes->price}}
-															<span class="label label-success label-sm"> Paid </span>
+														<td> {{$class->classes->time}}
 														</td>
 														<td>
 															<a class="btn btn-sm grey-salsa btn-outline" href="{{ Url('') }}"> View </a>
