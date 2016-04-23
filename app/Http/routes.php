@@ -320,6 +320,10 @@ Route::group(['prefix' => 'dashboard'], function () {
 	
 	Route::group(['prefix' => 'user'], function () {
 		
+		Route::get('/', function () {
+			return view('dashboard.pages.admin_profile');
+		});
+
 		Route::get('edit', function () {
 			return view('dashboard.pages.edit_user');
 		});
@@ -334,6 +338,21 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 	});
+
+	Route::group(['prefix' => 'admin'], function () {
+		
+		Route::get('add', [
+			'uses' 	=> 'AdminController@getAddAdmin',
+			'as' 	=> '/',
+		]);
+	
+		Route::post('add', [
+			'uses' 	=> 'AdminController@postAddAdmin',
+			'as' 	=> '/',
+		]);
+	});
+
+
 });
 
 

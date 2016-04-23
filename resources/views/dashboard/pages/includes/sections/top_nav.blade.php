@@ -144,14 +144,19 @@
 						@endif
 
 						<ul class="dropdown-menu dropdown-menu-default">
+							@if( Auth::user()->role == 1 )
 							<li>
-								<a href="{{ Url('dashboard') }}">
+								<a href="{{ Url('dashboard/user') }}">
 								<i class="icon-user"></i> My Profile </a>
+							</li>
+							@endif
+							<li>
+								<a href="{{ Url('dashboard/user/edit') }}">
+								<i class="icon-user"></i> Edit Profile </a>
 							</li>
 							<li>
 								<a href="{{ Url('logout') }}">
 								<i class="icon-envelope-open"></i> Logout
-								<span class="badge badge-danger"> 3 </span>
 								</a>
 							</li>
 						</ul>

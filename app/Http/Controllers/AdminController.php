@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Session;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -30,9 +31,16 @@ class AdminController extends Controller
 		}
 	}
 
-
-	public function login()
+	public function getAddAdmin()
 	{
-		return 2;
+		$users = $this->userRepo->getAllUser();
+		return view('dashboard.pages.create_user_admin', compact('users'));
+	}
+
+	public function postAddAdmin(Request $request)
+	{
+		$this->userRepo->updateUserRole($request->all());
+		Session::flash('message', 'good');
+		return back();
 	}
 }
