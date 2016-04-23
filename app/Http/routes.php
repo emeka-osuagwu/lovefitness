@@ -224,6 +224,14 @@ Route::group(['prefix' => 'dashboard'], function () {
 		]);
 	});
 
+	Route::group(['prefix' => 'class/session'], function () {
+
+		Route::post('create', [
+			'uses' 	=> 'ClassController@createSession',
+			'as' 	=> '/',
+		]);
+	});
+
 	Route::get('trainers', [
 		'uses' 	=> 'TrainerController@trainers',
 		'as' 	=> '/',
@@ -325,7 +333,6 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'UserController@updatePassword',
 			'as' 	=> '/',
 		]);
-
 	});
 });
 

@@ -71,13 +71,15 @@ class ClassController extends Controller
 			Session::flash('message', 'good');
 			return back();
 		}
+
+		public function createSession(Request $request)
+		{
+			$this->classRepo->joinClass($request->all());
+			return back();
+		}
 	/*=====================================
 	# Classes Methods
 	======================================*/
-
-
-
-
 
 	/*=====================================
 	# Groups Methods
@@ -131,8 +133,6 @@ class ClassController extends Controller
 	# Category Methods
 	=======================================*/
 
-
-
 	/*======================================
 	# Category Methods
 	=======================================*/
@@ -170,4 +170,8 @@ class ClassController extends Controller
 		}
 	/*=====================================
 	======================================*/
+
 }
+
+
+

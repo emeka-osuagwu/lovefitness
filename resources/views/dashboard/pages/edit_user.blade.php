@@ -22,7 +22,7 @@
 						function(isConfirm)
 						{
 							if (isConfirm) {
-						  		window.location="/dashboard/user";
+						  		window.location="/dashboard";
 						  	}
 						});
 					</script>

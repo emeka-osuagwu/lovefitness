@@ -13,6 +13,11 @@ class LocationRepo extends GymRepo
 		return Location::all();
 	}
 
+	public function getLocationWhere($field, $value)
+	{
+		return Location::where($field, $value)->get();
+	}
+
 	/*=====================================
 	# Gym Methods
 	======================================*/

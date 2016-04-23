@@ -129,6 +129,13 @@
 						<i class="fa fa-fw fa-home"></i>
 						<span class="title">Dashboard</span>
 					</a>
+				</li>		
+
+				<li class="start ">
+					<a href="{{ Url('classes') }}">
+						<i class="fa fa-fw fa-home"></i>
+						<span class="title">Join Class</span>
+					</a>
 				</li>
 			
 			</ul>

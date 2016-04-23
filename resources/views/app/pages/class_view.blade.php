@@ -42,7 +42,10 @@
 					<div class="gym-inner">
 						<div class="row">
 							<div class="medium-3 columns right text-center">
-								<a href="#" class="button">Join Class</a>
+								<form action="{{ Url('dashboard/class/session/create') }}" method="post">
+									<input hidden="true" value="{{ $class->id}}" name="class_id">
+									<button  class="button" type="submit">Join Class</button>
+								</form>
 								<div class="gym-price"><span>Price: </span>${{$class->price}}</div>
 							</div>
 						</div>
@@ -52,10 +55,6 @@
 						<h5>Timetable</h5>
 						<p>Monday: <span>5pm</span><br />
 						Monday: <span>5pm</span><br />
-						Monday: <span>5pm</span><br />
-						Monday: <span>5pm</span><br />
-						Monday: <span>5pm</span><br />
-						Monday: <span>5pm</span></p>
 
 						<section class="reviews">
 							<h5>Reviews</h5>
