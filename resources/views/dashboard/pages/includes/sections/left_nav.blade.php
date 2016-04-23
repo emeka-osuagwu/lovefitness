@@ -111,12 +111,17 @@
 
 				<li class="heading">
 	                            		<h3 class="uppercase">Settings</h3>
-	                        		</li>
-
-	                        		<li class="start ">
+	                        	</li>
+	                        	<li class="start ">
 					<a href="{{ Url('dashboard/setting/add/color') }}">
 						<i class="fa fa-fw fa-home"></i>
 						<span class="title">Add Color</span>
+					</a>
+				</li>
+				<li class="start ">
+					<a href="{{ Url('dashboard/admin/add') }}">
+						<i class="fa fa-fw fa-home"></i>
+						<span class="title">Add Admin</span>
 					</a>
 				</li>
 			</ul>

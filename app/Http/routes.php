@@ -338,6 +338,21 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 	});
+
+	Route::group(['prefix' => 'admin'], function () {
+		
+		Route::get('add', [
+			'uses' 	=> 'AdminController@getAddAdmin',
+			'as' 	=> '/',
+		]);
+	
+		Route::post('add', [
+			'uses' 	=> 'AdminController@postAddAdmin',
+			'as' 	=> '/',
+		]);
+	});
+
+
 });
 
 

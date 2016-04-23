@@ -53,4 +53,13 @@ class UserRepo extends CloudderRepo
 		User::where('id', $data['user_id'])->update($update);
 	}
 
+	public function updateUserRole($data)
+	{
+		$update = [
+			"role" => $data['role']
+		];
+
+		User::where('id', $data['user_id'])->update($update);
+	}
+
 }
