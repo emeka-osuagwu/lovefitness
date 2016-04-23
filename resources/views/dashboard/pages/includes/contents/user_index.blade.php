@@ -75,7 +75,7 @@
 														<td> {{$class->classes->time}}
 														</td>
 														<td>
-															<a class="btn btn-sm grey-salsa btn-outline" href="{{ Url('') }}"> View </a>
+															<a class="btn btn-sm grey-salsa btn-outline" target="_blank" href="classes/{{$class->classes->name}}"> View </a>
 														</td>
 													</tr>
 												@endforeach
