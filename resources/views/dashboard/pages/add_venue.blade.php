@@ -77,14 +77,14 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label">Phone Number</label>
 													<div class="col-md-4">
-														<input type="text" name="phone" class="form-control" value="" required="true">
+														<input type="number" name="phone" class="form-control" value="" required="true">
 													</div>
 												</div>
 
 												<div class="form-group">
 													<label class="col-md-3 control-label">Email</label>
 													<div class="col-md-4">
-														<input type="text" name="email" class="form-control" value="" required="true">
+														<input type="email" name="email" class="form-control" value="" required="true">
 													</div>
 												</div>
 
