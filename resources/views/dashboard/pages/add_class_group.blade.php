@@ -1,6 +1,6 @@
 @extends('dashboard.master')
 
-@section('title', 'Index')
+@section('title', 'Group')
 
 @section('content')
 	@include('dashboard.pages.includes.sections.top_nav')
