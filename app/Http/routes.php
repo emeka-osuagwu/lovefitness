@@ -88,6 +88,16 @@ Route::get('contact', [
 	'as' 	=> '/',
 ]);
 
+Route::get('gyms', [
+	'uses' 	=> 'LocationController@appGyms',
+	'as' 	=> '/',
+]);
+
+Route::get('gym/{id}', [
+	'uses' 	=> 'LocationController@appGym',
+	'as' 	=> '/',
+]);
+
 Route::group(['prefix' => 'dashboard'], function () {
 
 	Route::get('/', [

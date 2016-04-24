@@ -57,7 +57,7 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Membership Price</label>
 										<div class="col-md-4">
-											<input type="text" name="price" class="form-control" value="" required="true">
+											<input type="number" name="price" class="form-control" value="" required="true">
 										</div>
 									</div>
 									<div class="form-group">
@@ -66,17 +66,25 @@
 											<input type="text" name="address" class="form-control" value="" required="true">
 										</div>
 									</div>
+									
 									<div class="form-group">
 										<label class="col-md-3 control-label">Location</label>
 										<div class="col-md-4">
-											<input type="text" name="location" class="form-control" value="" required="true">
+											<select class="form-control" name="location" required="true">
+												<option>Select Location</option>
+												<option value="Lekki">Lekki</option>
+												<option value="Ikoyi">Ikoyi</option>
+												<option value="Victoria Island">Victoria Island</option>
+												<option value="Oniru">Oniru</option>
+												<option value="Ikeja">Ikeja</option>
+											</select>
 										</div>
 									</div>
-									
+
 									<div class="form-group">
 										<label class="col-md-3 control-label">Phone</label>
 										<div class="col-md-4">
-											<input type="text" name="phone" class="form-control" value="" required="true">
+											<input type="number" name="phone" class="form-control" value="" required="true">
 										</div>
 									</div>
 									
@@ -97,7 +105,7 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Email</label>
 										<div class="col-md-4">
-											<input type="text" name="email" class="form-control" value="" required="true">
+											<input type="email" name="email" class="form-control" value="" required="true">
 										</div>
 									</div>
 									<div class="form-group">
@@ -117,7 +125,7 @@
 									<div class="row">
 										<div class="col-md-offset-3 col-md-9">
 											<button type="submit" class="btn green">Submit</button>
-											<button type="button" class="btn default">Cancel</button>
+											<a type="button"  href="{{  Url('dashboard/gyms') }}" class="btn default">Cancel</a>
 										</div>
 									</div>
 								</div>

@@ -9,6 +9,17 @@ use App\Http\Controllers\Controller;
 
 class LocationController extends Controller
 {
+	public function appGyms()
+	{
+		$gyms = $this->locationRepo->getAllGym();
+		return view('app.pages.gyms', compact('gyms'));
+	}
+
+	public function appGym($id)
+	{
+		$gym = $this->locationRepo->getGymById($id);
+		return view('app.pages.gym', compact('gym'));
+	}
 	
 	/*=====================================
 	# Gym Methods
