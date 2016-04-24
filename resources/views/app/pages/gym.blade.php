@@ -73,7 +73,7 @@
 							<p>Your email address will not be published. Required fields are marked <em>*</em></p>
 							<form method="post" action="/review/create" id="review-form">
 								<input hidden="true"  name="_token" value="{{ csrf_token() }}">
-								<input hidden="true"  name="class_id" value="{{$gym->first()->id}}">
+								<input hidden="true"  name="gym_id" value="{{$gym->first()->id}}">
 								<p>
 									<label>Name <em>*</em></label>
 									<br />
