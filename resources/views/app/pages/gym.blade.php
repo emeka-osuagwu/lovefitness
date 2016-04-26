@@ -71,7 +71,7 @@
 						<div class="review-form">
 							<h5>Leave a review</h5>
 							<p>Your email address will not be published. Required fields are marked <em>*</em></p>
-							<form method="post" action="{{  Url('dashboard/review/create') }}" id="review-form">
+							<form method="post" action="{{  Url('dashboard/gym/review/create') }}" id="review-form">
 								<input hidden="true"  name="_token" value="{{ csrf_token() }}">
 								<input hidden="true"  name="gym_id" value="{{$gym->first()->id}}">
 								<p>

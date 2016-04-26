@@ -41,4 +41,9 @@ class GymController extends Controller
 		$this->locationRepo->deleteGym($id);
 		return back();
 	}
+
+	public function createReview(Request $request)
+	{
+		return $this->locationRepo->createReview($request->all());
+	}
 }

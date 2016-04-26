@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Color extends Model
 {
+	protected $table = 'location_reviews';
+	
 	protected $fillable = [
 		"name"
 	];

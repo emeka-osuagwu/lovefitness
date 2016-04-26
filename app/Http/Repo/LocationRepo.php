@@ -18,6 +18,19 @@ class LocationRepo extends GymRepo
 		return Location::where($field, $value)->get();
 	}
 
+	public function createReview($data)
+	{
+		$create = [
+			"name" 	=> $data['name'],
+			"email" 	=> $data['email'],
+			"website" 	=> $data['website'],
+			"comment" 	=> $data['comment'],
+			"location_id" 	=> $data['gym_id'],
+		];
+
+		return $create;
+	}
+
 	/*=====================================
 	# Gym Methods
 	======================================*/
