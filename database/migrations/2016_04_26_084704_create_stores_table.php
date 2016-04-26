@@ -20,7 +20,7 @@ class CreateStoresTable extends Migration
 			$table->string('location');
 			$table->string('image')->nullable();
 			$table->string('longitude')->nullable();
-			$table->strings('latitude')->nullable();
+			$table->string('latitude')->nullable();
 			$table->integer('number')->nullable();
 			$table->string('website')->nullable();
 			$table->timestamps();
