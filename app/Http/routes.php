@@ -116,7 +116,6 @@ Route::group(['prefix' => 'dashboard'], function () {
 		'as' 	=> '/',
 	]);
 
-
 	Route::get('gyms', [
 		'uses' 	=> 'GymController@index',
 		'as' 	=> '/',
@@ -368,7 +367,33 @@ Route::group(['prefix' => 'dashboard'], function () {
 		]);
 	});
 
+	Route::get('stores', [
+		'uses' 	=> 'StoreController@dashboardStores',
+		'as' 	=> '/',
+	]);	
+	
+	Route::group(['prefix' => 'store'], function () {
+	
+		Route::get('{id}/edit', [
+			'uses' 	=> 'StoreController@edit',
+			'as' 	=> '/',
+		]);
+	
+		Route::get('create', function (){
+			return view('dashboard.pages.add_store');
+		});		
 
+		Route::post('create', [
+			'uses' 	=> 'StoreController@postCreate',
+			'as' 	=> '/',
+		]);	
+
+		Route::post('update', [
+			'uses' 	=> 'StoreController@update',
+			'as' 	=> '/',
+		]);	
+
+	});
 });
 
 
