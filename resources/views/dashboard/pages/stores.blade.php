@@ -17,14 +17,14 @@
 										<div class="portlet-title">
 											<div class="caption">
 												<i class="fa fa-map-marker font-red-sunglo"></i>
-												<span class="caption-subject font-red-sunglo bold uppercase">Gyms</span>
+												<span class="caption-subject font-red-sunglo bold uppercase">Stores</span>
 											</div>
 											<div class="actions">
 												<div class="portlet-input input-inline input-small">
 													<div class="input-icon right">
 														<i class="fa fa-plus"></i>
-														<a class="form-control" href="/dashboard/gym/create">
-														Add new Gym </a>
+														<a class="form-control" href="/dashboard/store/create">
+														Add Store </a>
 													</div>
 												</div>
 											</div>

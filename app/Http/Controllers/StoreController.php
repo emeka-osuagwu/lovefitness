@@ -11,6 +11,13 @@ use App\Http\Controllers\Controller;
 class StoreController extends Controller
 {
 
+
+	public function edit($id)
+	{
+		$store = $this->storeRepo->getStoreWhere('id', $id);
+		return view('dashboard.pages.edit_store', compact('store'));
+	}
+
 	public function dashboardStores()
 	{
 		$stores = $this->storeRepo->getAllStore();
@@ -23,4 +30,13 @@ class StoreController extends Controller
 		Session::flash('message', 'good');
 		return back();
 	}
+
+	public function update(Request $request)
+	{
+		$this->storeRepo->updateStore($request->all());
+		Session::flash('message', 'good');
+		return back();
+	}
+
+
 }

@@ -374,12 +374,22 @@ Route::group(['prefix' => 'dashboard'], function () {
 	
 	Route::group(['prefix' => 'store'], function () {
 	
+		Route::get('{id}/edit', [
+			'uses' 	=> 'StoreController@edit',
+			'as' 	=> '/',
+		]);
+	
 		Route::get('create', function (){
 			return view('dashboard.pages.add_store');
 		});		
 
 		Route::post('create', [
 			'uses' 	=> 'StoreController@postCreate',
+			'as' 	=> '/',
+		]);	
+
+		Route::post('update', [
+			'uses' 	=> 'StoreController@update',
 			'as' 	=> '/',
 		]);	
 

@@ -19,8 +19,8 @@ class CreateStoresTable extends Migration
 			$table->string('email');
 			$table->string('location');
 			$table->string('image')->nullable();
-			$table->float('longitude')->nullable();
-			$table->float('latitude')->nullable();
+			$table->string('longitude')->nullable();
+			$table->strings('latitude')->nullable();
 			$table->integer('number')->nullable();
 			$table->string('website')->nullable();
 			$table->timestamps();

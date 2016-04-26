@@ -21,8 +21,8 @@ class CreateLocationTable extends Migration
 			$table->string('email');
 			$table->string('location');
 			$table->string('image')->nullable();
-			$table->float('longitude')->nullable();
-			$table->float('latitude')->nullable();
+			$table->string('longitude')->nullable();
+			$table->string('latitude')->nullable();
 			$table->integer('number')->nullable();
 			$table->string('hours');
 			$table->string('description');
