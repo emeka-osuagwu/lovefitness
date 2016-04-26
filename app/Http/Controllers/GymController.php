@@ -44,6 +44,8 @@ class GymController extends Controller
 
 	public function createReview(Request $request)
 	{
-		return $this->locationRepo->createReview($request->all());
+		$this->locationRepo->createReview($request->all());
+		return back();
 	}
+	
 }

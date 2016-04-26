@@ -3,6 +3,7 @@
 namespace App\Http\Repo;
 
 use App\Model\Location;
+use App\Model\LocationReview;
 use App\Http\Repo\CloudderRepo as CloudderRepo;
 
 class LocationRepo extends GymRepo
@@ -28,7 +29,7 @@ class LocationRepo extends GymRepo
 			"location_id" 	=> $data['gym_id'],
 		];
 
-		return $create;
+		LocationReview::create($create);
 	}
 
 	/*=====================================
@@ -41,7 +42,7 @@ class LocationRepo extends GymRepo
 
 		public function getGymById($id)
 		{
-			return Location::where('id', $id)->get();
+			return Location::with('reviews')->where('id', $id)->get();
 		}
 
 		public function createGym($data)

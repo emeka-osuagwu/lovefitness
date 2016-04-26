@@ -48,25 +48,18 @@
 					<section class="reviews">
 					
 						<h5>Reviews</h5>
-						
-						<div class="row collapse review-item">
-							<div class="medium-1 columns">
-								<img src="http://lorempixel.com/800/600/people/?26265" alt="">
+						@foreach($gym->first()->reviews as $review)
+							<div class="row collapse review-item">
+								<div class="medium-1 columns">
+									<img src="http://lorempixel.com/800/600/people/?26265" alt="">
+								</div>
+								<div class="medium-11 columns">
+									<h4>{{$review->name}}</h4>
+									<h6>{{$review->created_at->diffForHumans()}}</h6>
+									<p>{{$review->comment}}</p> 
+								</div>
 							</div>
-							<div class="medium-11 columns">
-								<h4>Eduard Lleshi
-									<span class="stars">
-										<i class="fa fa-star  "></i>
-										<i class="fa fa-star  "></i>
-										<i class="fa fa-star  "></i>
-										<i class="fa fa-star  empty  "></i>
-										<i class="fa fa-star  empty  "></i>
-									</span>
-								</h4>
-								<h6>October 29, 2015 - 05:10 pm</h6>
-								<p>asdasdasdasd asd sadsa</p> <p class="reply-review" data-id="4"><a href="#review-form"></a> 					</p>
-							</div>
-						</div>
+						@endforeach
 
 						<div class="review-form">
 							<h5>Leave a review</h5>
@@ -77,17 +70,17 @@
 								<p>
 									<label>Name <em>*</em></label>
 									<br />
-									<input type="text" name="name" value="">
+									<input type="text" name="name" required="true" value="">
 								</p>
 								<p>
 									<label>Email <em>*</em></label>
 									<br />
-									<input type="email" name="email" value="">
+									<input type="email" name="email" required="true" value="">
 								</p>
 								<p>
 									<label>Website</label>
 									<br />
-									<input type="text" name="website" value="">
+									<input type="text" name="website" required="true" value="">
 								</p>
 								<p>
 									<label>Comment</label>
@@ -95,7 +88,7 @@
 									<textarea name="comment"></textarea></span> 
 								</p>
 								<p>
-									<input type="submit" value="Post" class="button" />
+									<input type="submit" required="true" value="Post" class="button" />
 								</p>
 							</form>
 						</div>

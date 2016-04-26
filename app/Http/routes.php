@@ -151,6 +151,7 @@ Route::group(['prefix' => 'dashboard'], function () {
 		Route::post('review/create', [
 			'uses' 	=> 'GymController@createReview',
 			'as' 	=> '/',
+			'middleware' => ['auth'],
 		]);
 
 	});
