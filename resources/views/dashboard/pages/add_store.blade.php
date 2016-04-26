@@ -25,7 +25,7 @@
 											@if (Session::has('message'))
 									  	    	  	<script>
 													swal({
-														title: "Gym Added",
+														title: "Store Added",
 														type: "success",
 														confirmButtonColor: "#298829",
 														confirmButtonText: "OK",
@@ -35,11 +35,12 @@
 													function(isConfirm)
 													{
 														if (isConfirm) {
-													  		window.location="/dashboard/gyms";
+													  		window.location="/dashboard/stores";
 													  	}
 													});
 												</script>
 											@endif  
+											
 											<form method="post" action="{{ Url('dashboard/store/create') }}" enctype="multipart/form-data" class="form-horizontal">
 												<input type="hidden" name="_token" value="{{ csrf_token() }}">
 												<div class="form-body">

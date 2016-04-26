@@ -367,8 +367,13 @@ Route::group(['prefix' => 'dashboard'], function () {
 		]);
 	});
 
+	Route::get('stores', [
+		'uses' 	=> 'StoreController@dashboardStores',
+		'as' 	=> '/',
+	]);	
+	
 	Route::group(['prefix' => 'store'], function () {
-		
+	
 		Route::get('create', function (){
 			return view('dashboard.pages.add_store');
 		});		
