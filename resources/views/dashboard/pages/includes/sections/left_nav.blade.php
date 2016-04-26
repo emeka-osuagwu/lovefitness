@@ -109,6 +109,27 @@
 					</ul>
 				</li>
 
+				<li>
+					<a href="javascript:;">
+						<i class="fa fa-fw fa-building"></i>
+						<span class="title">Store</span>
+						<span class="arrow "></span>
+					</a>
+
+					<ul class="sub-menu">
+						<li>
+							<a href="{{ Url('dashboard/store/create') }}">
+							<i class="icon-plus"></i>
+							Add  Store</a>
+						</li>
+						<li>
+							<a href="{{ Url('dashboard/stores') }}">
+							<i class="icon-plus"></i>
+							Stores</a>
+						</li>
+					</ul>
+				</li>
+
 				<li class="heading">
 	                            		<h3 class="uppercase">Settings</h3>
 	                        	</li>

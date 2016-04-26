@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Repo\UserRepo;
 use App\Http\Repo\ColorRepo;
 use App\Http\Repo\ClassRepo;
-use App\Http\Repo\VenueRepo;
+use App\Http\Repo\StoreRepo;
 use App\Http\Repo\ReviewRepo;
 use App\Http\Repo\TrainerRepo;
 use App\Http\Repo\LocationRepo;
@@ -25,7 +25,7 @@ abstract class Controller extends BaseController
 		$this->userRepo 	= new UserRepo;
 		$this->colorRepo 	= new ColorRepo;
 		$this->classRepo 	= new ClassRepo;
-		$this->venueRepo 	= new VenueRepo;
+		$this->storeRepo 	= new StoreRepo;
 		$this->reviewRepo 	= new ReviewRepo;
 		$this->trainerRepo 	= new TrainerRepo;
 		$this->locationRepo 	= new LocationRepo;
