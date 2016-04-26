@@ -143,11 +143,17 @@ Route::group(['prefix' => 'dashboard'], function () {
 			return view('dashboard.pages.add_gym');
 		});
 
-
 		Route::post('create', [
 			'uses' 	=> 'GymController@create',
 			'as' 	=> '/',
 		]);
+		
+		Route::post('review/create', [
+			'uses' 	=> 'GymController@createReview',
+			'as' 	=> '/',
+			'middleware' => ['auth'],
+		]);
+
 	});
 
 	Route::group(['prefix' => 'class'], function () {

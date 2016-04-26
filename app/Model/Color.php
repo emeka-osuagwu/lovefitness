@@ -10,3 +10,4 @@ class Color extends Model
 		"name"
 	];
 }
+

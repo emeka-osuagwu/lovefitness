@@ -27,4 +27,9 @@ class Location extends Model
 		return $this->hasMany('App\Model\Classes');
 	}
 
+	public function reviews()
+	{
+		return $this->hasMany('App\Model\LocationReview');
+	}
+
 }
