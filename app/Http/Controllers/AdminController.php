@@ -31,6 +31,12 @@ class AdminController extends Controller
 		}
 	}
 
+	public function getAllAdmin()
+	{
+		$admins = $this->userRepo->getAllAdmin();
+		return view('dashboard.pages.admins', compact('admins'));	
+	}
+
 	public function getAddAdmin()
 	{
 		$users = $this->userRepo->getAllUser();
@@ -43,4 +49,6 @@ class AdminController extends Controller
 		Session::flash('message', 'good');
 		return back();
 	}
+
+
 }

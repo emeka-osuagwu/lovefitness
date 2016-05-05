@@ -354,6 +354,11 @@ Route::group(['prefix' => 'dashboard'], function () {
 		]);
 	});
 
+	Route::get('admins', [
+		'uses' 	=> 'AdminController@getAllAdmin',
+		'as' 	=> '/',
+	]);
+
 	Route::group(['prefix' => 'admin'], function () {
 		
 		Route::get('add', [

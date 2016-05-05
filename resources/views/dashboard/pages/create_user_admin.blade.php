@@ -1,6 +1,6 @@
 @extends('dashboard.master')
 
-@section('title', 'Index')
+@section('title', 'Add Admin')
 
 @section('content')
 	@include('dashboard.pages.includes.sections.top_nav')
@@ -35,7 +35,7 @@
 													function(isConfirm)
 													{
 														if (isConfirm) {
-													  		window.location="/dashboard";
+													  		window.location="/dashboard/admins";
 													  	}
 													});
 												</script>
@@ -77,7 +77,7 @@
 													<div class="row">
 														<div class="col-md-offset-3 col-md-9">
 															<button type="submit" class="btn green">Submit</button>
-															<a href="{{ Url('dashboard') }}"  class="btn default">Cancel</a>
+															<a href="{{ Url('dashboard/admins') }}"  class="btn default">Cancel</a>
 														</div>
 													</div>
 												</div>
