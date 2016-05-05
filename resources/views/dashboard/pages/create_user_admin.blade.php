@@ -49,7 +49,11 @@
 															<select class="form-control" name="user_id" required="true">
 																<option value="" >Select User</option>
 																@foreach($users->except(Auth::user()->id) as $user)
-																	<option value="{{$user->id}}">{{$user->firstname}}</option>
+																	@if($user->firstname == null || $user->firstname == '' )
+																		<option value="{{$user->id}}">{{$user->email}} </option>
+																	@else
+																		<option value="{{$user->id}}">{{$user->firstname}}</option>
+																	@endif
 																@endforeach
 															</select>
 														</div>
