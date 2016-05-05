@@ -39,6 +39,8 @@
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
         <script src="{!! load_asset('../assets/pages/scripts/components-bootstrap-select-splitter.min.js') !!}" type="text/javascript"></script>
+        
+        <script src="{!! load_asset('..//pages/scripts/portfolio-1.min.js') !!}" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
