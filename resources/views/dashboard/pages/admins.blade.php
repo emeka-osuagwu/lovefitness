@@ -16,7 +16,7 @@
 								<div class="portlet-title">
 									<div class="caption">
 										<i class=" icon-layers font-green"></i>
-										<span class="caption-subject font-green bold uppercase">Default</span>
+										<span class="caption-subject font-green bold uppercase">Lovefitness Admin</span>
 									</div>
 								</div>
 								<div class="portlet-body">
