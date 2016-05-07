@@ -51,9 +51,9 @@
 												
 						<a href="/{{$group->name}}/classes">
 							@if($group->image == '' || $group->image == null)
-								<img src="images/swimming.jpg" alt="">
+								<img src="{{asset('images/no_gym_group_image.jpg')}}" alt="">
 							@else
-							<img src="{{$group->image}}" width="50px">
+							<img style="width: 377px; height: 262px"   src="{{$group->image}}" width="50px">
 							@endif
 							<h3 class="{{$group->category->color}}"><a href="#">{{$group->name}}</a></h3>
 							<p>{{$group->description}}</p>

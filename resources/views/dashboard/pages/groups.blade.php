@@ -37,8 +37,8 @@
 															<thead>
 																<tr>
 																	<th width="10px">ID</th>
-																	<th>Name</th>
 																	<th>Image</th>
+																	<th>Name</th>
 																	<th>Description</th>
 																	<th>Category</th>
 																	<th>Class No</th>
@@ -51,7 +51,11 @@
 																@foreach($groups as $group)
 																<tr>
 																	<td>{{$i++}}</td>
-																	<td><img  width="40" src="{{$group->image}}"></td>
+																		@if($group->image == '' || $group->image == null )
+																			<td><img  width="40" src="{{asset('images/no_gym_group_image.jpg')}}"></td>
+																		@else
+																			<td><img  width="40" src="{{$group->image}}"></td>
+																		@endif
 																	<td>{{$group->name}}</td>
 																	<td>{{$group->description}}</td>
 																	<td>{{$group->category->name}}</td>
