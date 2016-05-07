@@ -140,6 +140,12 @@
 					</a>
 				</li>
 				<li class="start ">
+					<a href="{{ Url('dashboard/admins') }}">
+						<i class="fa fa-fw fa-home"></i>
+						<span class="title">Admins</span>
+					</a>
+				</li>
+				<li class="start ">
 					<a href="{{ Url('dashboard/admin/add') }}">
 						<i class="fa fa-fw fa-home"></i>
 						<span class="title">Add Admin</span>
