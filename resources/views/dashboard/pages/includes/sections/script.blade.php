@@ -30,7 +30,7 @@
       
         <script src="{!! load_asset('../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') !!}" type="text/javascript"></script>
         
-        <script src="{!! load_asset('../assets/global/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js') !!}" type="text/javascript"></script>
+       
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
