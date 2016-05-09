@@ -13,7 +13,7 @@ class LocationReview extends Model
 		"email",	
 		"website",	
 		"comment",	
-		"gym_id",	
+		"location_id",	
 	];
 
 	public function location()

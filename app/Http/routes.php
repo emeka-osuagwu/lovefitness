@@ -121,30 +121,34 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 		'middleware' => 'admin',
 	]);
 
-	Route::group(['prefix' => 'gym', 'middleware' => 'admin'], function () {
+	Route::group(['prefix' => 'gym'], function () {
 
 		Route::get('{id}/edit', [
 			'uses' 	=> 'GymController@edit',
 			'as' 	=> '/',
+			'middleware' => 'admin',
 		]);
 
 		Route::post('update', [
 			'uses' 	=> 'GymController@update',
 			'as' 	=> '/',
+			'middleware' => 'admin',
 		]);	
 
 		Route::get('{id}/delete', [
 			'uses' 	=> 'GymController@delete',
 			'as' 	=> '/',
+			'middleware' => 'admin',
 		]);
 
-		Route::get('create', function () {
+		Route::get('create', ['middleware' => 'admin', function () {
 			return view('dashboard.pages.add_gym');
-		});
+		}]);
 
 		Route::post('create', [
 			'uses' 	=> 'GymController@create',
 			'as' 	=> '/',
+			'middleware' => 'admin',
 		]);
 		
 		Route::post('review/create', [
