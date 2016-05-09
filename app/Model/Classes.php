@@ -16,7 +16,7 @@ class Classes extends Model
 		"name",
 		"duration",
 		"location_id",
-		"class_group_id",
+		"group_idgroup_idgroup_id",
 	];
 
 	public function group()
