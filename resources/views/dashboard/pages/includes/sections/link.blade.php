@@ -15,6 +15,8 @@
 <!-- END GLOBAL MANDATORY STYLES -->
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <link href="{!! load_asset('../assets/global/plugins/cubeportfolio/css/cubeportfolio.css') !!}" rel="stylesheet" type="text/css" />
+       
         <link href="{!! load_asset('../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css') !!}" rel="stylesheet" type="text/css" />
         <link href="{!! load_asset('../assets/global/plugins/morris/morris.css') !!}" rel="stylesheet" type="text/css" />
         <link href="{!! load_asset('../assets/global/plugins/fullcalendar/fullcalendar.min.css') !!}" rel="stylesheet" type="text/css" />
@@ -29,13 +31,18 @@
         <link href="{!! load_asset('../assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css') !!}" rel="stylesheet" type="text/css" />
       
         <link href="{!! load_asset('../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css') !!}" rel="stylesheet" type="text/css" />
-        <link href="{!! load_asset('../assets/pages/css/profile-2.min.css') !!}" rel="stylesheet" type="text/css" />
+       
 <!-- END PAGE LEVEL PLUGINS -->
 
 <!-- BEGIN THEME GLOBAL STYLES -->
         <link href="{!! load_asset('../assets/global/css/components.min.css') !!}" rel="stylesheet" id="style_components" type="text/css" />
         <link href="{!! load_asset('../assets/global/css/plugins.min.css') !!}" rel="stylesheet" type="text/css" />
+        <link href="{!! load_asset('../assets/global/css/plugins.min.css') !!}" rel="stylesheet" type="text/css" />
 <!-- END THEME GLOBAL STYLES -->
+
+<!-- BEGIN PAGE LEVEL STYLES -->
+        <link href="{!! load_asset('../assets/pages/css/portfolio.min.css') !!}" rel="stylesheet" type="text/css" />
+<!-- BEGIN PAGE LEVEL STYLES -->
 
 <!-- BEGIN THEME LAYOUT STYLES -->
         <link href="{!! load_asset('../assets/layouts/layout4/css/layout.min.css') !!}" rel="stylesheet" type="text/css" />

@@ -18,6 +18,11 @@ class UserRepo extends CloudderRepo
 		return User::where('id', Auth::user()->id)->get();
 	}
 
+	public function getAllAdmin()
+	{
+		return User::where('role', 2)->orWhere('role', 1)->get();
+	}
+
 	public function createUser($data)
 	{
 		$create = [

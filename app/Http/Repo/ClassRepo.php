@@ -44,7 +44,7 @@ class ClassRepo extends GymRepo
 				"name" 		=> $data['name'],
 				"time" 			=> $data['time'],
 				"duration" 		=> $data['duration'],
-				"price" 		=> $data['price'],
+				"price" 			=> $data['price'],
 				"location_id" 		=> $data['location'],
 				"group_id" 		=> $data['group_id'],
 			];

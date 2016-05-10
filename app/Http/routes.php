@@ -98,12 +98,11 @@ Route::get('gym/{id}', [
 	'as' 	=> '/',
 ]);
 
-Route::group(['prefix' => 'dashboard'], function () {
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 
 	Route::get('/', [
 		'uses' 	=> 'AdminController@index',
 		'as' 	=> '/',
-		'middleware' => 'auth',
 	]);
 
 	Route::get('login', [
@@ -119,6 +118,7 @@ Route::group(['prefix' => 'dashboard'], function () {
 	Route::get('gyms', [
 		'uses' 	=> 'GymController@index',
 		'as' 	=> '/',
+		'middleware' => 'admin',
 	]);
 
 	Route::group(['prefix' => 'gym'], function () {
@@ -126,36 +126,38 @@ Route::group(['prefix' => 'dashboard'], function () {
 		Route::get('{id}/edit', [
 			'uses' 	=> 'GymController@edit',
 			'as' 	=> '/',
+			'middleware' => 'admin',
 		]);
 
 		Route::post('update', [
 			'uses' 	=> 'GymController@update',
 			'as' 	=> '/',
+			'middleware' => 'admin',
 		]);	
 
 		Route::get('{id}/delete', [
 			'uses' 	=> 'GymController@delete',
 			'as' 	=> '/',
+			'middleware' => 'admin',
 		]);
 
-		Route::get('create', function () {
+		Route::get('create', ['middleware' => 'admin', function () {
 			return view('dashboard.pages.add_gym');
-		});
+		}]);
 
 		Route::post('create', [
 			'uses' 	=> 'GymController@create',
 			'as' 	=> '/',
+			'middleware' => 'admin',
 		]);
 		
 		Route::post('review/create', [
 			'uses' 	=> 'GymController@createReview',
 			'as' 	=> '/',
-			'middleware' => ['auth'],
 		]);
-
 	});
 
-	Route::group(['prefix' => 'class'], function () {
+	Route::group(['prefix' => 'class', 'middleware' => 'admin'], function () {
 
 		Route::get('/', [
 			'uses' 	=> 'ClassController@dashboardClasses',
@@ -227,7 +229,6 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'as' 	=> '/',
 		]);
 
-
 		Route::get('category/{id}/edit', [
 			'uses' 	=> 'ClassController@editCategory',
 			'as' 	=> '/',
@@ -282,9 +283,10 @@ Route::group(['prefix' => 'dashboard'], function () {
 	Route::get('venues', [
 		'uses' 	=> 'VenueController@venues',
 		'as' 	=> '/',
+		'middleware' => 'admin',
 	]);
 
-	Route::group(['prefix' => 'venue'], function () {
+	Route::group(['prefix' => 'venue', 'middleware' => 'admin'], function () {
 		
 		Route::get('create', function () {
 			return view('dashboard.pages.add_venue');
@@ -306,7 +308,7 @@ Route::group(['prefix' => 'dashboard'], function () {
 		]);
 	});
 
-	Route::group(['prefix' => 'setting'], function () {
+	Route::group(['prefix' => 'setting', 'middleware' => 'admin'], function () {
 
 		Route::get('colors', [
 			'uses' 	=> 'ColorController@index',
@@ -354,7 +356,13 @@ Route::group(['prefix' => 'dashboard'], function () {
 		]);
 	});
 
-	Route::group(['prefix' => 'admin'], function () {
+	Route::get('admins', [
+		'uses' 	=> 'AdminController@getAllAdmin',
+		'as' 	=> '/',
+		'middleware' => 'admin'
+	]);
+
+	Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 		
 		Route::get('add', [
 			'uses' 	=> 'AdminController@getAddAdmin',
@@ -370,9 +378,10 @@ Route::group(['prefix' => 'dashboard'], function () {
 	Route::get('stores', [
 		'uses' 	=> 'StoreController@dashboardStores',
 		'as' 	=> '/',
+		'middleware' => 'admin'
 	]);	
 	
-	Route::group(['prefix' => 'store'], function () {
+	Route::group(['prefix' => 'store','middleware' => 'admin'], function () {
 	
 		Route::get('{id}/edit', [
 			'uses' 	=> 'StoreController@edit',
@@ -392,7 +401,6 @@ Route::group(['prefix' => 'dashboard'], function () {
 			'uses' 	=> 'StoreController@update',
 			'as' 	=> '/',
 		]);	
-
 	});
 });
 
