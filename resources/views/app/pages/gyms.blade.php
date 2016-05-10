@@ -8,7 +8,13 @@
 	<div class="page-header">
 		<div class="row">
 			<div class="columns">
-				<h1>Gyms</h1>
+				<h1>
+				@if($gyms->count() == 0)
+					Opps no record found at the moment :(
+				@else
+					Gyms
+				@endif
+				</h1>
 			</div>
 		</div>
 	</div>

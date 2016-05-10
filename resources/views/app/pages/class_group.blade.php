@@ -8,7 +8,14 @@
 	<div class="page-header">
 		<div class="row">
 			<div class="columns">
-				<h1>Class Category</h1>
+				<h1>
+				@if($categories->count() == 0)
+					Opps no record found at the moment :(
+				@else
+					Class Category
+				@endif
+				</h1>
+				
 			</div>
 		</div>
 	</div
