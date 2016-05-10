@@ -60,7 +60,10 @@
 																	<td>{{$group->description}}</td>
 																	<td>{{$group->category->name}}</td>
 																	<td>{{$group->classes->count()}}</td>		
-																	<td><a style="text-decoration: none" href="#">View</a></td>		
+																	<td> 	
+																		<a href="#" data-toggle="modal" data-target="#editModal10">View</a>
+																		@include('dashboard.pages.includes.sections.group_class')
+																	</td>	
 																	<td>
 																		<a href="/dashboard/class/group/{{$group->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
 																		<a href="/dashboard/class/group/{{$group->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>

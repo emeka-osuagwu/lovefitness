@@ -1,7 +1,5 @@
 <div class="page-content-wrapper">
 	
-
-	
 	<div class="page-content">
 		<div class="page-head">
 			<div class="row">
@@ -45,7 +43,10 @@
 													<td>{{$category->name}}</td>
 													<td>{{$category->groups->count()}}</td>		
 													<td width="10px;"><span  class="color-{{$category->color}}" style="padding:4px 40px;"></span></td>
-													<td><a style="text-decoration: none" href="#">View</a></td>
+													<td> 	
+														<a href="#" data-toggle="modal" data-target="#editModal10">View</a>
+														@include('dashboard.pages.includes.sections.category_groups')
+													</td>	
 													<td>
 														<a href="/dashboard/class/category/{{$category->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
 														<a href="/dashboard/class/category/{{$category->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>
