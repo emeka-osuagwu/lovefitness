@@ -11,6 +11,7 @@
 				<div class="page-content-wrapper">
 					<div class="page-content">
 						<div class="page-head">
+
 							<div class="row">
 								<div class="col-md-12">
 									<div class="portlet light bordered">
@@ -41,6 +42,7 @@
 																	<th>Name</th>
 																	<th>Address</th>
 																	<th>Class No</th>
+																	<th>Classes</th>
 																	<th width="80px">Action</th>
 																</tr>
 															</thead>
@@ -56,7 +58,12 @@
 																	@endif
 																	<td>{{$gym->name}}</td>
 																	<td>{{$gym->address}}</td>
-																	<td>{{$gym->classes->count()}}</td>		
+																	<td>{{$gym->classes->count()}}</td>
+																	<td> 	
+																		<a href="#" data-toggle="modal" data-target="#editModal10">View</a>
+																		@include('dashboard.pages.includes.sections.gym_class')
+																	</td>
+
 																	<td>
 																		<a href="/dashboard/gym/{{$gym->id}}/edit"><i class="fa fa-pencil" title="Edit"></i></a>
 																		<a href="/dashboard/gym/{{$gym->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>
@@ -72,6 +79,7 @@
 									</div>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>

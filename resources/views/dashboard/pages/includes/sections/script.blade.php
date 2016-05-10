@@ -29,19 +29,24 @@
         <script src="{!! load_asset('../assets/pages/scripts/components-bootstrap-select.min.js') !!}" type="text/javascript"></script>
       
         <script src="{!! load_asset('../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js') !!}" type="text/javascript"></script>
-        
-       
 <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+
 
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
         <script src="{!! load_asset('../assets/global/scripts/app.min.js') !!}" type="text/javascript"></script>
+        <script src="{!! load_asset('../assets/pages/scripts/ui-modals.min.js') !!}" type="text/javascript"></script>
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 
+
+
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="{!! load_asset('../assets/pages/scripts/components-bootstrap-select-splitter.min.js') !!}" type="text/javascript"></script>
-        
-        <script src="{!! load_asset('..//pages/scripts/portfolio-1.min.js') !!}" type="text/javascript"></script>
+        <script src="{!! load_asset('../assets/pages/scripts/components-bootstrap-select-splitter.min.js') !!}" type="text/javascript"></script>        
+        <script src="{!! load_asset('../assets/pages/scripts/portfolio-1.min.js') !!}" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
+
+
+
 
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <script src="{!! load_asset('../assets/layouts/layout4/scripts/layout.min.js') !!}" type="text/javascript"></script>
@@ -49,12 +54,16 @@
         <script src="{!! load_asset('../assets/layouts/global/scripts/quick-sidebar.min.js') !!}" type="text/javascript"></script>
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
    
+
+
 <!-- PLUGINS TRIGGER-->
         <script src="{!! load_asset('../assets/pages/scripts/components-date-time-pickers.min.js') !!}" type="text/javascript"></script>
 <!-- PLUGINS TRIGGER-->
 
+
+
+
 <!-- CUSTOM Script -->
-        <script src="{!! load_asset('/js/sweetalert.min.js') !!}" type="text/javascript"></script>
-      
-        <script src="{!! load_asset('/Vue/vue.js') !!}" type="text/javascript"></script>
-        <script src="{!! load_asset('vue/app/ClassController.js') !!}" type="text/javascript"></script>
+<script src="{!! load_asset('/js/sweetalert.min.js') !!}" type="text/javascript"></script>
+<script src="{!! load_asset('/Vue/vue.js') !!}" type="text/javascript"></script>
+<script src="{!! load_asset('vue/app/ClassController.js') !!}" type="text/javascript"></script>
