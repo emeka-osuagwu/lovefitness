@@ -19,9 +19,9 @@
 				<h6>Social Networks<i></i></h6>
 				<div class="inner">
 					<ul class="medium-block-grid-5">
-						<li><a href="#"><img src="images/facebook.png" alt=""></a></li>
-						<li><a href="#"><img src="images/twitter.png" alt=""></a></li>
-						<li><a href="#"><img src="images/pinterest.png" alt=""></a></li>
+						<li><a href="#"><img src="{{ asset('images/facebook.png') }}" alt=""></a></li>
+						<li><a href="#"><img src="{{ asset('images/twitter.png') }}" alt=""></a></li>
+						<li><a href="#"><img src="{{ asset('images/pinterest.png') }}" alt=""></a></li>
 					</ul>
 				</div>
 			</div>
