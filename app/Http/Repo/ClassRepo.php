@@ -47,6 +47,7 @@ class ClassRepo extends GymRepo
 				"price" 			=> $data['price'],
 				"location_id" 		=> $data['location'],
 				"group_id" 		=> $data['group_id'],
+				"image"		=> "http://placehold.it/377x236"
 			];
 
 			if (isset($data['image']) && isset($data['image']) != null) {
@@ -62,7 +63,7 @@ class ClassRepo extends GymRepo
 				"name" 		=> $data['name'],
 				"time" 			=> $data['time'],
 				"duration" 		=> $data['duration'],
-				"price" 		=> $data['price'],
+				"price" 			=> $data['price'],
 				"location_id" 		=> $data['location'],
 				"group_id" 		=> $data['group_id'],
 			];
@@ -93,7 +94,6 @@ class ClassRepo extends GymRepo
 		{
 			return Session::with('classes')->where('user_id', Auth::user()->id)->get();
 		}
-
 	/*=====================================
 	# Classes Methods
 	======================================*/

@@ -42,7 +42,6 @@ class ClassController extends Controller
 
 		public function getCreateClass()
 		{
-			
 			$groups 	= $this->classRepo->getAllGroup();
 			$locations 	= $this->locationRepo->getAllLocation();
 			$categories 	= $this->classRepo->getAllCategory();

@@ -28,7 +28,7 @@
 				</div>
 			</div>
 		</div>
-
+		
 		<div class="row">
 			<div class="medium-8 columns">
 				<main class="main-gym-list">
