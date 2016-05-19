@@ -31,9 +31,9 @@
 
 							<div class="meta red clearfix">
 								<a href="/class/view" class="arrow"></a>
+								<a style="text-transform: uppercase;" href="#">GYM: {{$gym->name}}</a>
 								<a style="text-transform: uppercase;" href="#">CLASS: {{$gym->name}}</a>
-								<!-- <a style="text-transform: uppercase;" href="#">DURATION: {{$gym->first()->duration}}</a> -->
-								<!-- <a style="text-transform: uppercase;" href="#">GYM: ABC GYM</a> -->
+								<!-- <a style="text-transform: uppercase;" href="#">DURATION: {{$gym->duration}}</a> -->
 								<a style="text-transform: uppercase;" href="#">LOCATION: {{$gym->location}}</a>
 							</div>
 							</a>
