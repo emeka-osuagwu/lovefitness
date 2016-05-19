@@ -58,6 +58,7 @@ class LocationRepo extends GymRepo
 				"email"	=> $data['email'],
 				"website"	=> $data['website'],
 				"type"		=> "gym",
+				"image"	=> "http://placehold.it/770x378"
 			];
 			
 			if (isset($data['image']) && isset($data['image']) != null) {

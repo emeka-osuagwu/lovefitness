@@ -57,7 +57,7 @@
 																<option>Select Color</option>
 																<option value="red" >Red</option>
 																<option value="blue" >Blue</option>
-																<option value="purple" >Purle</option>
+																<option value="purple" >Purple</option>
 																<option value="Orange" >Orange</option>
 															</select>
 														</div>
