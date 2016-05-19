@@ -50,7 +50,7 @@
 	</div>
 	<div class="row">
 		<div class="columns">
-			<p class="copyright">Copyright &copy; 2015. All Rights Reserved.</p>
+			<p class="copyright">Copyright &copy; {{ date('Y') }}. All Rights Reserved.</p>
 		</div>
 	</div>
 </footer>
