@@ -50,7 +50,7 @@
 																	<td>{{$i++}}</td>
 																	<td>{{$class->name}}</td>
 																	<td>{{$class->group['name']}}</td>
-																	<td><a href="dashboard/venue/{{$class->id}}">{{$class->location->name}}</a></td>
+																	<td><a href="/dashboard/venue/{{$class->id}}">{{$class->location->name}}</a></td>
 																	<td>
 																		<a href="/dashboard/class/{{$class->id}}/edit" ><i class="fa fa-pencil" title="Edit"></i></a>
 																		<a href="/dashboard/class/{{$class->id}}/delete"><i class="fa fa-times" title="Remove"></i></a>

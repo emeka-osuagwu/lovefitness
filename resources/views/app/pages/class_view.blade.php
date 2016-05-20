@@ -20,15 +20,9 @@
 				<main class="main-gym-list">
 
 					<div class="gym-item">
-						@if($class->image == '' || $class->image == null)
-							<img class="gym-image" src="https://images7.alphacoders.com/671/671281.jpg" alt="">
-						@else
-							<img class="gym-image" src="https://images7.alphacoders.com/671/671281.jpg" alt="">
-						@endif
-
-						@if($class->location->image != '' || $class->location->image != null)
-							<img class="gym-logo" src="{{$class->location->image}}" alt="">
-						@endif
+	
+						<img class="gym-image" src="{{ $class->image }}" alt="">
+						<!-- <img class="gym-logo" src="{{$class->location->image}}" alt=""> -->
 
 						<div class="meta red clearfix">
 							<a href="#" class="arrow"></a>

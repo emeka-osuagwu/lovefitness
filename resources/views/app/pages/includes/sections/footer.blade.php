@@ -19,9 +19,9 @@
 				<h6>Social Networks<i></i></h6>
 				<div class="inner">
 					<ul class="medium-block-grid-5">
-						<li><a href="#"><img src="images/facebook.png" alt=""></a></li>
-						<li><a href="#"><img src="images/twitter.png" alt=""></a></li>
-						<li><a href="#"><img src="images/pinterest.png" alt=""></a></li>
+						<li><a href="#"><img src="{{ asset('images/facebook.png') }}" alt=""></a></li>
+						<li><a href="#"><img src="{{ asset('images/twitter.png') }}" alt=""></a></li>
+						<li><a href="#"><img src="{{ asset('images/pinterest.png') }}" alt=""></a></li>
 					</ul>
 				</div>
 			</div>
@@ -50,7 +50,7 @@
 	</div>
 	<div class="row">
 		<div class="columns">
-			<p class="copyright">Copyright &copy; 2015. All Rights Reserved.</p>
+			<p class="copyright">Copyright &copy; {{ date('Y') }}. All Rights Reserved.</p>
 		</div>
 	</div>
 </footer>
