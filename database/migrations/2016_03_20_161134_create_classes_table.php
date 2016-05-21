@@ -15,7 +15,7 @@ class CreateClassesTable extends Migration
 		Schema::create('classes', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
-			$table->float('price');
+			$table->string('price');
 			$table->string('time');
 			$table->string('duration');
 			$table->integer('group_id');
