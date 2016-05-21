@@ -12,10 +12,58 @@
 */
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
-    return [
-        'name' => $faker->name,
-        'email' => $faker->email,
-        'password' => bcrypt(str_random(10)),
-        'remember_token' => str_random(10),
-    ];
+	return [
+		'email' 		=> $faker->email,
+		'firstname' 		=> $faker->name,
+		'lastname' 		=> $faker->name,
+		'address' 		=> $faker->address,
+		'phone' 		=> $faker->email,
+		'post_code' 		=> $faker->email,
+		'city' 			=> $faker->name,
+		'country' 		=> $faker->email,
+		'password' 		=> bcrypt(str_random(10)),
+		'remember_token' 	=> str_random(10),
+	];
+});
+
+$factory->define(App\Model\Category::class, function (Faker\Generator $faker) {
+	return [
+		'name' => $faker->company,
+		'color' => "red",
+	];
+});
+
+$factory->define(App\Model\Group::class, function (Faker\Generator $faker) {
+	return [
+		'name' 		=> $faker->company,
+		'description' 		=> $faker->address,
+		'category_id' 	=> 1,
+	];
+});
+
+$factory->define(App\Model\Classes::class, function (Faker\Generator $faker) {
+	return [
+		'time' 			=> "1:20pm - 10:30pm",
+		'price' 			=> 13434,
+		'name' 		=> $faker->company,
+		'duration' 		=> $faker->address,
+		'location_id' 		=> 1,
+		'group_id' 		=> 1,
+	];
+});
+
+$factory->define(App\Model\Location::class, function (Faker\Generator $faker) {
+	return [
+		'name' 	=> $faker->name,
+		'name' 	=> 'gym',
+		'address' 	=> $faker->address,
+		'email' 		=> $faker->email,
+		'location' 	=> $faker->address,
+		'image' 	=> $faker->image,
+		'number' 	=> 09984984938,
+		'hours' 	=> "1:20pm - 10:30pm",
+		'description' 	=> $faker->address,
+		'price' 		=> 122323,
+		'website' 	=> $faker->address,
+	];
 });

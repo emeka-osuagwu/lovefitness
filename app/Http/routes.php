@@ -11,8 +11,397 @@
 |
 */
 
-Route::get('/', function () {
-	return view('pages.index');
+Route::group(['prefix' => '/'], function () {
+
+	Route::get('/', function () {
+		return view('app.pages.index');
+	});
+
+	Route::get('login', function () {
+		return view('dashboard.pages.login');
+	});
+
+	Route::post('login', [
+		'uses' 	=> 'Auth\AuthController@login',
+		'as' 	=> '/',
+	]);
+
+	Route::get('register', function () {
+		return view('dashboard.pages.register');
+	});
+
+	Route::post('register', [
+		'uses' 	=> 'UserController@create',
+		'as' 	=> '/',
+	]);
+
+	Route::get('logout', [
+		'uses' 	=> 'Auth\AuthController@getLogout',
+		'as' 	=> '/',
+	]);
+});
+
+
+Route::get('account', [
+	'uses' 	=> 'UserController@view',
+	'as' 	=> '/',
+        	'middleware' => ['auth'],
+]);
+
+Route::post('update', [
+	'uses' 	=> 'UserController@update',
+	'as' 	=> '/'
+]);
+
+Route::get('classes', [
+	'uses' 	=> 'ClassController@class_group',
+	'as' 	=> '/',
+]);
+
+Route::get('classes/{class_name}', [
+	'uses' 	=> 'ClassController@view',
+	'as' 	=> '/',
+]);
+
+Route::get('{group}/classes', [
+	'uses' 	=> 'ClassController@class_list',
+	'as' 	=> '/',
+]);
+
+Route::post('review/create', [
+	'uses' 	=> 'ReviewController@create',
+	'as' 	=> '/',
+]);
+
+Route::get('review/delete/{id}', [
+	'uses' 	=> 'ReviewController@delete',
+	'as' 	=> '/',
+]);
+
+Route::get('blogs', [
+	'uses' 	=> 'BlogController@index',
+	'as' 	=> '/',
+]);
+
+Route::get('contact', [
+	'uses' 	=> 'ContactController@index',
+	'as' 	=> '/',
+]);
+
+Route::get('gyms', [
+	'uses' 	=> 'LocationController@appGyms',
+	'as' 	=> '/',
+]);
+
+Route::get('gym/{id}', [
+	'uses' 	=> 'LocationController@appGym',
+	'as' 	=> '/',
+]);
+
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
+
+	Route::get('/', [
+		'uses' 	=> 'AdminController@index',
+		'as' 	=> '/',
+	]);
+
+	Route::get('login', [
+		'uses' 	=> 'UserController@login',
+		'as' 	=> '/',
+	]);
+
+	Route::get('register', [
+		'uses' 	=> 'UserController@register',
+		'as' 	=> '/',
+	]);
+
+	Route::get('gyms', [
+		'uses' 	=> 'GymController@index',
+		'as' 	=> '/',
+		'middleware' => 'admin',
+	]);
+
+	Route::group(['prefix' => 'gym'], function () {
+
+		Route::get('{id}/edit', [
+			'uses' 	=> 'GymController@edit',
+			'as' 	=> '/',
+			'middleware' => 'admin',
+		]);
+
+		Route::post('update', [
+			'uses' 	=> 'GymController@update',
+			'as' 	=> '/',
+			'middleware' => 'admin',
+		]);	
+
+		Route::get('{id}/delete', [
+			'uses' 	=> 'GymController@delete',
+			'as' 	=> '/',
+			'middleware' => 'admin',
+		]);
+
+		Route::get('create', ['middleware' => 'admin', function () {
+			return view('dashboard.pages.add_gym');
+		}]);
+
+		Route::post('create', [
+			'uses' 	=> 'GymController@create',
+			'as' 	=> '/',
+			'middleware' => 'admin',
+		]);
+		
+		Route::post('review/create', [
+			'uses' 	=> 'GymController@createReview',
+			'as' 	=> '/',
+		]);
+	});
+
+	Route::group(['prefix' => 'class', 'middleware' => 'admin'], function () {
+
+		Route::get('/', [
+			'uses' 	=> 'ClassController@dashboardClasses',
+			'as' 	=> '/',
+		]);
+
+		Route::get('create', [
+			'uses' 	=> 'ClassController@getCreateClass',
+			'as' 	=> '/',
+		]);
+
+		Route::post('create', [
+			'uses' 	=> 'ClassController@postCreateClass',
+			'as' 	=> '/',
+		]);
+
+		Route::get('group/create', [
+			'uses' 	=> 'ClassController@addClassGroup',
+			'as' 	=> '/',
+		]);
+
+		Route::post('group/create', [
+			'uses' 	=> 'ClassController@createGroup',
+			'as' 	=> '/',
+		]);
+
+		Route::post('category/create', [
+			'uses' 	=> 'ClassController@postCreateCategory',
+			'as' 	=> '/',
+		]);
+
+		Route::get('{id}/edit', [
+			'uses' 	=> 'ClassController@getEditClass',
+			'as' 	=> '/',
+		]);
+
+		Route::post('update', [
+			'uses' 	=> 'ClassController@updateClass',
+			'as' 	=> '/',
+		]);
+
+		Route::get('groups', [
+			'uses' 	=> 'ClassController@dashboardGroups',
+			'as' 	=> '/',
+		]);
+
+		Route::get('group/{id}/edit', [
+			'uses' 	=> 'ClassController@editClassGroup',
+			'as' 	=> '/',
+		]);
+
+		Route::get('group/{id}/delete', [
+			'uses' 	=> 'ClassController@deleteGroup',
+			'as' 	=> '/',
+		]);
+
+		Route::post('group/update', [
+			'uses' 	=> 'ClassController@updateGroup',
+			'as' 	=> '/',
+		]);
+
+		Route::get('categorys', [
+			'uses' 	=> 'ClassController@dashboardCategory',
+			'as' 	=> '/',
+		]);
+
+		Route::get('category/create', [
+			'uses' 	=> 'ClassController@getCreateCategory',
+			'as' 	=> '/',
+		]);
+
+		Route::get('category/{id}/edit', [
+			'uses' 	=> 'ClassController@editCategory',
+			'as' 	=> '/',
+		]);
+		
+		Route::post('category/update', [
+			'uses' 	=> 'ClassController@updateCategory',
+			'as' 	=> '/',
+		]);
+	});
+
+	Route::group(['prefix' => 'class/session'], function () {
+
+		Route::post('create', [
+			'uses' 	=> 'ClassController@createSession',
+			'as' 	=> '/',
+		]);
+	});
+
+	Route::get('trainers', [
+		'uses' 	=> 'TrainerController@trainers',
+		'as' 	=> '/',
+	]);
+
+	Route::group(['prefix' => 'trainer'], function () {
+		
+		Route::get('/', [
+			'uses' 	=> 'TrainerController@getCreate',
+			'as' 	=> '/',
+		]);
+
+		Route::get('create', function () {
+			return view('dashboard.pages.add_trainer');
+		});
+
+		Route::post('create', [
+			'uses' 	=> 'TrainerController@create',
+			'as' 	=> '/',
+		]);
+
+		Route::get('{id}/edit', [
+			'uses' 	=> 'TrainerController@getEdit',
+			'as' 	=> '/',
+		]);
+
+		Route::post('update', [
+			'uses' 	=> 'TrainerController@update',
+			'as' 	=> '/',
+		]);
+	});
+
+	Route::get('venues', [
+		'uses' 	=> 'VenueController@venues',
+		'as' 	=> '/',
+		'middleware' => 'admin',
+	]);
+
+	Route::group(['prefix' => 'venue', 'middleware' => 'admin'], function () {
+		
+		Route::get('create', function () {
+			return view('dashboard.pages.add_venue');
+		});
+
+		Route::post('create', [
+			'uses' 	=> 'VenueController@create',
+			'as' 	=> '/',
+		]);
+
+		Route::get('{id}/edit', [
+			'uses' 	=> 'VenueController@edit',
+			'as' 	=> '/',
+		]);
+
+		Route::post('update', [
+			'uses' 	=> 'VenueController@update',
+			'as' 	=> '/',
+		]);
+	});
+
+	Route::group(['prefix' => 'setting', 'middleware' => 'admin'], function () {
+
+		Route::get('colors', [
+			'uses' 	=> 'ColorController@index',
+			'as' 	=> '/',
+		]);
+
+		Route::get('add/color', function () {
+			return view('dashboard.pages.add_color');
+		});
+
+		Route::post('add/color', [
+			'uses' 	=> 'ColorController@create',
+			'as' 	=> '/',
+		]);
+
+		Route::get('color/{id}/edit', [
+			'uses' 	=> 'ColorController@edit',
+			'as' 	=> '/',
+		]);
+
+		Route::post('color/update', [
+			'uses' 	=> 'ColorController@update',
+			'as' 	=> '/',
+		]);
+	});
+	
+	Route::group(['prefix' => 'user'], function () {
+		
+		Route::get('/', function () {
+			return view('dashboard.pages.admin_profile');
+		});
+
+		Route::get('edit', function () {
+			return view('dashboard.pages.edit_user');
+		});
+
+		Route::post('update', [
+			'uses' 	=> 'UserController@update',
+			'as' 	=> '/',
+		]);
+
+		Route::post('updatepassword', [
+			'uses' 	=> 'UserController@updatePassword',
+			'as' 	=> '/',
+		]);
+	});
+
+	Route::get('admins', [
+		'uses' 	=> 'AdminController@getAllAdmin',
+		'as' 	=> '/',
+		'middleware' => 'admin'
+	]);
+
+	Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+		
+		Route::get('add', [
+			'uses' 	=> 'AdminController@getAddAdmin',
+			'as' 	=> '/',
+		]);
+	
+		Route::post('add', [
+			'uses' 	=> 'AdminController@postAddAdmin',
+			'as' 	=> '/',
+		]);
+	});
+
+	Route::get('stores', [
+		'uses' 	=> 'StoreController@dashboardStores',
+		'as' 	=> '/',
+		'middleware' => 'admin'
+	]);	
+	
+	Route::group(['prefix' => 'store','middleware' => 'admin'], function () {
+	
+		Route::get('{id}/edit', [
+			'uses' 	=> 'StoreController@edit',
+			'as' 	=> '/',
+		]);
+	
+		Route::get('create', function (){
+			return view('dashboard.pages.add_store');
+		});		
+
+		Route::post('create', [
+			'uses' 	=> 'StoreController@postCreate',
+			'as' 	=> '/',
+		]);	
+
+		Route::post('update', [
+			'uses' 	=> 'StoreController@update',
+			'as' 	=> '/',
+		]);	
+	});
 });
 
 
@@ -20,15 +409,5 @@ Route::get('/', function () {
 
 
 
-Route::get('classes', [
-	'uses' 	=> 'AdminController@index',
-	'as' 	=> '/',
-]);
 
-Route::group(['prefix' => 'admin'], function () {
 
-	Route::get('admins', [
-		'uses' 	=> 'AdminController@index',
-		'as' 	=> '/',
-	]);
-]);

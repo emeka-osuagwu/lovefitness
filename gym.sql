@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
+<<<<<<< HEAD
 -- Generation Time: May 21, 2016 at 03:24 PM
+=======
+-- Generation Time: May 21, 2016 at 02:57 PM
+>>>>>>> 5ea2e6016927c642537419fcba0efa7b05e55058
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.16
 

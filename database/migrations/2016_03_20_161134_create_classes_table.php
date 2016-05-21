@@ -14,21 +14,14 @@ class CreateClassesTable extends Migration
 	{
 		Schema::create('classes', function (Blueprint $table) {
 			$table->increments('id');
-			$table->string('name')->unique();
-			$table->integer('location')->unsigned()->nullable();
+			$table->string('name');
+			$table->float('price');
 			$table->string('time');
 			$table->string('duration');
-			$table->float('price');
-			$table->integer('Instructor')->nullabel()->unsigned();
+			$table->integer('group_id');
+			$table->integer('location_id');
+			$table->string('image')->nullable();
 			$table->timestamps();
-
-			$table->foreign('location')
-				->references('id')
-				->on('gyms');
-			
-			$table->foreign('Instructor')
-				->references('id')
-				->on('users');
 			
 		});
 	}
