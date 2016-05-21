@@ -58,7 +58,7 @@ Route::get('classes', [
 	'as' 	=> '/',
 ]);
 
-Route::get('classes/{class_name}', [
+Route::get('classes/{id}', [
 	'uses' 	=> 'ClassController@view',
 	'as' 	=> '/',
 ]);
