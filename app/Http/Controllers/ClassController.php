@@ -17,9 +17,9 @@ class ClassController extends Controller
 		return view('app.pages.class_group');
 	}
 
-	public function view($class_name)
+	public function view($id)
 	{
-		$class =  $this->classRepo->getClassWhere('name', $class_name)->first();
+		$class =  $this->classRepo->getClassWhere('id', $id)->first();
 		return view('app.pages.class_view', compact('class'));
 	}
 

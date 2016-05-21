@@ -34,7 +34,7 @@
 				<main class="main-gym-list">
 					@foreach($datas['classes'] as $data)
 						<div class="gym-item">
-							<a href="/classes/{{$data->name}}">
+							<a href="/classes/{{$data->id}}">
 							<img style="height:379px;"  class="gym-image" src="{{ $data->image == '' ? asset('images/no_image_2.png') : $data->image }}" alt="">
 							<img width="100" class="gym-logo" src="{{ $data->image == '' ? asset('images/noimage.png') : $data->logo }}" alt="">
 
