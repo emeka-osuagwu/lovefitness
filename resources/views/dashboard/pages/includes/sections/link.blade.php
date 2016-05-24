@@ -42,6 +42,8 @@
 
 <!-- BEGIN PAGE LEVEL STYLES -->
         <link href="{!! load_asset('../assets/pages/css/portfolio.min.css') !!}" rel="stylesheet" type="text/css" />
+  <link href="../assets/pages/css/profile.min.css" rel="stylesheet" type="text/css" />
+
 <!-- BEGIN PAGE LEVEL STYLES -->
 
 <!-- BEGIN THEME LAYOUT STYLES -->
