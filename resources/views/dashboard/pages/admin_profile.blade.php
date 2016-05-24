@@ -91,106 +91,68 @@
 															<a href="#tab_1_1" data-toggle="tab" aria-expanded="true">Personal Info</a>
 														</li>
 														<li class="">
-															<a href="#tab_1_2" data-toggle="tab" aria-expanded="false">Change Avatar</a>
-														</li>
-														<li class="">
 															<a href="#tab_1_3" data-toggle="tab" aria-expanded="false">Change Password</a>
-														</li>
-														<li class="">
-															<a href="#tab_1_4" data-toggle="tab" aria-expanded="false">Privacy Settings</a>
 														</li>
 													</ul>
 												</div>
+
 												<div class="portlet-body">
 													<div class="tab-content">
-														<!-- PERSONAL INFO TAB -->
+														
 														<div class="tab-pane active" id="tab_1_1">
-																												<form role="form" action="{{ Url('dashboard/user/update') }}" method="post" enctype="multipart/form-data">
+															<input type="hidden" name="_token" value="{{ csrf_token() }}">
+															<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 														
-														<input type="hidden" name="_token" value="{{ csrf_token() }}">
+															<div class="form-group">
+																<label class="control-label">First Name</label>
+																<input type="text" name="firstname" required="true"  value="{{Auth::user()->firstname}}" class="form-control"> 
+															</div>
 														
-														<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-														
-														<div class="form-group">
-															<label class="control-label">First Name</label>
-															<input type="text" name="firstname" required="true"  value="{{Auth::user()->firstname}}" class="form-control"> 
-														</div>
-														
-														<div class="form-group">
-															<label class="control-label">Last Name</label>
-															<input type="text" name="lastname" required="true" value="{{Auth::user()->lastname}}" class="form-control"> 
-														</div>
-														
-														<div class="form-group">
-															<label class="control-label">Email</label>
-															<input type="email" name="email" required="true" value="{{Auth::user()->email}}" class="form-control">
-														</div>
+															<div class="form-group">
+																<label class="control-label">Last Name</label>
+																<input type="text" name="lastname" required="true" value="{{Auth::user()->lastname}}" class="form-control"> 
+															</div>
+															
+															<div class="form-group">
+																<label class="control-label">Email</label>
+																<input type="email" name="email" required="true" value="{{Auth::user()->email}}" class="form-control">
+															</div>
 
-														<div class="form-group">
-															<label class="control-label">Mobile Number</label>
-															<input type="number"  name="phone" required="true" value="{{Auth::user()->phone}}" class="form-control">
-														</div>
+															<div class="form-group">
+																<label class="control-label">Mobile Number</label>
+																<input type="number"  name="phone" required="true" value="{{Auth::user()->phone}}" class="form-control">
+															</div>
 
-														<div class="form-group">
-															<label class="control-label">Address</label>
-															<input type="text" name="address" required="true" value="{{Auth::user()->address}}" class="form-control">
-														</div>
+															<div class="form-group">
+																<label class="control-label">Address</label>
+																<input type="text" name="address" required="true" value="{{Auth::user()->address}}" class="form-control">
+															</div>
 
-														<div class="form-group">
-															<label class="control-label">Post Code</label>
-															<input type="number" name="post_code" required="true" value="{{Auth::user()->post_code}}" class="form-control">
-														</div>
-														
-														<div class="form-group">
-															<label class="control-label">City</label>
-															<input type="text" name="city" required="true" value="{{Auth::user()->city}}" class="form-control">
-														</div>	
+															<div class="form-group">
+																<label class="control-label">Post Code</label>
+																<input type="number" name="post_code" required="true" value="{{Auth::user()->post_code}}" class="form-control">
+															</div>
+															
+															<div class="form-group">
+																<label class="control-label">City</label>
+																<input type="text" name="city" required="true" value="{{Auth::user()->city}}" class="form-control">
+															</div>	
 
-														<div class="form-group">
-															<label class="control-label">Image</label>
-															<input type="file" name="image"  value="{{Auth::user()->city}}" class="form-control">
-														</div>
+															<div class="form-group">
+																<label class="control-label">Image</label>
+																<input type="file" name="image"  value="{{Auth::user()->city}}" class="form-control">
+															</div>
 
-														<div class="margiv-top-10">
-															<button class="btn green" type="submit"> Save Changes </button>
-															@if(Auth::user()->status == 1)
-																<a href="{{ Url('dashboard') }}" class="btn default"> Cancel </a>
-															@endif
+															<div class="margiv-top-10">
+																<button class="btn green" type="submit"> Save Changes </button>
+																@if(Auth::user()->status == 1)
+																	<a href="{{ Url('dashboard') }}" class="btn default"> Cancel </a>
+																@endif
+															</div>
+														</form>
 														</div>
-													</form>
-														</div>
-														<!-- END PERSONAL INFO TAB -->
-														<!-- CHANGE AVATAR TAB -->
-														<div class="tab-pane" id="tab_1_2">
-															<p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-																eiusmod. </p>
-															<form action="#" role="form">
-																<div class="form-group">
-																	<div class="fileinput fileinput-new" data-provides="fileinput">
-																		<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-																			<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""> </div>
-																		<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
-																		<div>
-																			<span class="btn default btn-file">
-																				<span class="fileinput-new"> Select image </span>
-																				<span class="fileinput-exists"> Change </span>
-																				<input type="file" name="..."> </span>
-																			<a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
-																		</div>
-																	</div>
-																	<div class="clearfix margin-top-10">
-																		<span class="label label-danger">NOTE! </span>
-																		<span>Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
-																	</div>
-																</div>
-																<div class="margin-top-10">
-																	<a href="javascript:;" class="btn green"> Submit </a>
-																	<a href="javascript:;" class="btn default"> Cancel </a>
-																</div>
-															</form>
-														</div>
-														<!-- END CHANGE AVATAR TAB -->
-														<!-- CHANGE PASSWORD TAB -->
+												
+											
 														<div class="tab-pane" id="tab_1_3">
 															<form action="#">
 																<div class="form-group">
@@ -208,8 +170,7 @@
 																</div>
 															</form>
 														</div>
-														<!-- END CHANGE PASSWORD TAB -->
-														<!-- PRIVACY SETTINGS TAB -->
+												
 														<div class="tab-pane" id="tab_1_4">
 															<form action="#">
 																<table class="table table-light table-hover">
@@ -251,7 +212,7 @@
 																</div>
 															</form>
 														</div>
-														<!-- END PRIVACY SETTINGS TAB -->
+														
 													</div>
 												</div>
 											</div>
