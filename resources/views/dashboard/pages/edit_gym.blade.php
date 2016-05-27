@@ -93,7 +93,7 @@
 												<div class="form-group">
 													<label class="col-md-3 control-label">Phone</label>
 													<div class="col-md-4">
-														<input type="number" name="phone" class="form-control"  value="{{$gym->number}}" required="true">
+														<input type="text" name="phone" class="form-control"  value="{{$gym->number}}" required="true">
 													</div>
 												</div>
 

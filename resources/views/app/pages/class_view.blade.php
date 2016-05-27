@@ -45,10 +45,14 @@
 						</div>
 
 						<h5>About the class</h5>
-						<p>{{$class->description}}</p>
+						<p>{{ getGroupById($class->group_id)->description }}</p>
+						
 						<h5>Timetable</h5>
-						<p>Monday: <span>5pm</span><br />
-						Monday: <span>5pm</span><br />
+						<p>
+				 			<span class="week-day">Class Time</span>
+				 			<span>{{$class->time}}</span> <br> 				 
+				 			<span class="week-day">Class Duration</span> <span>{{$class->duration}}</span> <br> 																								      		
+				 		</p>
 
 						<section class="reviews">
 							<h5>Reviews</h5>

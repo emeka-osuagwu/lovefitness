@@ -64,7 +64,7 @@
 													<div class="form-group">
 														<label class="control-label col-md-3">Class Time</label>
 														<div class="col-md-4">
-															<input type="text" name="time" class="form-control timepicker timepicker-no-seconds">
+															<input type="text" name="time" class="form-control">
 														</div>
 													</div>
 
