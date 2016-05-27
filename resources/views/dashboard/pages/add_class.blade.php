@@ -73,10 +73,10 @@
 														<div class="col-md-4">
 															<select class="form-control" name="duration" required="true">
 																<option value="" >Select Duration</option>
+																<option value="15min">15min</option>
 																<option value="30min">30min</option>
-																<option value="1 hour">1 hour</option>
-																<option value="1 - 30min">1 - 30min</option>
-																<option value="2 hour">2 hour</option>
+																<option value="45min">45min</option>
+																<option value="60min">60min</option>
 															</select>
 														</div>
 													</div>
