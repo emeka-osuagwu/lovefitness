@@ -12,12 +12,13 @@ class Classes extends Model
 	
 	protected $fillable = [	
 		"time",
+		"logo",
 		"price",
 		"name",
+		"image",
 		"duration",
-		"location_id",
 		"group_id",
-		"image"
+		"location_id",
 	];
 
 	public function group()

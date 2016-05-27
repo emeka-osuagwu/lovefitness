@@ -8,7 +8,7 @@
 	<div class="page-header">
 		<div class="row">
 			<div class="columns">
-				<h1>Class</h1>
+				<h1>{{  ($datas['classes']->count() > 0 ) ? "Class" : "Opps no record found at the moment :( "  }}</h1>
 			</div>
 		</div>
 	</div>
