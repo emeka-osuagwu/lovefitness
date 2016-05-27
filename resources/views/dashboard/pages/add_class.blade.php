@@ -121,6 +121,13 @@
 														<div class="col-md-4">
 															<input type="file" name="image">
 														</div>
+													</div>	
+
+													<div class="form-group">
+														<label class="col-md-3 control-label">Logo</label>
+														<div class="col-md-4">
+															<input type="file" name="logo">
+														</div>
 													</div>
 																						
 												</div>

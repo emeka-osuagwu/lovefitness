@@ -47,8 +47,8 @@ class ClassRepo extends GymRepo
 				"price" 			=> $data['price'],
 				"location_id" 		=> $data['location'],
 				"group_id" 		=> $data['group_id'],
-				"image"		=> "http://placehold.it/377x236"
-				"logo"			=> "http://placehold.it/377x236"
+				"image"		=> "http://placehold.it/377x236",
+				"logo"			=> "http://placehold.it/100x63"
 			];
 
 			if (isset($data['image']) && isset($data['image']) != null) {
@@ -80,7 +80,7 @@ class ClassRepo extends GymRepo
 			if (isset($data['logo']) && isset($data['logo']) != null) {
 				$update['logo'] = $this->getImageUrl();
 			}
-			s
+			
 			Classes::where('id', $data['class_id'])->update($update);
 		}
 
