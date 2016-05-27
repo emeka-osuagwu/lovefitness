@@ -1,6 +1,6 @@
 @extends('dashboard.master')
 
-@section('title', 'Index')
+@section('title', 'Profile')
 
 @section('content')
 	@include('dashboard.pages.includes.sections.top_nav')
@@ -100,56 +100,57 @@
 													<div class="tab-content">
 														
 														<div class="tab-pane active" id="tab_1_1">
-															<input type="hidden" name="_token" value="{{ csrf_token() }}">
-															<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-														
-															<div class="form-group">
-																<label class="control-label">First Name</label>
-																<input type="text" name="firstname" required="true"  value="{{Auth::user()->firstname}}" class="form-control"> 
-															</div>
-														
-															<div class="form-group">
-																<label class="control-label">Last Name</label>
-																<input type="text" name="lastname" required="true" value="{{Auth::user()->lastname}}" class="form-control"> 
-															</div>
+															<form action="{{ Url('dashboard/user/update') }}" method="post" enctype="multipart/form-data">
+																<input type="hidden" name="_token" value="{{ csrf_token() }}">
+																<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 															
-															<div class="form-group">
-																<label class="control-label">Email</label>
-																<input type="email" name="email" required="true" value="{{Auth::user()->email}}" class="form-control">
-															</div>
-
-															<div class="form-group">
-																<label class="control-label">Mobile Number</label>
-																<input type="number"  name="phone" required="true" value="{{Auth::user()->phone}}" class="form-control">
-															</div>
-
-															<div class="form-group">
-																<label class="control-label">Address</label>
-																<input type="text" name="address" required="true" value="{{Auth::user()->address}}" class="form-control">
-															</div>
-
-															<div class="form-group">
-																<label class="control-label">Post Code</label>
-																<input type="number" name="post_code" required="true" value="{{Auth::user()->post_code}}" class="form-control">
-															</div>
+																<div class="form-group">
+																	<label class="control-label">First Name</label>
+																	<input type="text" name="firstname" required="true"  value="{{Auth::user()->firstname}}" class="form-control"> 
+																</div>
 															
-															<div class="form-group">
-																<label class="control-label">City</label>
-																<input type="text" name="city" required="true" value="{{Auth::user()->city}}" class="form-control">
-															</div>	
+																<div class="form-group">
+																	<label class="control-label">Last Name</label>
+																	<input type="text" name="lastname" required="true" value="{{Auth::user()->lastname}}" class="form-control"> 
+																</div>
+																
+																<div class="form-group">
+																	<label class="control-label">Email</label>
+																	<input type="email" name="email" required="true" value="{{Auth::user()->email}}" class="form-control">
+																</div>
 
-															<div class="form-group">
-																<label class="control-label">Image</label>
-																<input type="file" name="image"  value="{{Auth::user()->city}}" class="form-control">
-															</div>
+																<div class="form-group">
+																	<label class="control-label">Mobile Number</label>
+																	<input type="number"  name="phone" required="true" value="{{Auth::user()->phone}}" class="form-control">
+																</div>
 
-															<div class="margiv-top-10">
-																<button class="btn green" type="submit"> Save Changes </button>
-																@if(Auth::user()->status == 1)
-																	<a href="{{ Url('dashboard') }}" class="btn default"> Cancel </a>
-																@endif
-															</div>
-														</form>
+																<div class="form-group">
+																	<label class="control-label">Address</label>
+																	<input type="text" name="address" required="true" value="{{Auth::user()->address}}" class="form-control">
+																</div>
+
+																<div class="form-group">
+																	<label class="control-label">Post Code</label>
+																	<input type="number" name="post_code" required="true" value="{{Auth::user()->post_code}}" class="form-control">
+																</div>
+																
+																<div class="form-group">
+																	<label class="control-label">City</label>
+																	<input type="text" name="city" required="true" value="{{Auth::user()->city}}" class="form-control">
+																</div>	
+
+																<div class="form-group">
+																	<label class="control-label">Image</label>
+																	<input type="file" name="image"  value="{{Auth::user()->city}}" class="form-control">
+																</div>
+
+																<div class="margiv-top-10">
+																	<button class="btn green" type="submit"> Save Changes </button>
+																	@if(Auth::user()->status == 1)
+																		<a href="{{ Url('dashboard') }}" class="btn default"> Cancel </a>
+																	@endif
+																</div>
+															</form>
 														</div>
 												
 											
