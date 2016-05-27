@@ -54,13 +54,13 @@
 													<div class="form-group">
 														<label class="col-md-3 control-label">Price</label>
 														<div class="col-md-4">
-															<input type="number" name="price" class="form-control" value="{{$class->price}}" required="true">
+															<input type="text" name="price" class="form-control" value="{{$class->price}}" required="true">
 														</div>
 													</div>
 													<div class="form-group">
 														<label class="control-label col-md-3">Class Time</label>
 														<div class="col-md-4">
-															<input type="text" value="{{$class->time}}" name="time" class="form-control timepicker timepicker-no-seconds">
+															<input type="text" value="{{$class->time}}" name="time" class="form-control">
 														</div>
 													</div>
 	
@@ -69,10 +69,10 @@
 														<div class="col-md-4">
 															<select class="form-control" name="duration" required="true">
 																<option value="{{$class->duration}}" >{{$class->duration}}</option>
+																<option value="15min">15min</option>
 																<option value="30min">30min</option>
-																<option value="1 hour">1 hour</option>
-																<option value="1 - 30min">1 - 30min</option>
-																<option value="2 hour">2 hour</option>
+																<option value="45min">45min</option>
+																<option value="60min">60min</option>
 															</select>
 														</div>
 													</div>
@@ -113,6 +113,12 @@
 														<label class="col-md-3 control-label">Image</label>
 														<div class="col-md-4">
 															<input type="file" name="image" >
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-md-3 control-label">Logo</label>
+														<div class="col-md-4">
+															<input type="file" name="logo" >
 														</div>
 													</div>
 																						

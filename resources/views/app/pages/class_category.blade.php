@@ -49,7 +49,6 @@
 				<ul class="medium-block-grid-3 class-categories">
 					@foreach($categories as $category)
 					<li>
-
 						<a href="/{{$category->name}}/classes">
 							<img src="{{ asset('images/swimming.jpg') }}" alt="">
 							<h3 class="red"><a href="#">{{$category->name}}</a></h3>

@@ -21,6 +21,7 @@ class CreateClassesTable extends Migration
 			$table->integer('group_id');
 			$table->integer('location_id');
 			$table->string('image')->nullable();
+			$table->string('logo')->nullable();
 			$table->timestamps();
 			
 		});
