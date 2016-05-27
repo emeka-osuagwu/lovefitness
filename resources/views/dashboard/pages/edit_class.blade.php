@@ -54,7 +54,7 @@
 													<div class="form-group">
 														<label class="col-md-3 control-label">Price</label>
 														<div class="col-md-4">
-															<input type="number" name="price" class="form-control" value="{{$class->price}}" required="true">
+															<input type="text" name="price" class="form-control" value="{{$class->price}}" required="true">
 														</div>
 													</div>
 													<div class="form-group">
