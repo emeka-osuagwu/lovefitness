@@ -39,11 +39,11 @@
 							<img width="100" class="gym-logo" src="{{ $data->image == '' ? asset('images/noimage.png') : $data->logo }}" alt="">
 
 							<div class="meta red clearfix">
-								<a href="/class/view" class="arrow"></a>
-								<a style="text-transform: uppercase;" href="#">CLASS: {{$data->first()->name}}</a>
-								<a style="text-transform: uppercase;" href="#">DURATION: {{$data->first()->duration}}</a>
-								<a style="text-transform: uppercase;" href="#">GYM: ABC GYM</a>
-								<a style="text-transform: uppercase;" href="#">LOCATION: {{  getlocationById($data->location_id) }}</a>
+								<a href="/classes/{{$data->id}}" class="arrow"></a>
+								<a style="text-transform: uppercase;" href="/classes/{{$data->id}}">CLASS: {{$data->first()->name}}</a>
+								<a style="text-transform: uppercase;" href="/classes/{{$data->id}}">DURATION: {{$data->first()->duration}}</a>
+								<a style="text-transform: uppercase;" href="/classes/{{$data->id}}">GYM: ABC GYM</a>
+								<a style="text-transform: uppercase;" href="/classes/{{$data->id}}">LOCATION: {{  getlocationById($data->location_id) }}</a>
 							</div>
 							</a>
 						</div>
